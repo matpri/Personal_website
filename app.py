@@ -5,7 +5,7 @@ from PIL import Image
 def main():
     # Page configuration
     st.set_page_config(
-        page_title="Matteo Giacomo Prina - Energy Systems Expert",
+        page_title="Matteo Giacomo Prina - Energy Systems Modeling Expert",
         page_icon="🔋",
         layout="wide"
     )

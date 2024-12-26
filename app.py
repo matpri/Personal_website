@@ -22,7 +22,7 @@ def main():
         }
         .block-container {
             padding-top: 4rem;
-            padding-bottom: 0rem;
+            padding-bottom: 2rem;
             padding-left: 1rem;
             padding-right: 1rem;
         }

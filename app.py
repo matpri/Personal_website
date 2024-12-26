@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 
 def main():
     # Page configuration
@@ -13,11 +14,17 @@ def main():
     st.markdown("""
         <style>
         .main {
-            padding: 0rem 1rem;
+            padding: 0;
         }
         .stApp {
             max-width: 1200px;
             margin: 0 auto;
+        }
+        .block-container {
+            padding-top: 2rem;
+            padding-bottom: 0rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
         h1 {
             color: #2e7d32;
@@ -31,32 +38,52 @@ def main():
             border-radius: 5px;
             margin: 0.5rem 0;
         }
+        .header-text {
+            color: #666666;
+            font-size: 1.2rem;
+            margin: 0 0 0.5rem 0;
+            padding: 0 0 0.5rem 0;
+            border-bottom: 1px solid #eeeeee;
+        }
         </style>
     """, unsafe_allow_html=True)
-
-    # Header Section
-    col1, col2 = st.columns([2, 1])
     
-    with col1:
-        st.title("Matteo Giacomo Prina")
-        st.subheader("Senior Researcher in Energy Systems")
-        st.write("🏢 Eurac Research Institute for Renewable Energy, Bolzano (Italy)")
-        st.write("📧 Matteogiacomo.prina@eurac.edu")
+    # Persistent header
+    st.markdown('<p class="header-text">Matteo Giacomo Prina - Personal Website</p>', unsafe_allow_html=True)
 
-    # Metrics
-    st.subheader("Research Impact")
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("H-index (Scopus)", "17", "1108 citations")
-    with col2:
-        st.metric("H-index (Google Scholar)", "19", "1526 citations")
-    with col3:
-        st.metric("Open Access Publications", "7", "of top 10 papers")
+    # Navigation Tabs at the top
+    tabs = st.tabs(["Home", "Experience", "Education", "Publications", "Awards", "Thesis Supervision", "Research Interests", "Contacts"])
 
-    # Tabs for different sections
-    tab1, tab2, tab3, tab4 = st.tabs(["Experience", "Education", "Publications", "Awards"])
+    # Home Tab
+    with tabs[0]:
+        col1, col2 = st.columns([0.7, 0.3])
+        
+        with col1:
+            st.title("Matteo Giacomo Prina")
+            st.subheader("Senior Researcher in Energy Systems")
+            st.write("🏢 Eurac Research Institute for Renewable Energy, Bolzano (Italy)")
+            st.write("📧 Matteogiacomo.prina@eurac.edu")
+            
+            st.markdown("---")
+            st.markdown("""
+            I am a Senior Researcher at Eurac Research, specializing in energy system modeling and renewable energy integration. 
+            My research focuses on developing and applying advanced optimization models for energy transition strategies. 
+            I have extensive experience in leading international projects and collaborating with diverse stakeholders in the energy sector.
 
-    with tab1:
+            As the developer of the EPLANopt model and project coordinator for initiatives like V2G-BOOST and PNRR IOMSES, 
+            I am committed to advancing sustainable energy solutions and supporting the transition to renewable energy systems.
+            My work combines technical expertise in energy engineering with practical applications in policy development and regional energy strategies.
+            """)
+
+        with col2:
+            try:
+                image = Image.open("profile.jpg")
+                st.image(image, width=200)
+            except:
+                st.write("Profile picture not found. Please add 'profile.jpg' to your repository.")
+
+    # Experience Tab
+    with tabs[1]:
         st.header("Professional Experience")
         
         st.subheader("Senior Researcher (2022-Present)")
@@ -75,7 +102,8 @@ def main():
         - Developer of EPLANoptMAC model
         """)
 
-    with tab2:
+    # Education Tab
+    with tabs[2]:
         st.header("Education")
         
         st.subheader("PhD in Energy Engineering (2015-2019)")
@@ -86,7 +114,8 @@ def main():
         st.write("Politecnico di Milano")
         st.write("Energy & Sustainability Management")
 
-    with tab3:
+    # Publications Tab
+    with tabs[3]:
         st.header("Selected Publications")
         
         publications = [
@@ -111,9 +140,11 @@ def main():
         ]
         
         df = pd.DataFrame(publications)
-        st.dataframe(df, hide_index=True)
+        df.index = [""] * len(df)
+        st.dataframe(df)
 
-    with tab4:
+    # Awards Tab
+    with tabs[4]:
         st.header("Awards & Recognition")
         
         st.markdown("""
@@ -123,9 +154,84 @@ def main():
         - **Best Presentation Award** at SES Conference 2020
         """)
 
-    # Footer
-    st.markdown("---")
-    st.markdown("Connect with me: [ResearchGate](https://www.researchgate.net/profile/Matteo_Prina) | [Google Scholar](https://scholar.google.it/citations?user=i_GqXEsAAAAJ&hl=it)")
+    # Thesis Supervision Tab
+    with tabs[5]:
+        st.header("Thesis Supervision")
+        st.markdown("""
+        ### Current Supervision
+        - PhD Thesis: "Integration of Vehicle-to-Grid Technologies in Energy Systems"
+        - Master Thesis: "Machine Learning Applications in Energy System Modeling"
+        
+        ### Past Supervision
+        1. **Master Thesis (2023)**
+           - Title: "Optimization of District Heating Networks"
+           - Student: Marco Rossi
+           - University: Politecnico di Milano
+
+        2. **Master Thesis (2022)**
+           - Title: "Integration of Renewable Energy in Urban Areas"
+           - Student: Laura Bianchi
+           - University: Free University of Bozen-Bolzano
+        """)
+
+    # Research Interests Tab
+    with tabs[6]:
+        st.header("Research Interests")
+        st.markdown("""
+        ### Main Research Areas
+        - **Energy System Modeling**
+          - Development of optimization models for energy systems
+          - Integration of renewable energy sources
+          - Multi-objective optimization techniques
+
+        - **Smart Energy Systems**
+          - Vehicle-to-Grid (V2G) technologies
+          - District heating and cooling
+          - Sector coupling
+
+        - **Energy Transition Strategies**
+          - Regional and national energy planning
+          - Policy development and analysis
+          - Decarbonization pathways
+
+        ### Technical Expertise
+        - **Programming & Tools**
+          - Python (Pandas, Numpy, Optimization libraries)
+          - Energy system modeling tools (EnergyPLAN, Oemof)
+          - GIS and data analysis
+
+        - **Methodologies**
+          - Multi-objective optimization
+          - Machine learning applications in energy
+          - Bottom-up modeling approaches
+        """)
+
+    # Contacts Tab
+    with tabs[7]:
+        st.header("Contact Information")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.subheader("Professional Address")
+            st.markdown("""
+            Eurac Research\n
+            Institute for Renewable Energy\n
+            Via A. Volta 13/A\n
+            39100 Bolzano (Italy)
+            """)
+            
+            st.subheader("Email")
+            st.write("📧 Matteogiacomo.prina@eurac.edu")
+            
+        with col2:
+            st.subheader("Professional Profiles")
+            st.markdown("""
+            - [ResearchGate](https://www.researchgate.net/profile/Matteo_Prina)
+            - [Google Scholar](https://scholar.google.it/citations?user=i_GqXEsAAAAJ&hl=it)
+            - [ORCID](https://orcid.org/0000-0002-3240-9156)
+            - [Scopus](https://www.scopus.com/authid/detail.uri?authorId=56893629600)
+            """)
 
 if __name__ == "__main__":
     main()

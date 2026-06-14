@@ -184,24 +184,42 @@ def main():
             """
         )
 
+    from publications_pages import deep_learning_paper, classification_paper
+
     with tabs[3]:
-        st.header("Selected Publications")
-        st.markdown(
-            """
-            1. **Deep learning surrogate model to explain decision variable synergies in energy system modelling** (2026). DOI: [10.1016/j.segy.2026.100246](https://doi.org/10.1016/j.segy.2026.100246)
-            2. **Impact of sufficiency on achieving the EU's 2030 and 2050 greenhouse gas emissions targets** (2026). DOI: [10.1016/j.sftr.2026.101791](https://doi.org/10.1016/j.sftr.2026.101791)
-            3. **A Composite Indicator for Assessing Upscaled Energy Sufficiency and Sustainable Prosperity in the European Union** (2025). DOI: [10.13044/j.sdi.d2.0558](https://doi.org/10.13044/j.sdi.d2.0558)
-            4. **Advancing renewable energy community planning through integrated sector-coupling and economies of scale** (2025). DOI: [10.1016/j.apenergy.2025.125942](https://doi.org/10.1016/j.apenergy.2025.125942)
-            5. **Electrification and flexibility of process heat in energy system modelling: A review** (2025). DOI: [10.1016/j.rser.2025.115698](https://doi.org/10.1016/j.rser.2025.115698)
-            """
-        )
+        st.header("Publications (selected and full list)")
+
+        # A placeholder publications list; replace or extend with the full publications sheet as provided
+        publications = [
+            {"title": "Deep learning surrogate model to explain decision variable synergies in energy system modelling", "year": 2026, "doi": "10.1016/j.segy.2026.100246", "module": deep_learning_paper},
+            {"title": "Impact of sufficiency on achieving the EU's 2030 and 2050 greenhouse gas emissions targets", "year": 2026, "doi": "10.1016/j.sftr.2026.101791", "module": None},
+            {"title": "A Composite Indicator for Assessing Upscaled Energy Sufficiency and Sustainable Prosperity in the European Union", "year": 2025, "doi": "10.13044/j.sdi.d2.0558", "module": None},
+            {"title": "Advancing renewable energy community planning through integrated sector-coupling and economies of scale", "year": 2025, "doi": "10.1016/j.apenergy.2025.125942", "module": None},
+            {"title": "Electrification and flexibility of process heat in energy system modelling: A review", "year": 2025, "doi": "10.1016/j.rser.2025.115698", "module": None},
+            {"title": "Classification and challenges of bottom-up energy system models", "year": 2020, "doi": "10.1016/j.rser.2020.109917", "module": classification_paper},
+        ]
+
+        # Display as a simple interactive list
+        for i, pub in enumerate(publications):
+            st.markdown(f"**{pub['year']} — {pub['title']}**  ")
+            if pub.get('doi'):
+                st.markdown(f"DOI: [{pub['doi']}](https://doi.org/{pub['doi']})")
+            if pub.get('module') is not None:
+                if st.button("Show details", key=f"pub_details_{i}"):
+                    st.markdown("---")
+                    pub['module'].render()
+                    st.markdown("---")
+            else:
+                st.markdown("\n")
+
+        st.info("To add the full publications sheet, upload or provide a CSV/Excel file and I'll import it and render the complete list.")
 
     with tabs[4]:
         st.header("Awards & Recognition")
         st.markdown(
             """
-            - **Junior Research Award Südtirol/Alto Adige** (2025)
-            - **EUREGIO Young Researcher Award** (2021)
+            - **Junior Research Award Südtirol/Alto Adige** (2025) — [news item](https://news.provincia.bz.it/it/news/junior-research-award-2025-a-matteo-prina)
+            - **EUREGIO Young Researcher Award** (2021) — [EUREGIO archive](https://www.europaregion.info/it/euregio/archivio/progetti-archivio/2021/istruzione-ricerca/premio-giovani-ricercatori-euregio/)
             - **National Scientific Qualification** as Associate Professor in Fluid Machinery, Energy Systems, and Power Generation (2024)
             - Reviewer and scientific advisor for leading journals including Nature Energy and Applied Energy
             """

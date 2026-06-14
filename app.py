@@ -1,237 +1,280 @@
-import streamlit as st
-import pandas as pd
+﻿import streamlit as st
 from PIL import Image
 
+def get_vcard():
+    return """BEGIN:VCARD
+VERSION:3.0
+N:Prina;Matteo Giacomo;;;
+FN:Matteo Giacomo Prina
+TITLE:Research Group Leader, Overall Energy System Modelling and E-Mobility
+ORG:Eurac Research;Institute for Renewable Energy
+TEL;TYPE=WORK,VOICE:+39 0471 055 587
+EMAIL;TYPE=INTERNET,WORK:matteogiacomo.prina@eurac.edu
+URL:https://www.eurac.edu/en/people/matteo-giacomo-prina
+X-ORCID:https://orcid.org/0000-0002-3240-9156
+END:VCARD
+"""
+
+
 def main():
-    # Page configuration
     st.set_page_config(
-        page_title="Matteo Giacomo Prina - Energy Systems Modeling Expert",
+        page_title="Matteo Giacomo Prina | Energy Systems Modeling",
         page_icon="🔋",
         layout="wide"
     )
 
-    # Custom CSS
-    st.markdown("""
+    st.markdown(
+        """
         <style>
-        .main {
-            padding: 0;
-        }
         .stApp {
             max-width: 1200px;
             margin: 0 auto;
         }
         .block-container {
-            padding-top: 4rem;
+            padding-top: 3rem;
             padding-bottom: 2rem;
             padding-left: 1rem;
             padding-right: 1rem;
         }
-        h1 {
-            color: #2e7d32;
-        }
-        h2 {
-            color: #1976d2;
-        }
-        .metric-box {
-            background-color: #f5f5f5;
-            padding: 1rem;
-            border-radius: 5px;
-            margin: 0.5rem 0;
+        h1, h2, h3 {
+            color: #1f4f4f;
         }
         .header-text {
-            color: #666666;
-            font-size: 1.2rem;
-            margin: 0 0 0.5rem 0;
-            padding: 0 0 0.5rem 0;
-            border-bottom: 1px solid #eeeeee;
+            color: #444444;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #d7d7d7;
+            padding-bottom: 0.5rem;
+        }
+        .card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .small-text {
+            color: #555555;
+            font-size: 0.95rem;
         }
         </style>
-    """, unsafe_allow_html=True)
-    
-    # Persistent header
-    st.markdown('<p class="header-text">Matteo Giacomo Prina - Personal Website</p>', unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True,
+    )
 
-    # Navigation Tabs at the top
-    tabs = st.tabs(["Home", "Experience", "Education", "Publications", "Awards", "Thesis Supervision", "Research Interests", "Contacts"])
+    st.markdown('<p class="header-text">Matteo Giacomo Prina — Group Leader, Energy Systems Modeling and E-Mobility</p>', unsafe_allow_html=True)
 
-    # Home Tab
+    tabs = st.tabs(["Home", "Biography", "Projects", "Publications", "Awards", "Research", "Contacts"])
+
     with tabs[0]:
-        col1, col2 = st.columns([0.7, 0.3])
-        
+        col1, col2 = st.columns([0.65, 0.35])
+
         with col1:
             st.title("Matteo Giacomo Prina")
-            st.subheader("Senior Researcher in Energy Systems")
-            st.write("🏢 Eurac Research Institute for Renewable Energy, Bolzano (Italy)")
-            st.write("📧 Matteogiacomo.prina@eurac.edu")
-            
-            st.markdown("---")
-            st.markdown("""
-            I am a Senior Researcher at Eurac Research, specializing in energy system modeling and renewable energy integration. 
-            My research focuses on developing and applying advanced optimization models for energy transition strategies. 
-            I have extensive experience in leading international projects and collaborating with diverse stakeholders in the energy sector.
+            st.subheader("Research Group Leader | Institute for Renewable Energy | Eurac Research")
+            st.write("📍 Bolzano, Italy")
+            st.write("📧 matteogiacomo.prina@eurac.edu")
+            st.write("📞 +39 0471 055 587")
 
-            As the developer of the EPLANopt model and project coordinator for initiatives like V2G-BOOST and PNRR IOMSES, 
-            I am committed to advancing sustainable energy solutions and supporting the transition to renewable energy systems.
-            My work combines technical expertise in energy engineering with practical applications in policy development and regional energy strategies.
-            """)
+            st.markdown("---")
+            st.markdown(
+                """
+                Dr. Matteo Giacomo Prina is Group Leader of the Overall Energy System Modelling and E-Mobility group at the Institute for Renewable Energy, Eurac Research.
+                He holds a Ph.D. in Energy and Nuclear Science and Technology from Politecnico di Milano.
+
+                Since 2014, Dr. Prina has advanced energy system modeling by integrating artificial intelligence, optimization algorithms, and participatory planning frameworks. His research supports authorities in implementing clean energy transition strategies and coupling transport with broader energy systems.
+
+                A recent research focus is AI-enhanced surrogate models for uncertainty analysis in large-scale energy systems, enabling faster, more transparent, and uncertainty-aware decision-making.
+                """
+            )
+
+            st.markdown(
+                """
+                - Group Leader, Overall Energy System Modelling and E-Mobility group
+                - Project coordinator for LIFE PLANtoACT, V2G-BOOST, AIchargeMAP, and IOMSES
+                - Member of the Open Energy Modelling Initiative (OpenMod)
+                - Reviewer for Nature Energy, Applied Energy, Renewable and Sustainable Energy Reviews
+                """
+            )
+
+            st.markdown("**External profiles:**")
+            st.markdown(
+                """
+                - [EURAC Research profile](https://www.eurac.edu/en/people/matteo-giacomo-prina)
+                - [Google Scholar](https://scholar.google.com/citations?user=i_GqXEsAAAAJ&hl=en#)
+                - [ORCID](https://orcid.org/0000-0002-3240-9156)
+                - [LinkedIn](https://www.linkedin.com/in/matteo-giacomo-prina-999248b/)
+                """
+            )
 
         with col2:
             try:
                 image = Image.open("profile.jpg")
-                st.image(image, width=200)
-            except:
-                st.write("Profile picture not found. Please add 'profile.jpg' to your repository.")
+                st.image(image, width=250)
+            except FileNotFoundError:
+                st.info("Add a 'profile.jpg' image file to display your portrait here.")
 
-    # Experience Tab
+            st.markdown(
+                """
+                <div class="card">
+                <h3>Contact snapshot</h3>
+                <p class="small-text">Research Group Leader, Institute for Renewable Energy, Eurac Research</p>
+                <p class="small-text">matteogiacomo.prina@eurac.edu</p>
+                <p class="small-text">+39 0471 055 587</p>
+                <p class="small-text">Bolzano, Italy</p>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            vcard = get_vcard()
+            st.download_button(
+                label="Download contact vCard",
+                data=vcard,
+                file_name="Matteo_Giacomo_Prina.vcf",
+                mime="text/vcard",
+            )
+
     with tabs[1]:
-        st.header("Professional Experience")
-        
-        st.subheader("Senior Researcher (2022-Present)")
-        st.write("Eurac Research Institute for Renewable Energy")
-        st.markdown("""
-        - Project Coordinator of V2G-BOOST (2023-2026)
-        - Project Coordinator of PNRR IOMSES (2024-2025)
-        - Lead research on energy system modeling and scenario generation
-        """)
+        st.header("Biography")
+        st.markdown(
+            """
+            **Current role**
 
-        st.subheader("Post-doctoral Researcher (2019-2022)")
-        st.write("Eurac Research Institute for Renewable Energy")
-        st.markdown("""
-        - Energy system modeling expert for Ukraine's energy strategy
-        - Task leader in H2020 Trust-PV project
-        - Developer of EPLANoptMAC model
-        """)
+            Dr. Matteo Prina leads the Overall Energy System Modelling and E-Mobility group at Eurac Research’s Institute for Renewable Energy. His team works at the intersection of energy system modeling, transport sector integration, and sustainable transition planning.
 
-    # Education Tab
+            **Research profile**
+
+            His work combines AI, optimization algorithms, and participatory processes to build robust and transparent energy transition scenarios. He frequently collaborates with public authorities to support regional and municipal clean energy strategies.
+
+            **Academic background**
+
+            - Ph.D. in Energy and Nuclear Science and Technology, Politecnico di Milano
+            - MSc in Management Engineering, Politecnico di Milano
+            """
+        )
+
+        st.subheader("Selected career milestones")
+        st.markdown(
+            """
+            - 2014: Joined Eurac Research
+            - 2019: Completed Ph.D. at Politecnico di Milano
+            - 2022: Appointed Senior Researcher and Group Leader at Eurac Research
+            - 2024: National Scientific Qualification as Associate Professor in Fluid Machinery, Energy Systems, and Power Generation
+            - 2025: Junior Research Award Südtirol/Alto Adige
+            """
+        )
+
     with tabs[2]:
-        st.header("Education")
-        
-        st.subheader("PhD in Energy Engineering (2015-2019)")
-        st.write("Politecnico di Milano - Cum Laude")
-        st.write("Thesis: 'Renewable energy high penetration scenarios using bottom-up modelling'")
-        
-        st.subheader("MSc in Management Engineering (2011-2013)")
-        st.write("Politecnico di Milano")
-        st.write("Energy & Sustainability Management")
+        st.header("Coordinated Projects")
+        st.markdown(
+            """
+            - [LIFE PLANtoACT](https://webgate.ec.europa.eu/life/publicWebsite/project/LIFE24-CET-PLANtoACT-101214506/bridging-the-gap-from-planning-to-action-capacity-building-for-regions-and-municipalities-in-implementing-clean-energy-transition-strategies) — capacity-building for regions and municipalities in implementing clean energy transition strategies
+            - [V2G-BOOST](https://www.eurac.edu/en/projects/v2g-boost) — EFRE project on vehicle-to-grid innovation
+            - [AIchargeMAP](https://www.eurac.edu/it/projects/aichargemap) — AI-supported charging station expansion planning
+            - [IOMSES](https://www.eurac.edu/en/projects/iomses) — PNRR project on integrated optimization of mobility and energy systems
+            """
+        )
 
-    # Publications Tab
+        st.markdown("**Additional project interests:**")
+        st.markdown(
+            """
+            - AI-enhanced surrogate models for uncertainty-aware energy system planning
+            - Integrated sector-coupling and transport-energy system solutions
+            - Participatory regional and municipal energy transition frameworks
+            """
+        )
+
     with tabs[3]:
         st.header("Selected Publications")
-        
-        publications = [
-            {
-                "title": "Machine learning as a surrogate model for EnergyPLAN",
-                "journal": "Energy 2024",
-                "doi": "10.1016/J.ENERGY.2024.132735",
-                "year": 2024
-            },
-            {
-                "title": "Municipal energy system modelling – A practical comparison",
-                "journal": "Energy 2023",
-                "doi": "10.1016/J.ENERGY.2023.126803",
-                "year": 2023
-            },
-            {
-                "title": "Classification and challenges of bottom-up energy system models",
-                "journal": "Renewable and Sustainable Energy Reviews",
-                "doi": "10.1016/j.rser.2020.109917",
-                "year": 2020
-            }
-        ]
-        
-        df = pd.DataFrame(publications)
-        df.index = [""] * len(df)
-        st.dataframe(df)
+        st.markdown(
+            """
+            1. **Deep learning surrogate model to explain decision variable synergies in energy system modelling** (2026). DOI: [10.1016/j.segy.2026.100246](https://doi.org/10.1016/j.segy.2026.100246)
+            2. **Impact of sufficiency on achieving the EU's 2030 and 2050 greenhouse gas emissions targets** (2026). DOI: [10.1016/j.sftr.2026.101791](https://doi.org/10.1016/j.sftr.2026.101791)
+            3. **A Composite Indicator for Assessing Upscaled Energy Sufficiency and Sustainable Prosperity in the European Union** (2025). DOI: [10.13044/j.sdi.d2.0558](https://doi.org/10.13044/j.sdi.d2.0558)
+            4. **Advancing renewable energy community planning through integrated sector-coupling and economies of scale** (2025). DOI: [10.1016/j.apenergy.2025.125942](https://doi.org/10.1016/j.apenergy.2025.125942)
+            5. **Electrification and flexibility of process heat in energy system modelling: A review** (2025). DOI: [10.1016/j.rser.2025.115698](https://doi.org/10.1016/j.rser.2025.115698)
+            """
+        )
 
-    # Awards Tab
     with tabs[4]:
         st.header("Awards & Recognition")
-        
-        st.markdown("""
-        - **National Scientific Qualification** as Associate Professor (2024)
-        - **EUREGIO Young Researcher Award 2021** - 2nd Place
-        - **Best Paper Award** at SDEWES Conference 2020
-        - **Best Presentation Award** at SES Conference 2020
-        """)
+        st.markdown(
+            """
+            - **Junior Research Award Südtirol/Alto Adige** (2025)
+            - **EUREGIO Young Researcher Award** (2021)
+            - **National Scientific Qualification** as Associate Professor in Fluid Machinery, Energy Systems, and Power Generation (2024)
+            - Reviewer and scientific advisor for leading journals including Nature Energy and Applied Energy
+            """
+        )
 
-    # Thesis Supervision Tab
     with tabs[5]:
-        st.header("Thesis Supervision")
-        st.markdown("""
-        ### Current Supervision
-        - PhD Thesis: "Integration of Vehicle-to-Grid Technologies in Energy Systems"
-        - Master Thesis: "Machine Learning Applications in Energy System Modeling"
-        
-        ### Past Supervision
-        1. **Master Thesis (2023)**
-           - Title: "Optimization of District Heating Networks"
-           - Student: Marco Rossi
-           - University: Politecnico di Milano
+        st.header("Research Focus")
+        st.markdown(
+            """
+            **Core expertise**
+            - Energy system modeling and optimization
+            - AI and surrogate modeling for large-scale energy models
+            - Sector coupling of transportation, heating, and electricity
+            - Participatory planning with regional and municipal stakeholders
 
-        2. **Master Thesis (2022)**
-           - Title: "Integration of Renewable Energy in Urban Areas"
-           - Student: Laura Bianchi
-           - University: Free University of Bozen-Bolzano
-        """)
+            **Technical strengths**
+            - Optimization algorithms and multi-objective analysis
+            - AI-enhanced uncertainty analysis
+            - Bottom-up and hybrid energy system modeling
+            - Model comparability and interpretability
+            """
+        )
 
-    # Research Interests Tab
+        st.subheader("Key themes")
+        st.markdown(
+            """
+            - Integrated energy-transport system planning
+            - Vehicle-to-grid and charging infrastructure expansion
+            - Renewable energy community design and economies of scale
+            - Sufficiency, resilience, and sustainable prosperity metrics
+            """
+        )
+
     with tabs[6]:
-        st.header("Research Interests")
-        st.markdown("""
-        ### Main Research Areas
-        - **Energy System Modeling**
-          - Development of optimization models for energy systems
-          - Integration of renewable energy sources
-          - Multi-objective optimization techniques
-
-        - **Smart Energy Systems**
-          - Vehicle-to-Grid (V2G) technologies
-          - District heating and cooling
-          - Sector coupling
-
-        - **Energy Transition Strategies**
-          - Regional and national energy planning
-          - Policy development and analysis
-          - Decarbonization pathways
-
-        ### Technical Expertise
-        - **Programming & Tools**
-          - Python (Pandas, Numpy, Optimization libraries)
-          - Energy system modeling tools (EnergyPLAN, Oemof)
-          - GIS and data analysis
-
-        - **Methodologies**
-          - Multi-objective optimization
-          - Machine learning applications in energy
-          - Bottom-up modeling approaches
-        """)
-
-    # Contacts Tab
-    with tabs[7]:
-        st.header("Contact Information")
-        
+        st.header("Contacts")
         col1, col2 = st.columns(2)
-        
+
         with col1:
-            st.subheader("Professional Address")
-            st.markdown("""
-            Eurac Research\n
-            Institute for Renewable Energy\n
-            Via A. Volta 13/A\n
-            39100 Bolzano (Italy)
-            """)
-            
-            st.subheader("Email")
-            st.write("📧 Matteogiacomo.prina@eurac.edu")
-            
+            st.markdown(
+                """
+                **Eurac Research**
+
+                Institute for Renewable Energy
+                Via A. Volta 13/A
+                39100 Bolzano, Italy
+                """
+            )
+            st.write("**Email:** matteogiacomo.prina@eurac.edu")
+            st.write("**Phone:** +39 0471 055 587")
+            st.write("**ORCID:** https://orcid.org/0000-0002-3240-9156")
+            st.write("**EURAC profile:** https://www.eurac.edu/en/people/matteo-giacomo-prina")
+
+            vcard = get_vcard()
+            st.download_button(
+                label="Download vCard",
+                data=vcard,
+                file_name="Matteo_Giacomo_Prina.vcf",
+                mime="text/vcard",
+            )
+
         with col2:
-            st.subheader("Professional Profiles")
-            st.markdown("""
-            - [ResearchGate](https://www.researchgate.net/profile/Matteo_Prina)
-            - [Google Scholar](https://scholar.google.it/citations?user=i_GqXEsAAAAJ&hl=it)
-            - [ORCID](https://orcid.org/0000-0002-3240-9156)
-            - [Scopus](https://www.scopus.com/authid/detail.uri?authorId=56893629600)
-            """)
+            st.markdown(
+                """
+                **Professional profiles**
+
+                - [EURAC Research profile](https://www.eurac.edu/en/people/matteo-giacomo-prina)
+                - [Google Scholar](https://scholar.google.com/citations?user=i_GqXEsAAAAJ&hl=en#)
+                - [ORCID](https://orcid.org/0000-0002-3240-9156)
+                - [LinkedIn](https://www.linkedin.com/in/matteo-giacomo-prina-999248b/)
+                - [ResearchGate](https://www.researchgate.net/profile/Matteo_Prina)
+                """
+            )
+
 
 if __name__ == "__main__":
     main()

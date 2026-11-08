@@ -186,13 +186,25 @@ const PROJECTS = [
     role: "Chapter author",
     status: "completed",
     tags: ["EEA", "Climate risk"],
-    links: [{ label: "Report", url: "https://doi.org/10.2800/204249" }],
+    links: [
+      { label: "Report", url: "https://doi.org/10.2800/204249" },
+      { label: "Blog post", url: "blog/climate-change-risks-european-energy-system.html" },
+    ],
   },
 ];
 
 /* Blog posts — newest first. Each post is an HTML page in the /blog folder
    (copy blog/_template.html), then add an entry here and in sitemap.xml. */
 const BLOG = [
+  {
+    title: "Climate change risks for Europe's energy system: what the European Climate Risk Assessment found",
+    description:
+      "Heatwaves, droughts and floods already disrupt energy supply in Europe, and southern Europe faces the highest risk. Findings of the EUCRA energy chapter.",
+    image: "images/blog/european-climate-risk-assessment-energy-og.jpg",
+    date: "2026-11-08",
+    tags: ["Research explained", "Climate risk", "EEA"],
+    links: [{ label: "Read article", url: "blog/climate-change-risks-european-energy-system.html" }],
+  },
   {
     title: "A machine learning surrogate model makes EnergyPLAN optimisation 64% faster",
     description:

@@ -285,3 +285,46 @@ const BLOG = [
     links: [{ label: "Read article", url: "blog/challenges-bottom-up-energy-system-models.html" }],
   },
 ];
+
+/* Media coverage. Order does not matter: the page sorts by date, newest first.
+   Fields: date (YYYY-MM-DD), outlet, title (original headline), url,
+   lang ("EN", "IT", "DE"...), type ("Quoted", "Interview", "Award", "Feature"...),
+   summary (one sentence in English on what the piece is about / your role). */
+const MEDIA = [
+  {
+    date: "2026-11-05",
+    outlet: "Euronews",
+    title: "Oil giants cash in on the US-Iran conflict. Can an EU-wide tax on oil profits ease the energy crisis?",
+    url: "https://www.euronews.com/2026/11/05/oil-giants-cash-in-on-the-us-iran-conflict-can-an-eu-wide-tax-on-oil-profits-ease-the-ener",
+    lang: "EN",
+    type: "Quoted",
+    summary: "On fuel price caps, refining and trading margins, and how an EU levy on oil-company windfall profits could be designed.",
+  },
+  {
+    date: "2026-11-03",
+    outlet: "Euronews",
+    title: "How can the EU support 50 million Europeans who can't heat their homes?",
+    url: "https://www.euronews.com/2026/11/03/how-can-the-eu-support-50-million-europeans-who-cant-heat-their-homes",
+    lang: "EN",
+    type: "Quoted",
+    summary: "On short-term relief for energy-poor households and how renewables, grids, storage and efficiency bring down bills over time.",
+  },
+  {
+    date: "2025-12-05",
+    outlet: "Provincia autonoma di Bolzano – Alto Adige",
+    title: "Junior Research Award 2025 a Matteo Prina",
+    url: "https://news.provincia.bz.it/it/news/junior-research-award-2025-a-matteo-prina",
+    lang: "IT",
+    type: "Award",
+    summary: "Junior Research Award Südtirol/Alto Adige 2025 for research on energy system modelling that informs South Tyrol's Klimaplan 2040.",
+  },
+  {
+    date: "2024-08-03",
+    outlet: "salto.bz",
+    title: "E-Autos als Speicher für Erneuerbare",
+    url: "https://salto.bz/de/article/03082024/e-autos-als-speicher-fur-erneuerbare",
+    lang: "DE",
+    type: "Quoted",
+    summary: "On the V2G-BOOST project, which uses electric-car batteries as storage for renewable power through bidirectional charging.",
+  },
+];

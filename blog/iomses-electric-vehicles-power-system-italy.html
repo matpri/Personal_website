@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is vehicle-to-grid worth it? Results of the IOMSES project on electric vehicles and Italy's power grid | Matteo Giacomo Prina</title>
+  <meta name="description" content="What the IOMSES project found about integrating electric vehicles into Italy's power system: costs, CO2 and environmental trade-offs of smart charging and vehicle-to-grid (V2G).">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/iomses-electric-vehicles-power-system-italy.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="Is vehicle-to-grid worth it? Results of the IOMSES project on electric vehicles and Italy's power grid">
+  <meta property="og:description" content="Smart charging and V2G cut costs and CO2 for EV owners and for Italy's power system, but V2G also raises land use and mineral depletion.">
+  <meta property="og:url" content="https://matteoprina.com/blog/iomses-electric-vehicles-power-system-italy.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/smart-charging-v2g-og.jpg">
+  <meta property="og:image:alt" content="Hourly power generation and electric vehicle charging and V2G discharging over one week">
+  <meta property="article:published_time" content="2026-11-08">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Is vehicle-to-grid worth it? Results of the IOMSES project on electric vehicles and Italy's power grid",
+    "description": "What the IOMSES project found about integrating electric vehicles into Italy's power system: costs, CO2 and environmental trade-offs of smart charging and vehicle-to-grid (V2G).",
+    "image": "https://matteoprina.com/images/blog/smart-charging-v2g-og.jpg",
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/iomses-electric-vehicles-power-system-italy.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "vehicle-to-grid, V2G, smart charging, electric vehicles, EV grid integration, life cycle assessment, PyPSA, emobpy, Italy, IOMSES",
+    "about": { "@type": "ResearchProject", "name": "IOMSES - Integrated Optimization and Management of Sustainable Mobility and Energy Systems", "url": "https://www.eurac.edu/en/projects/iomses" },
+    "citation": [
+      {
+        "@type": "ScholarlyArticle",
+        "name": "How convenient is vehicle-to-grid? An economic and environmental perspective",
+        "isPartOf": { "@type": "Periodical", "name": "Sustainable Futures" },
+        "sameAs": "https://doi.org/10.1016/j.sftr.2026.102184"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Role of smart charging and vehicle-to-grid for long-term decarbonization pathways in Italy",
+        "isPartOf": { "@type": "Periodical", "name": "Sustainable Energy Technologies and Assessments" },
+        "sameAs": "https://doi.org/10.1016/j.seta.2026.105474"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is vehicle-to-grid worth it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In the IOMSES studies, yes, in economic and climate terms. For a group of 20 simulated electric vehicles, V2G cut annual costs by 12 to 42% and CO2 emissions by up to 50%. At national scale it lowered the cost of Italy's net-zero power system in 2050 by 3.3% compared with uncontrolled charging. The trade-off is higher land use and mineral resource depletion." }
+      },
+      {
+        "@type": "Question",
+        "name": "What was the IOMSES project?",
+        "acceptedAnswer": { "@type": "Answer", "text": "IOMSES (Integrated Optimization and Management of Sustainable Mobility and Energy Systems) was a research project at Eurac Research, running from November 2024 to June 2025. It built a multi-node model of Italy's energy system with PyPSA and emobpy to study how large numbers of electric vehicles can be integrated into the power grid." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does V2G have environmental downsides?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Sustainable Futures study found that V2G lowers CO2 emissions but increases land use and mineral resource depletion, so its benefits depend on which environmental impacts are prioritised." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo Giacomo <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › IOMSES project results</nav>
+
+    <header>
+      <p class="eyebrow">Project results · IOMSES, 2024–2025</p>
+      <h1>Is vehicle-to-grid worth it? Results of the IOMSES project on electric vehicles and Italy's power grid</h1>
+      <p class="lead">Italy will need millions of electric vehicles to decarbonise transport. In the IOMSES project we asked two questions: what does it cost the power system to charge them, and is it worth letting their batteries send power back to the grid? We looked at it from two scales, a small group of vehicles and the whole Italian power system, and we counted both money and environmental impacts.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-08">8 November 2026</time> · 5 min read</p>
+      <div class="topics"><span class="visually-hidden">Topics: </span><ul class="tags"><li><a href="../blog.html?k=vehicle-to-grid">vehicle-to-grid</a></li><li><a href="../blog.html?k=smart+charging">smart charging</a></li><li><a href="../blog.html?k=electric+vehicles">electric vehicles</a></li><li><a href="../blog.html?k=life+cycle+assessment">life cycle assessment</a></li><li><a href="../blog.html?k=PyPSA">PyPSA</a></li><li><a href="../blog.html?k=Italy">Italy</a></li></ul></div>
+    </header>
+
+    <figure>
+      <img src="../images/blog/smart-charging-v2g-validation.jpg" width="1800" height="1287" alt="Two panels of hourly power generation by source over one week, each with the charging and V2G discharging of electric vehicles below it">
+      <figcaption>Output of the IOMSES model of Italy for one week: power generation by source (top of each panel) and electric vehicle charging and V2G discharging (bottom). From Kumar et al. (2026), Sustainable Energy Technologies and Assessments.</figcaption>
+    </figure>
+
+    <h2>What is IOMSES?</h2>
+    <p>IOMSES stands for Integrated Optimization and Management of Sustainable Mobility and Energy Systems. It ran at the Institute for Renewable Energy of Eurac Research from November 2024 to June 2025, and I was its project manager. The goal was to build modelling tools to assess and optimise large-scale integration of electric vehicles with Italy's power system.</p>
+    <p>We combined two open-source tools. PyPSA models the power system: generation, storage and the transmission grid between Italy's market zones, hour by hour. emobpy generates realistic hourly profiles of when vehicles drive, park and can charge. Together they give a multi-node model of Italy in which electric vehicles are part of the grid rather than a fixed extra demand.</p>
+    <p>The project set out to evaluate:</p>
+    <ul>
+      <li>the impact of transport electrification on power grids;</li>
+      <li>the optimisation of smart charging and vehicle-to-grid (V2G);</li>
+      <li>economic and environmental benefits across different scenarios;</li>
+      <li>possible remuneration mechanisms for V2G participants.</li>
+    </ul>
+
+    <h2>Smart charging and V2G in one sentence each</h2>
+    <p><strong>Smart charging</strong> shifts when a car charges, towards hours with cheap electricity or surplus solar and wind, while making sure it still has the charge its driver needs. <strong>Vehicle-to-grid</strong> goes one step further and lets the parked car send electricity back to the grid when demand peaks, which requires a bidirectional charger. Both are compared with uncontrolled charging, where the car charges as soon as it is plugged in.</p>
+
+    <h2>Result 1: what V2G saves for a group of vehicles</h2>
+    <p>The first study, published in Sustainable Futures, looks at V2G from an economic and environmental perspective. It simulates 20 electric vehicles and compares their annual costs and environmental impacts under the three charging strategies. According to the published abstract:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Compared with uncontrolled charging</th><th>Smart charging</th><th>V2G</th></tr></thead>
+        <tbody>
+          <tr><td>Annual costs</td><td>−5% to −25%</td><td>−12% to −42%</td></tr>
+          <tr><td>CO<sub>2</sub> emissions</td><td>−15% to −35%</td><td>up to −50%</td></tr>
+          <tr><td>Land use and mineral resource depletion</td><td>not reported in the abstract</td><td>higher</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The last row is the trade-off. V2G uses the battery more, and the study's environmental assessment finds that this raises land use and the depletion of mineral resources even as CO<sub>2</sub> falls. Whether V2G is the greener choice depends on which impacts matter most.</p>
+
+    <h2>Result 2: what V2G saves for Italy's power system</h2>
+    <p>The second study scales up to the whole country. With the PyPSA model of Italy's seven market zones, we optimised the power system from 2025 to a net-zero target in 2050, with 30% of electric cars using smart charging or V2G.</p>
+    <ul>
+      <li>Smart charging lowers the total annual system cost in 2050 by 1.3% compared with uncontrolled charging. V2G lowers it by 3.3%, even after paying for bidirectional chargers.</li>
+      <li>V2G reduces the stationary battery capacity Italy needs in 2050 by 39.7% compared with smart charging alone.</li>
+      <li>Modelling when cars are actually plugged in, hour by hour, changes battery investments by tens of gigawatts compared with assuming a constant share of connected vehicles.</li>
+    </ul>
+    <p>The full story, including where in Italy the flexibility is used and what changes when V2G is not free, is in our article on <a href="smart-charging-vehicle-to-grid-italy.html">smart charging and vehicle-to-grid in Italy</a>.</p>
+
+    <h2>What the two studies say together</h2>
+    <p>Both scales point the same way on money and climate. Smart charging is a low-cost step that already brings savings, and V2G adds more, both for the owners of a small fleet and for the national power system. The environmental assessment adds a caveat that a cost-only model would miss: V2G shifts part of the burden from CO<sub>2</sub> to land and mineral resources.</p>
+    <p>The same research line continues in the <a href="../projects.html">V2G-BOOST project</a>, which works on vehicle-to-grid in South Tyrol.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>Is vehicle-to-grid worth it?</h3>
+    <p>In the IOMSES studies, yes, in economic and climate terms. For a group of 20 simulated electric vehicles, V2G cut annual costs by 12 to 42% and CO<sub>2</sub> emissions by up to 50%. At national scale it lowered the cost of Italy's net-zero power system in 2050 by 3.3% compared with uncontrolled charging. The trade-off is higher land use and mineral resource depletion.</p>
+    <h3>What was the IOMSES project?</h3>
+    <p>IOMSES (Integrated Optimization and Management of Sustainable Mobility and Energy Systems) was a research project at Eurac Research, running from November 2024 to June 2025. It built a multi-node model of Italy's energy system with PyPSA and emobpy to study how large numbers of electric vehicles can be integrated into the power grid.</p>
+    <h3>Does V2G have environmental downsides?</h3>
+    <p>Yes. The Sustainable Futures study found that V2G lowers CO<sub>2</sub> emissions but increases land use and mineral resource depletion, so its benefits depend on which environmental impacts are prioritised.</p>
+
+    <aside class="ref">
+      <strong>Project publications</strong>
+      <p>Rotondo G, Prina MG, Schau EM, Barchi G, Casalicchio V, Grazieschi G, Deep Kumar P, Secchi M, et al. <em>How convenient is vehicle-to-grid? An economic and environmental perspective.</em> Sustainable Futures (2026).</p>
+      <a class="btn primary" href="https://doi.org/10.1016/j.sftr.2026.102184" target="_blank" rel="noopener">doi.org/10.1016/j.sftr.2026.102184 ↗</a>
+      <p style="margin-top:18px">Kumar PD, Prina MG, Rotondo G, Manzolini G, Leva S, Longo M, Sparber W. <em>Role of smart charging and vehicle-to-grid for long-term decarbonization pathways in Italy.</em> Sustainable Energy Technologies and Assessments 94: 105474 (2026).</p>
+      <a class="btn primary" href="https://doi.org/10.1016/j.seta.2026.105474" target="_blank" rel="noopener">doi.org/10.1016/j.seta.2026.105474 ↗</a>
+      <a class="btn" href="https://www.eurac.edu/en/projects/iomses" target="_blank" rel="noopener">Project page ↗</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

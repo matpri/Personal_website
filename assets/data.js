@@ -174,12 +174,16 @@ const PROJECTS = [
   },
   {
     title: "IOMSES",
-    description: "Integrated optimisation of mobility and energy systems.",
+    description: "Integrated Optimization and Management of Sustainable Mobility and Energy Systems: a multi-node PyPSA model of Italy to study large-scale EV integration, smart charging and vehicle-to-grid.",
     icon: "🔄",
-    role: "PI",
+    period: "2024–2025",
+    role: "Project manager",
     status: "completed",
-    tags: ["PNRR", "Sector coupling"],
-    links: [{ label: "Project page", url: "https://www.eurac.edu/en/projects/iomses" }],
+    tags: ["PNRR", "E-mobility", "V2G"],
+    links: [
+      { label: "Project page", url: "https://www.eurac.edu/en/projects/iomses" },
+      { label: "Blog post", url: "blog/iomses-electric-vehicles-power-system-italy.html" },
+    ],
   },
   {
     title: "European Climate Risk Assessment (EUCRA)",
@@ -202,6 +206,15 @@ const PROJECTS = [
    "keywords" are shown as tags and used by the search on blog.html. Reuse
    existing keywords where they fit, so the filters group related posts. */
 const BLOG = [
+  {
+    title: "Is vehicle-to-grid worth it? Results of the IOMSES project on electric vehicles and Italy's power grid",
+    description:
+      "Smart charging and V2G cut costs and CO2 for EV owners and for Italy's power system, but V2G also raises land use and mineral depletion.",
+    image: "images/blog/smart-charging-v2g-og.jpg",
+    date: "2026-11-08",
+    keywords: ["vehicle-to-grid", "smart charging", "electric vehicles", "life cycle assessment", "PyPSA", "Italy"],
+    links: [{ label: "Read article", url: "blog/iomses-electric-vehicles-power-system-italy.html" }],
+  },
   {
     title: "Smart charging and vehicle-to-grid (V2G): what electric cars can do for Italy's power system",
     description:

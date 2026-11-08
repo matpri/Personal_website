@@ -327,4 +327,13 @@ const MEDIA = [
     type: "Quoted",
     summary: "On the V2G-BOOST project, which uses electric-car batteries as storage for renewable power through bidirectional charging.",
   },
+  {
+    date: "2021-08-22",
+    outlet: "Euregio Tirol – Südtirol – Trentino",
+    title: "Premio giovani ricercatori Euregio",
+    url: "https://www.europaregion.info/it/euregio/archivio/progetti-archivio/2021/istruzione-ricerca/premio-giovani-ricercatori-euregio/",
+    lang: "IT",
+    type: "Award",
+    summary: "Second prize in the Euregio Young Researchers Award 2021 on \"Europe's Green Transition – The Climate Opportunity\", for work on high-renewable scenarios for the Euregio energy transition.",
+  },
 ];

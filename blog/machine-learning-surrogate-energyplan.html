@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine learning surrogate model makes EnergyPLAN optimisation 64% faster | Matteo Giacomo Prina</title>
+  <meta name="description" content="How a neural network surrogate model cut the computing time of a national energy system optimisation with EnergyPLAN by 64%, with the same accuracy. Italian case study.">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/machine-learning-surrogate-energyplan.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="Machine learning surrogate model makes EnergyPLAN optimisation 64% faster">
+  <meta property="og:description" content="A neural network learns to imitate EnergyPLAN and cuts the computing time of a national energy system optimisation by 64%.">
+  <meta property="og:url" content="https://matteoprina.com/blog/machine-learning-surrogate-energyplan.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/machine-learning-surrogate-energyplan.png">
+  <meta property="og:image:alt" content="Prediction error of the neural network surrogate model for costs and CO2 emissions over 12 training generations">
+  <meta property="article:published_time" content="2026-11-08">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Machine learning surrogate model makes EnergyPLAN optimisation 64% faster",
+    "description": "How a neural network surrogate model cut the computing time of a national energy system optimisation with EnergyPLAN by 64%, with the same accuracy. Italian case study.",
+    "image": "https://matteoprina.com/images/blog/machine-learning-surrogate-energyplan.png",
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/machine-learning-surrogate-energyplan.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "machine learning surrogate model, EnergyPLAN, EPLANopt, energy system optimisation, neural network, multi-objective optimisation, energy system modelling, Italy energy scenarios 2050",
+    "citation": {
+      "@type": "ScholarlyArticle",
+      "name": "Machine learning as a surrogate model for EnergyPLAN: Speeding up energy system optimization at the country level",
+      "author": [
+        { "@type": "Person", "name": "Matteo Giacomo Prina" },
+        { "@type": "Person", "name": "Mattia Dallapiccola" },
+        { "@type": "Person", "name": "David Moser" },
+        { "@type": "Person", "name": "Wolfram Sparber" }
+      ],
+      "datePublished": "2024-08-03",
+      "isPartOf": { "@type": "Periodical", "name": "Energy" },
+      "sameAs": "https://doi.org/10.1016/j.energy.2024.132735"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a surrogate model in energy system optimisation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A surrogate model is a fast approximation of a slow simulation. A machine learning model is trained on scenarios already calculated with the energy system model, here EnergyPLAN, and then predicts the costs and CO2 emissions of new scenarios almost instantly." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which machine learning model works best as a surrogate for EnergyPLAN?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In our tests a neural network (MLP regressor) with a hidden layer of 500 nodes performed best, passing 99% accuracy after 10 generations of training data. Linear regression stayed around 73%, a decision tree around 82% and a random forest around 94%." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much computing time does the surrogate model save?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Between 44% and 74%, depending on how many final generations are run with EnergyPLAN to check the results. With 10 final generations the time saving is 64% and the accuracy is close to a full EPLANopt run without the surrogate." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo Giacomo <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › Machine learning surrogate for EnergyPLAN</nav>
+
+    <header>
+      <p class="eyebrow">Research explained · Energy, 2024</p>
+      <h1>A machine learning surrogate model makes EnergyPLAN optimisation 64% faster</h1>
+      <p class="lead">Optimising the energy system of a whole country means simulating tens of thousands of scenarios, and each simulation takes time. We trained a neural network to imitate EnergyPLAN and used it inside our optimisation model EPLANopt. For Italy in 2050, the computing time dropped by 64% and the optimal scenarios stayed almost identical.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-08">8 November 2026</time> · 7 min read</p>
+    </header>
+
+    <figure>
+      <img src="../images/blog/ml-surrogate-prediction-error-by-generation.png" width="1557" height="1054" alt="Twelve density plots showing the prediction error of the neural network surrogate model for annual costs and CO2 emissions, shrinking towards zero from generation 1 to generation 12">
+      <figcaption>How the neural network learns. Each panel shows its prediction error on annual costs (vertical) and CO<sub>2</sub> emissions (horizontal) after training on more generations of EnergyPLAN results. By generation 10 to 12 the errors cluster within about one percent of zero. From Prina et al. (2024), Energy.</figcaption>
+    </figure>
+
+    <h2>Why energy system optimisation is slow</h2>
+    <p>Our model EPLANopt couples <a href="https://www.energyplan.eu/" target="_blank" rel="noopener">EnergyPLAN</a>, the energy system simulation tool developed at Aalborg University, with a multi-objective evolutionary algorithm. The algorithm proposes an energy system, for example a certain amount of wind, solar, batteries and heat pumps. EnergyPLAN simulates it hour by hour for a full year, across electricity, heating, transport and industry, and returns two numbers: total annual costs and CO<sub>2</sub> emissions. The algorithm keeps the best candidates, mixes them and tries again.</p>
+    <p>For the Italian case each generation has 200 candidate scenarios and the reference run uses 200 generations. That is 40,000 EnergyPLAN simulations for a single optimisation. If you want to repeat it under different fuel prices or technology costs, the hours add up fast. Long computing time is one of the practical limits of <a href="challenges-bottom-up-energy-system-models.html">bottom-up energy system models</a>: it makes uncertainty analysis expensive, so it is often skipped.</p>
+
+    <h2>The idea: let a neural network stand in for EnergyPLAN</h2>
+    <p>A surrogate model is a fast approximation of a slow model. We call our approach a hybrid optimisation model, and it works in three phases:</p>
+    <ol>
+      <li>The optimisation starts normally with EnergyPLAN. The scenarios simulated in these first generations become the training data.</li>
+      <li>A machine learning model learns from them and replaces EnergyPLAN for the next 200 generations. Each prediction takes a fraction of a second.</li>
+      <li>For the last generations the algorithm switches back to EnergyPLAN, so the final optimal scenarios are calculated with the full model.</li>
+    </ol>
+    <p>This leaves three questions. Which machine learning model should we use? How much training data does it need? And how many final generations must go back through EnergyPLAN to keep the results accurate?</p>
+
+    <h2>Which machine learning model works best?</h2>
+    <p>We tested linear regression, a decision tree, a random forest and neural networks (scikit-learn's MLP regressor) with hidden layers of 50, 100, 200 and 500 nodes, each trained five times. Linear regression levelled off around 73% accuracy, the decision tree around 82% and the random forest around 94%. All neural networks went above 99%, and the one with 500 nodes got there fastest.</p>
+    <p>The figure above shows that network learning. After one or two generations of training data its errors spread up to two percent in every direction. After 10 generations, or 2,000 scenarios, the accuracy stays above 99% in all five runs. That is the training set size we chose.</p>
+
+    <h2>How much time does the surrogate save?</h2>
+    <p>We then compared the optimal scenarios (the Pareto front of costs against emissions) found by the hybrid model with the ones found by EPLANopt alone, using the generational distance indicator. The time saving includes the time to generate the training data and train the network.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Final generations with EnergyPLAN</th><th>Computing time saved</th><th>Distance from reference front</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>74%</td><td>0.000891</td></tr>
+          <tr><td>10</td><td>64%</td><td>0.000551</td></tr>
+          <tr><td>20</td><td>44%</td><td>0.000352</td></tr>
+          <tr><td>Two more full EPLANopt runs (no surrogate)</td><td>none</td><td>0.000362 (average)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Evolutionary algorithms are stochastic, so even two more full EPLANopt runs without the surrogate do not land on exactly the reference front. With 20 final generations the hybrid model is as close to the reference as a repeated full run, at 44% less computing time. With 10 final generations it is almost as close and saves 64%, which is the setting we recommend. The optimal levels of onshore wind, utility-scale solar, building efficiency and heat pumps were nearly identical in all cases.</p>
+
+    <h2>Using the saved time: what if gas prices change?</h2>
+    <p>Between 2018 and 2023 the natural gas price in Italy ranged from 19 to 121 €/MWh. To see how this changes the optimal energy mix, we trained a more general surrogate on random EnergyPLAN simulations, with the gas price as an extra input. This let us run eight full optimisations with gas prices from 18 to 180 €/MWh.</p>
+    <ul>
+      <li>As gas gets more expensive, the range of optimal solutions narrows. Scenarios that keep a lot of gas and cut few emissions stop being cost-effective.</li>
+      <li>Onshore wind and utility-scale solar, the cheapest sources per unit of electricity, appear in almost every optimal scenario and grow with the gas price.</li>
+      <li>Offshore wind and rooftop solar only enter the optimal scenarios at high levels of CO<sub>2</sub> reduction, because they cost more.</li>
+      <li>At low gas prices, battery capacity and building efficiency grow step by step with emission cuts. At high gas prices both sit close to their upper limits.</li>
+      <li>The share of heat pumps stays stable whatever the gas price.</li>
+    </ul>
+
+    <h2>Where this work led</h2>
+    <p>This study showed that a neural network can reproduce a national, hourly, sector-coupled EnergyPLAN model with more than 99% accuracy. In a follow-up study we used a deep learning surrogate to go one step further: <a href="deep-learning-surrogate-energy-system-synergies.html">explaining which clean energy technologies work best together</a>. The code is available on GitHub as <a href="https://github.com/matpri/EPLANoptML" target="_blank" rel="noopener">EPLANoptML</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is a surrogate model in energy system optimisation?</h3>
+    <p>A surrogate model is a fast approximation of a slow simulation. A machine learning model is trained on scenarios already calculated with the energy system model, here EnergyPLAN, and then predicts the costs and CO<sub>2</sub> emissions of new scenarios almost instantly.</p>
+    <h3>Which machine learning model works best as a surrogate for EnergyPLAN?</h3>
+    <p>In our tests a neural network (MLP regressor) with a hidden layer of 500 nodes performed best, passing 99% accuracy after 10 generations of training data. Linear regression stayed around 73%, a decision tree around 82% and a random forest around 94%.</p>
+    <h3>How much computing time does the surrogate model save?</h3>
+    <p>Between 44% and 74%, depending on how many final generations are run with EnergyPLAN to check the results. With 10 final generations the time saving is 64% and the accuracy is close to a full EPLANopt run without the surrogate.</p>
+
+    <aside class="ref">
+      <strong>Read the full article (open access)</strong>
+      <p>Prina MG, Dallapiccola M, Moser D, Sparber W. <em>Machine learning as a surrogate model for EnergyPLAN: Speeding up energy system optimization at the country level.</em> Energy 307: 132735 (2024). Funded by the EU Horizon 2020 project TRUST PV.</p>
+      <a class="btn primary" href="https://doi.org/10.1016/j.energy.2024.132735" target="_blank" rel="noopener">doi.org/10.1016/j.energy.2024.132735 ↗</a>
+      <a class="btn" href="https://github.com/matpri/EPLANoptML" target="_blank" rel="noopener">Code on GitHub ↗</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -194,18 +194,27 @@ const PROJECTS = [
    (copy blog/_template.html), then add an entry here and in sitemap.xml. */
 const BLOG = [
   {
-    title: "How AI explains which clean energy technologies work best together",
+    title: "A machine learning surrogate model makes EnergyPLAN optimisation 64% faster",
     description:
-      "A deep learning surrogate and explainable AI reveal when heat pumps, batteries and Power-to-X cut CO2 — and why renewables must come first.",
+      "A neural network learns to imitate EnergyPLAN and cuts the computing time of a national energy system optimisation by 64%, with the same accuracy.",
+    image: "images/blog/machine-learning-surrogate-energyplan.png",
+    date: "2026-11-08",
+    tags: ["Research explained", "Machine learning", "Energy"],
+    links: [{ label: "Read article", url: "blog/machine-learning-surrogate-energyplan.html" }],
+  },
+  {
+    title: "Heat pumps first, Power-to-X later: what a deep learning surrogate model shows",
+    description:
+      "Heat pumps cut CO2 right away. Hydrogen and synthetic gas only help once renewables cover about half of electricity demand.",
     image: "images/blog/deep-learning-surrogate-energy-system-synergies.png",
     date: "2026-11-08",
     tags: ["Research explained", "AI", "Smart Energy"],
     links: [{ label: "Read article", url: "blog/deep-learning-surrogate-energy-system-synergies.html" }],
   },
   {
-    title: "Why energy system models need accuracy, robustness and comprehensibility",
+    title: "The challenges of energy system models: accuracy, robustness and comprehensibility",
     description:
-      "A plain-language guide to the three pillars that can close the gap between energy system models and real-world energy policy.",
+      "Twelve challenges of bottom-up energy system models, grouped into three pillars, and why they matter for energy policy.",
     image: "images/blog/challenges-bottom-up-energy-system-models.png",
     date: "2026-11-08",
     tags: ["Research explained", "Energy system models", "PLOS Climate"],

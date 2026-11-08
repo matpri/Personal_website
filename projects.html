@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Matteo Giacomo Prina</title>
+  <meta name="description" content="Research projects coordinated or contributed to by Matteo Giacomo Prina.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Matteo G. <span>Prina</span></a>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <h1>Projects</h1>
+      <p>European, national and regional research projects I coordinate or work on — from energy planning with regions and municipalities to vehicle-to-grid and smart charging.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="filter" id="filter">
+        <button data-f="all" class="active">All</button>
+        <button data-f="ongoing">Ongoing</button>
+        <button data-f="completed">Completed</button>
+      </div>
+      <div class="grid" id="projects"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="index.html">About</a> · <a href="portfolio.html">Portfolio</a> · <a href="https://github.com/matpri" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/cards.js"></script>
+<script>
+  renderCards("projects", PROJECTS);
+  document.getElementById("filter").addEventListener("click", (e) => {
+    const f = e.target.dataset.f;
+    if (!f) return;
+    document.querySelectorAll("#filter button").forEach((b) => b.classList.toggle("active", b === e.target));
+    renderCards("projects", f === "all" ? PROJECTS : PROJECTS.filter((p) => p.status === f));
+  });
+</script>
+</body>
+</html>

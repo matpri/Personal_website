@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How AI explains which clean energy technologies work best together | Matteo Giacomo Prina</title>
+  <meta name="description" content="A deep learning surrogate of an energy system model and explainable AI reveal when heat pumps, batteries and Power-to-X reduce CO2 — and why renewables must come first.">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/deep-learning-surrogate-energy-system-synergies.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="How AI explains which clean energy technologies work best together">
+  <meta property="og:description" content="Deep learning and explainable AI reveal synergies between solar, batteries, heat pumps and Power-to-X in a regional energy system.">
+  <meta property="og:url" content="https://matteoprina.com/blog/deep-learning-surrogate-energy-system-synergies.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/deep-learning-surrogate-energy-system-synergies.png">
+  <meta property="og:image:alt" content="Contour maps of CO2 change for six electrification technologies as a function of the effective renewable share">
+  <meta property="article:published_time" content="2026-11-08">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How AI explains which clean energy technologies work best together",
+    "description": "A deep learning surrogate of an energy system model and explainable AI reveal when heat pumps, batteries and Power-to-X reduce CO2 — and why renewables must come first.",
+    "image": "https://matteoprina.com/images/blog/deep-learning-surrogate-energy-system-synergies.png",
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/deep-learning-surrogate-energy-system-synergies.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "deep learning surrogate model, explainable AI, energy system modelling, Power-to-X, heat pumps, sector coupling, EnergyPLAN, Piemonte",
+    "about": ["Energy system modelling", "Surrogate model", "Explainable artificial intelligence", "Power-to-X", "Heat pumps"],
+    "citation": {
+      "@type": "ScholarlyArticle",
+      "name": "Deep learning surrogate model to explain decision variable synergies in energy system modelling",
+      "author": [
+        { "@type": "Person", "name": "Matteo Giacomo Prina" },
+        { "@type": "Person", "name": "Carlo Pelizzoni" },
+        { "@type": "Person", "name": "Mackenzie Judson" },
+        { "@type": "Person", "name": "Madeleine McPherson" },
+        { "@type": "Person", "name": "Andrea Menapace" },
+        { "@type": "Person", "name": "Giampaolo Manzolini" },
+        { "@type": "Person", "name": "Wolfram Sparber" }
+      ],
+      "datePublished": "2026-04-25",
+      "isPartOf": { "@type": "Periodical", "name": "Smart Energy" },
+      "sameAs": "https://doi.org/10.1016/j.segy.2026.100246"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a surrogate model in energy system modelling?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A surrogate model is a fast approximation of a complex simulation model. It is trained on thousands of runs of the original model, here EnergyPLAN, and then predicts costs and emissions of a new scenario in milliseconds instead of seconds, making it possible to explore hundreds of thousands of technology combinations." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Power-to-X technologies always reduce CO2 emissions?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. In the Piemonte 2050 case study, synthetic gas, electric furnaces and industrial hydrogen only reduced emissions once renewables covered roughly 50% of electricity demand in real time. Below that level, the extra electricity they consume comes partly from fossil sources and net emissions can increase." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is explainable AI and why use it for energy planning?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Explainable AI (XAI) is a set of methods that make the predictions of a black-box model understandable. SHAP values show how much each technology contributes to costs and emissions, while Sobol indices show how much of that influence depends on interactions with other technologies. Together they turn a fast neural network into insights planners can act on." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo Giacomo <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › AI and technology synergies</nav>
+
+    <header>
+      <p class="eyebrow">Research explained · Smart Energy, 2026</p>
+      <h1>How AI explains which clean energy technologies work best together</h1>
+      <p class="lead">Energy models can tell us the cheapest mix of solar panels, heat pumps and hydrogen for 2050 — but rarely <em>why</em> that mix works. We trained a deep learning model on 40,000 energy system simulations and used explainable AI to open the black box. The answer has a clear message for planners: build renewables first.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-08">8 November 2026</time> · 8 min read</p>
+    </header>
+
+    <figure>
+      <img src="../images/blog/surrogate-co2-change-vs-renewable-share.png" width="1147" height="756" alt="Contour maps showing the relative CO2 change of six electrification technologies — industrial hydrogen, synthetic gas, electric furnaces, industrial heat pumps, district heating heat pumps and individual heat pumps — as a function of the effective renewable share of electricity demand">
+      <figcaption>Relative CO<sub>2</sub> change caused by six electrification technologies (vertical axis: how much is deployed) as the effective renewable share of electricity grows (horizontal axis). Blue = emissions fall, red = emissions rise, hatched = not feasible. Heat pumps (bottom) are blue almost everywhere; Power-to-X technologies (top) turn blue only at high renewable shares. From Prina et al. (2026), Smart Energy.</figcaption>
+    </figure>
+
+    <h2>The question: why do some technology combinations work better?</h2>
+    <p>Decarbonising a region means combining many measures at once: rooftop and agrivoltaic solar, wind, batteries, heat pumps, building renovation, hydrogen, synthetic gas and the electrification of industry. <strong>Energy system models</strong> such as EnergyPLAN and our optimisation tool <a href="../portfolio.html">EPLANopt</a> can search for the combinations that minimise costs and CO<sub>2</sub> emissions. What they usually don't say is <em>how</em> those technologies help or hinder each other.</p>
+    <p>That matters. If a technology only pays off once another is in place, the <strong>order of deployment</strong> becomes a policy decision. Understanding these <strong>synergies</strong> — when the whole is more than the sum of its parts — is a gap in the scientific literature that this study set out to fill.</p>
+
+    <h2>The case study: Piemonte in 2050</h2>
+    <p>We modelled the energy system of the <strong>Piemonte region</strong> in north-west Italy, a highly industrialised European region, for the year 2050, together with the regional energy office. The model covers electricity, heating, transport and industry hour by hour and includes <strong>17 decision variables</strong> — from residential rooftop PV and agrivoltaics to batteries, electrolysers, district heating heat pumps, building efficiency and industrial hydrogen — evaluated on two objectives: total annual costs and annual CO<sub>2</sub> emissions.</p>
+
+    <h2>Step 1 — Expert analysis: heat pumps vs Power-to-X</h2>
+    <p>We first used the full EnergyPLAN model to test six electrification technologies against increasing shares of renewable electricity. The result is a clear <strong>dichotomy</strong>, visible in the figure above:</p>
+    <ul>
+      <li><strong>Heat pumps</strong> — for individual buildings, district heating and low-temperature industry — cut CO<sub>2</sub> from the very first unit installed, whatever the share of renewables in the grid. They are "no-regret" measures that should not be postponed.</li>
+      <li><strong>Power-to-X and high-temperature electrification</strong> — synthetic gas injected into the gas grid, electric furnaces and hydrogen for industry — <em>increase</em> net emissions until renewables cover roughly <strong>50% of electricity demand in real time</strong> (about 90% if surplus generation is also counted). Below that threshold, the extra electricity they need comes partly from fossil plants.</li>
+    </ul>
+    <p>The policy implication is direct: <strong>renewable expansion must precede or accompany large-scale Power-to-X</strong>, not follow it. Deploying hydrogen or synthetic gas too early risks locking in additional emissions.</p>
+
+    <figure>
+      <img src="../images/blog/surrogate-cost-change-vs-renewable-share.png" width="1200" height="782" loading="lazy" alt="Contour maps of the relative cost change of six electrification technologies as a function of the effective renewable share of electricity demand">
+      <figcaption>Relative change in total annual system costs for the same six technologies. Synthetic gas raises costs across the whole range; heat pumps lower costs, but district heating heat pumps become expensive when oversized. From Prina et al. (2026), Smart Energy.</figcaption>
+    </figure>
+    <p>Costs tell a complementary story. <strong>Synthetic gas</strong> raises system costs in every scenario because of the electrolyser and methanation plants and the losses of converting electricity to hydrogen and then methane — its role is flexibility and long-duration storage, not cost saving. Individual and industrial heat pumps reduce both costs and emissions when renewables and electrification grow together. District heating heat pumps save money only up to the network's actual heat demand: beyond that, extra capacity adds cost without benefit, so <strong>correct sizing</strong> is essential.</p>
+
+    <h2>Step 2 — A deep learning surrogate of the energy system</h2>
+    <p>Expert analysis can only test a handful of combinations: each EnergyPLAN run takes seconds, and 17 variables create an enormous number of possibilities. So we built a <strong>surrogate model</strong> — a neural network that learns to imitate EnergyPLAN.</p>
+    <ul>
+      <li>We generated <strong>40,000 scenarios</strong> with quasi-random Sobol sampling and simulated each one with EnergyPLAN over 8,784 hours.</li>
+      <li>We compared <strong>16 machine learning architectures</strong>, from linear regression to XGBoost and neural networks.</li>
+      <li>The selected neural network reached <strong>R² = 0.999</strong> and, crucially, reproduced the optimal cost–emission Pareto front of the original model. It answers in milliseconds instead of seconds.</li>
+    </ul>
+    <p>An interesting lesson: the model with the best average accuracy was <em>not</em> the best at reproducing the optimal solutions. For energy planning, what counts is fidelity where the best scenarios are.</p>
+
+    <h2>Step 3 — Explainable AI opens the black box</h2>
+    <p>A fast neural network is still a black box. We used two <strong>explainable AI (XAI)</strong> methods to understand what it learned:</p>
+    <ul>
+      <li><strong>SHAP values</strong> measure how much each technology pushes costs and emissions up or down. <strong>Agrivoltaic solar</strong> emerged as the strongest lever for cutting emissions, followed by <strong>building energy efficiency</strong> — which is also the biggest cost driver. Synthetic gas, electric furnaces and industrial hydrogen showed the same threshold behaviour found in step 1.</li>
+      <li><strong>Sobol indices</strong> measure how much of a technology's influence depends on <em>interactions</em> with others. Agrivoltaics and synthetic gas were by far the most interaction-dependent variables, while district heating heat pumps and thermal storage act almost independently.</li>
+    </ul>
+
+    <h2>The key finding: solar, batteries and Power-to-Gas work as a chain</h2>
+    <p>Thanks to the surrogate we could test all <strong>136 pairs</strong> of the 17 variables. The strongest synergies all belong to one physical chain: <strong>solar surplus → storage → Power-to-Gas</strong>. Solar power produced at midday, beyond what is needed, is converted into synthetic methane instead of being wasted. Pairs without a storage or Power-to-X element show almost no synergy.</p>
+    <p>Going one step further, to <strong>three-way interactions</strong>, revealed that <strong>battery storage is the critical mediator</strong> between agrivoltaics and synthetic gas: batteries bridge the gap between solar peaks and electrolyser operation. This synergy is <em>emergent</em> — it cannot be predicted from pairs alone and only appears when all three are scaled together. We also found that electrolyser capacity stops adding benefit at around <strong>10 GW</strong> in this case: beyond that, the bottleneck is the available renewable surplus, not the electrolyser.</p>
+
+    <h2>What this means for regional energy planning</h2>
+    <ul>
+      <li><strong>Start with heat pumps and renewables</strong> — they deliver emission cuts immediately.</li>
+      <li><strong>Sequence Power-to-X</strong> after renewables reach a high share; timing decides whether hydrogen and synthetic gas help or harm.</li>
+      <li><strong>Plan technologies as packages</strong>: solar, batteries and Power-to-Gas create value together that none delivers alone.</li>
+      <li><strong>Size infrastructure to real needs</strong>, from district heating heat pumps to electrolysers.</li>
+    </ul>
+    <p>The exact thresholds depend on Piemonte's assumptions and should be read as indicative, but the method is designed to be applied to any region or country. The work was carried out with the <strong>University of Victoria</strong> (Canada), where I was visiting researcher in 2025, and <strong>Politecnico di Milano</strong>, with data from Regione Piemonte.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is a surrogate model in energy system modelling?</h3>
+    <p>A surrogate model is a fast approximation of a complex simulation model. It is trained on thousands of runs of the original model, here EnergyPLAN, and then predicts costs and emissions of a new scenario in milliseconds instead of seconds, making it possible to explore hundreds of thousands of technology combinations.</p>
+    <h3>Do Power-to-X technologies always reduce CO<sub>2</sub> emissions?</h3>
+    <p>No. In the Piemonte 2050 case study, synthetic gas, electric furnaces and industrial hydrogen only reduced emissions once renewables covered roughly 50% of electricity demand in real time. Below that level, the extra electricity they consume comes partly from fossil sources and net emissions can increase.</p>
+    <h3>What is explainable AI and why use it for energy planning?</h3>
+    <p>Explainable AI (XAI) is a set of methods that make the predictions of a black-box model understandable. SHAP values show how much each technology contributes to costs and emissions, while Sobol indices show how much of that influence depends on interactions with other technologies. Together they turn a fast neural network into insights planners can act on.</p>
+
+    <aside class="ref">
+      <strong>Read the full article (open access)</strong>
+      <p>Prina MG, Pelizzoni C, Judson M, McPherson M, Menapace A, Manzolini G, Sparber W. <em>Deep learning surrogate model to explain decision variable synergies in energy system modelling.</em> Smart Energy 22: 100246 (2026).</p>
+      <a class="btn primary" href="https://doi.org/10.1016/j.segy.2026.100246" target="_blank" rel="noopener">doi.org/10.1016/j.segy.2026.100246 ↗</a>
+    </aside>
+
+    <p>Related post: <a href="challenges-bottom-up-energy-system-models.html">Why energy system models need accuracy, robustness and comprehensibility</a></p>
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

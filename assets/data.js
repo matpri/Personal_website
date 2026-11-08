@@ -194,6 +194,15 @@ const PROJECTS = [
    (copy blog/_template.html), then add an entry here and in sitemap.xml. */
 const BLOG = [
   {
+    title: "How AI explains which clean energy technologies work best together",
+    description:
+      "A deep learning surrogate and explainable AI reveal when heat pumps, batteries and Power-to-X cut CO2 — and why renewables must come first.",
+    image: "images/blog/deep-learning-surrogate-energy-system-synergies.png",
+    date: "2026-11-08",
+    tags: ["Research explained", "AI", "Smart Energy"],
+    links: [{ label: "Read article", url: "blog/deep-learning-surrogate-energy-system-synergies.html" }],
+  },
+  {
     title: "Why energy system models need accuracy, robustness and comprehensibility",
     description:
       "A plain-language guide to the three pillars that can close the gap between energy system models and real-world energy policy.",

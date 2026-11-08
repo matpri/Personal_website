@@ -25,7 +25,7 @@ function cardHTML(item) {
 
   const tags = (item.tags || []).map((t) => `<li>${esc(t)}</li>`).join("");
   const links = (item.links || [])
-    .map((l) => `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`)
+    .map((l) => `<a class="btn${/app/i.test(l.label) ? " primary" : ""}" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`)
     .join("");
 
   return `

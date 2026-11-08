@@ -69,33 +69,10 @@ const PORTFOLIO = [
       "Integrated Dashboard for Energy Transition Analysis: an interactive Dash web app to compare and explore energy system modelling scenarios.",
     icon: "📊",
     tags: ["Web app", "Dash", "Docker"],
-    links: [{ label: "Code", url: "https://github.com/matpri/idea-dash-italy" }],
-  },
-  {
-    title: "PLANtoACT Footprint Tracker",
-    description:
-      "Web application that tracks the travel emissions of the LIFE PLANtoACT project: multi-segment trips, automatic distances and results by event, mode and partner.",
-    icon: "🌍",
-    tags: ["Web app", "Python", "Emissions"],
     links: [
-      { label: "Code", url: "https://github.com/matpri/PLANtoACT_project_footprint_tracker" },
+      { label: "Web app", url: "https://idea-dash-italy.onrender.com/" },
+      { label: "Code", url: "https://github.com/matpri/idea-dash-italy" },
     ],
-  },
-  {
-    title: "micrOgridS",
-    description:
-      "LP/MILP model to size and optimise hybrid mini-grids (microgrids), built on a fork of oemof.",
-    icon: "🔋",
-    tags: ["Python", "oemof", "MILP"],
-    links: [{ label: "Code", url: "https://github.com/matpri/migrOgridS" }],
-  },
-  {
-    title: "AI for Research",
-    description:
-      "Script to chat with your own collection of PDF papers with long-term memory, using LangChain and an LLM API.",
-    icon: "📚",
-    tags: ["Python", "LLM", "LangChain"],
-    links: [{ label: "Code", url: "https://github.com/matpri/AI-for-Research" }],
   },
 ];
 
@@ -155,7 +132,7 @@ const PROJECTS = [
     icon: "🚗",
     period: "2023–2026",
     role: "Coordinator & PI",
-    status: "ongoing",
+    status: "completed",
     tags: ["EFRE", "650 k€"],
     links: [{ label: "Project page", url: "https://www.eurac.edu/en/projects/v2g-boost" }],
   },
@@ -164,7 +141,7 @@ const PROJECTS = [
     description: "AI-supported planning of charging station expansion.",
     icon: "📍",
     role: "PI",
-    status: "ongoing",
+    status: "completed",
     tags: ["FUSION grant", "AI"],
     links: [{ label: "Project page", url: "https://www.eurac.edu/it/projects/aichargemap" }],
   },
@@ -173,7 +150,7 @@ const PROJECTS = [
     description: "Integrated optimisation of mobility and energy systems.",
     icon: "🔄",
     role: "PI",
-    status: "ongoing",
+    status: "completed",
     tags: ["PNRR", "Sector coupling"],
     links: [{ label: "Project page", url: "https://www.eurac.edu/en/projects/iomses" }],
   },

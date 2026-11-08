@@ -152,15 +152,15 @@ const PROJECTS = [
   {
     title: "V2G-BOOST",
     description:
-      "Developing and expanding the vehicle-to-grid decarbonisation option for advanced energy innovation in South Tyrol. 4 local partners.",
+      "Bidirectional charging in South Tyrol with Alpitronic, NEOGY and Leitner Energy: a 50 kW V2G charger, energy management software, control strategies and business models.",
     icon: "🚗",
     period: "2023–2026",
     role: "Coordinator & PI",
     status: "completed",
-    tags: ["EFRE", "650 k€"],
+    tags: ["ERDF", "650 k€", "V2G"],
     links: [
       { label: "Project page", url: "https://www.eurac.edu/en/projects/v2g-boost" },
-      { label: "Related blog post", url: "blog/smart-charging-vehicle-to-grid-italy.html" },
+      { label: "Blog post", url: "blog/v2g-boost-bidirectional-charging-south-tyrol.html" },
     ],
   },
   {
@@ -206,6 +206,15 @@ const PROJECTS = [
    "keywords" are shown as tags and used by the search on blog.html. Reuse
    existing keywords where they fit, so the filters group related posts. */
 const BLOG = [
+  {
+    title: "Bidirectional charging in practice: results of the V2G-BOOST project in South Tyrol",
+    description:
+      "A 50 kW bidirectional charger, an energy management app, business models for fleets and real savings: three years of vehicle-to-grid work in South Tyrol.",
+    image: "images/blog/v2g-boost-project-results.png",
+    date: "2026-11-08",
+    keywords: ["vehicle-to-grid", "smart charging", "electric vehicles", "energy communities", "life cycle assessment", "South Tyrol"],
+    links: [{ label: "Read article", url: "blog/v2g-boost-bidirectional-charging-south-tyrol.html" }],
+  },
   {
     title: "Is vehicle-to-grid worth it? Results of the IOMSES project on electric vehicles and Italy's power grid",
     description:

@@ -237,3 +237,4 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .article .topics ul.tags { padding-left: 0; }
 .article .topics .tags li { font-size: .8rem; line-height: 1.5; margin: 0; padding: 3px 10px; }
+.kw-filter button[hidden] { display: none; }

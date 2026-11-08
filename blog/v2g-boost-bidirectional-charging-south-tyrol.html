@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bidirectional charging in practice: results of the V2G-BOOST project in South Tyrol | Matteo Giacomo Prina</title>
+  <meta name="description" content="A 50 kW bidirectional charger, an energy management app, business models and real savings: what the V2G-BOOST vehicle-to-grid project achieved in South Tyrol in three years.">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/v2g-boost-bidirectional-charging-south-tyrol.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="Bidirectional charging in practice: results of the V2G-BOOST project in South Tyrol">
+  <meta property="og:description" content="From a 50 kW bidirectional charger to business models for fleets: what three years of vehicle-to-grid work in South Tyrol delivered.">
+  <meta property="og:url" content="https://matteoprina.com/blog/v2g-boost-bidirectional-charging-south-tyrol.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/v2g-boost-project-results.png">
+  <meta property="og:image:alt" content="Overview of the five work areas and main results of the V2G-BOOST project">
+  <meta property="article:published_time" content="2026-11-08">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Bidirectional charging in practice: results of the V2G-BOOST project in South Tyrol",
+    "description": "A 50 kW bidirectional charger, an energy management app, business models and real savings: what the V2G-BOOST vehicle-to-grid project achieved in South Tyrol in three years.",
+    "image": "https://matteoprina.com/images/blog/v2g-boost-project-results.png",
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/v2g-boost-bidirectional-charging-south-tyrol.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "bidirectional charging, vehicle-to-grid, V2G, smart charging, electric vehicles, ISO 15118-20, OCPP 2.1, energy communities, South Tyrol, V2G-BOOST",
+    "about": { "@type": "ResearchProject", "name": "V2G-BOOST", "url": "https://www.eurac.edu/en/projects/v2g-boost" },
+    "citation": {
+      "@type": "ScholarlyArticle",
+      "name": "How convenient is vehicle-to-grid? An economic and environmental perspective",
+      "isPartOf": { "@type": "Periodical", "name": "Sustainable Futures" },
+      "sameAs": "https://doi.org/10.1016/j.sftr.2026.102184"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is bidirectional charging?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bidirectional charging lets an electric car both take electricity from the grid and send it back, to the grid (vehicle-to-grid, V2G) or to a home. It needs a bidirectional charger, a car that supports the function, communication standards such as ISO 15118-20 and market rules that pay for the service." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does vehicle-to-grid damage the car battery?",
+        "acceptedAnswer": { "@type": "Answer", "text": "V2G adds charging cycles, so the battery wears faster. In our simulation of 20 electric cars, the battery lasted on average about 7 years with V2G instead of 14 to 15 years. Even counting the earlier replacement, annual costs were 12 to 42% lower than with uncontrolled charging." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does vehicle-to-grid pay off first?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In the V2G-BOOST project, company fleets were the most promising segment in the short term, because their vehicles are used more predictably. A scenario where flexibility comes only from electric vehicles reached an internal rate of return of about 12%, even without dedicated tariffs." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo Giacomo <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › V2G-BOOST project results</nav>
+
+    <header>
+      <p class="eyebrow">Project results · V2G-BOOST, 2023–2026</p>
+      <h1>Bidirectional charging in practice: results of the V2G-BOOST project in South Tyrol</h1>
+      <p class="lead">A private car spends most of its life parked. If it is electric, it carries a battery of tens of kilowatt-hours that could support the grid while it waits. In V2G-BOOST, a three-year project in South Tyrol that I coordinated, we worked on everything needed to make that happen: the charger, the software, the control logic, the business case and the impact on energy communities and the region.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-08">8 November 2026</time> · 6 min read</p>
+      <div class="topics"><span class="visually-hidden">Topics: </span><ul class="tags"><li><a href="../blog.html?k=vehicle-to-grid">vehicle-to-grid</a></li><li><a href="../blog.html?k=smart+charging">smart charging</a></li><li><a href="../blog.html?k=electric+vehicles">electric vehicles</a></li><li><a href="../blog.html?k=energy+communities">energy communities</a></li><li><a href="../blog.html?k=life+cycle+assessment">life cycle assessment</a></li><li><a href="../blog.html?k=South+Tyrol">South Tyrol</a></li></ul></div>
+    </header>
+
+    <figure>
+      <img src="../images/blog/v2g-boost-project-results.svg" width="1200" height="630" alt="Overview of the five work areas of V2G-BOOST: bidirectional charger, digital ecosystem, control strategies, business models and energy community impacts, with their main results">
+      <figcaption>The five work areas of V2G-BOOST and their main results.</figcaption>
+    </figure>
+
+    <h2>What is bidirectional charging?</h2>
+    <p>Today almost everyone uses uncontrolled charging: the car starts charging at full power as soon as it is plugged in, whatever the price of electricity or the amount of solar and wind on the grid. If everyone plugs in when they get home in the evening, the load lands right when the grid is already busy and the sun has gone down.</p>
+    <p>Smart charging moves the charging to better hours, for example midday when solar panels produce most, while making sure the battery is full when the driver needs it. It only needs communication and control, so it is close to market.</p>
+    <p>Bidirectional charging, or vehicle-to-grid (V2G), goes a step further: the car can also give energy back to the grid or to the home, like a stationary battery. That needs bidirectional chargers, cars with the function enabled, dedicated communication standards and market rules that pay for the service. The International Energy Agency still considers V2G pre-commercial.</p>
+
+    <h2>The V2G-BOOST project</h2>
+    <p>V2G-BOOST was funded by the European Regional Development Fund (ERDF) and ran for 36 months, until September 2026. Eurac Research coordinated it with three South Tyrolean companies, Alpitronic, NEOGY and Leitner Energy. The aim was to develop and test the technology locally and find out where V2G really pays off.</p>
+    <p>It ran in parallel with <a href="iomses-electric-vehicles-power-system-italy.html">the IOMSES project</a>, which looked at the same question for the whole Italian power system up to 2050.</p>
+
+    <h2>Results across the value chain</h2>
+    <h3>The charger</h3>
+    <p>Alpitronic developed and tested a 50 kW bidirectional DC charger compliant with the ISO 15118-20 standard. It passed laboratory tests and responds correctly to commands from an external energy management system.</p>
+
+    <h3>The digital ecosystem</h3>
+    <p>Leitner Energy, with its technology partner Ekon, built an energy management system and the "Leitner Energy SmartGrid" app, which coordinate solar panels, home storage and car charging. NEOGY developed a back-end platform that recognises and records V2G sessions.</p>
+
+    <h3>The control strategies</h3>
+    <p>At Eurac we developed four energy management strategies. In a home with solar panels, maximising self-consumption saved 51% on energy costs. Using V2G also to buy electricity when it is cheap and sell it when it is expensive raised the saving to 66%.</p>
+
+    <h3>The business models</h3>
+    <p>We developed three business models: residential, company fleets and car sharing. Fleets are the most promising segment in the short term because their vehicles are used more predictably. Even without dedicated tariffs, a scenario in which flexibility comes only from electric vehicles reaches an internal rate of return of about 12%.</p>
+
+    <h3>Energy communities and the region</h3>
+    <p>In a renewable energy community, V2G raises self-consumption by up to 10%, raises the value of the investment by 19% and cuts emissions by a further 13%. A regional model also assessed how V2G could contribute to the targets of South Tyrol's Klimaplan.</p>
+
+    <h2>Is V2G worth it for drivers and the environment?</h2>
+    <p>Every extra cycle wears the battery, which then has to be replaced earlier, and making a battery has a significant environmental footprint and uses critical raw materials. To check whether V2G still pays off, a study shared between V2G-BOOST and IOMSES simulated one year of 20 electric cars representative of the Italian fleet, with real electricity prices, and counted battery wear and its environmental impact over the whole life cycle.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Compared with uncontrolled charging</th><th>Smart charging</th><th>V2G</th></tr></thead>
+        <tbody>
+          <tr><td>Average battery life</td><td>about 14–15 years</td><td>about 7 years</td></tr>
+          <tr><td>Total annual costs</td><td>−5% to −25%</td><td>−12% to −42%</td></tr>
+          <tr><td>CO<sub>2</sub> emissions</td><td>−15% to −35%</td><td>up to −50%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>V2G pays off even with a battery that lasts half as long. But not all of the 15 environmental indicators improve. With V2G, land use gets worse because cars charge in the hours of peak solar production, and so does the use of mineral resources, because batteries are replaced more often. Cost and CO<sub>2</sub> alone are not enough to judge V2G.</p>
+
+    <h2>What held V2G back</h2>
+    <p>Very few cars on the market have the V2G function actually enabled. The OCPP 2.1 protocol, needed to manage bidirectional charging remotely, is still rare among software providers. And in Italy end users do not see dynamic electricity prices, so they have no reason to shift charging or to sell energy back. These limits come from the maturity of the market and the rules, not from the technology the project developed.</p>
+
+    <h2>What comes next</h2>
+    <p>Together with IOMSES, the project tells a consistent story. Smart charging is the low-risk first step: it is cheap, it benefits both the system and drivers, and it does not wear the battery. V2G adds value, reduces the need for stationary storage and helps integrate more renewables, but it pays off where its flexibility is worth more than its cost and the battery wear it causes. At national scale, our <a href="smart-charging-vehicle-to-grid-italy.html">PyPSA model of Italy</a> found that V2G cuts the cost of a net-zero power system in 2050 by 3.3%.</p>
+    <p>The next step is pilot projects with company fleets and car sharing in South Tyrol, a region with a high share of renewables and widespread smart meters. Above all, V2G needs a regulatory and tariff framework that pays for flexibility. In my view that will do more to make it take off than any one-off incentive.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is bidirectional charging?</h3>
+    <p>Bidirectional charging lets an electric car both take electricity from the grid and send it back, to the grid (vehicle-to-grid, V2G) or to a home. It needs a bidirectional charger, a car that supports the function, communication standards such as ISO 15118-20 and market rules that pay for the service.</p>
+    <h3>Does vehicle-to-grid damage the car battery?</h3>
+    <p>V2G adds charging cycles, so the battery wears faster. In our simulation of 20 electric cars, the battery lasted on average about 7 years with V2G instead of 14 to 15 years. Even counting the earlier replacement, annual costs were 12 to 42% lower than with uncontrolled charging.</p>
+    <h3>Where does vehicle-to-grid pay off first?</h3>
+    <p>In the V2G-BOOST project, company fleets were the most promising segment in the short term, because their vehicles are used more predictably. A scenario where flexibility comes only from electric vehicles reached an internal rate of return of about 12%, even without dedicated tariffs.</p>
+
+    <aside class="ref">
+      <strong>Learn more</strong>
+      <p>Rotondo G, Prina MG, Schau EM, Barchi G, Casalicchio V, Grazieschi G, Deep Kumar P, Secchi M, et al. <em>How convenient is vehicle-to-grid? An economic and environmental perspective.</em> Sustainable Futures (2026).</p>
+      <a class="btn primary" href="https://doi.org/10.1016/j.sftr.2026.102184" target="_blank" rel="noopener">doi.org/10.1016/j.sftr.2026.102184 ↗</a>
+      <a class="btn" href="https://www.eurac.edu/en/projects/v2g-boost" target="_blank" rel="noopener">V2G-BOOST project page ↗</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

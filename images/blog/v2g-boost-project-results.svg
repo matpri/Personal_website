@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">V2G-BOOST project: bidirectional charging in South Tyrol</title>
+  <desc id="d">Five work areas of the V2G-BOOST project with their main results: a 50 kW bidirectional DC charger, an energy management system and back-end, control strategies that save 51 to 66 percent in a home with PV, business models with about 12 percent internal rate of return for fleets, and impacts in an energy community.</desc>
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="118" fill="#006273"/>
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif" fill="#ffffff">
+    <text x="600" y="58" font-size="38" font-weight="700" text-anchor="middle">V2G-BOOST · bidirectional charging in South Tyrol</text>
+    <text x="600" y="95" font-size="21" text-anchor="middle" opacity=".9">Eurac Research · Alpitronic · NEOGY · Leitner Energy · ERDF 2023–2026</text>
+  </g>
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif" text-anchor="middle">
+    <!-- connector line -->
+    <line x1="140" y1="214" x2="1060" y2="214" stroke="#9cc9c2" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
+    <!-- 1 -->
+    <circle cx="140" cy="214" r="52" fill="#007c7c"/>
+    <text x="140" y="228" font-size="40" fill="#fff" font-weight="700">1</text>
+    <text x="140" y="312" font-size="23" font-weight="700" fill="#14302c">Charger</text>
+    <text x="140" y="352" font-size="19" fill="#3c524d">50 kW DC</text>
+    <text x="140" y="378" font-size="19" fill="#3c524d">bidirectional</text>
+    <text x="140" y="404" font-size="19" fill="#3c524d">ISO 15118-20</text>
+    <text x="140" y="448" font-size="16" fill="#6b7f7a">Alpitronic</text>
+    <!-- 2 -->
+    <circle cx="370" cy="214" r="52" fill="#008a77"/>
+    <text x="370" y="228" font-size="40" fill="#fff" font-weight="700">2</text>
+    <text x="370" y="312" font-size="23" font-weight="700" fill="#14302c">Digital ecosystem</text>
+    <text x="370" y="352" font-size="19" fill="#3c524d">energy management</text>
+    <text x="370" y="378" font-size="19" fill="#3c524d">+ SmartGrid app</text>
+    <text x="370" y="404" font-size="19" fill="#3c524d">+ V2G back-end</text>
+    <text x="370" y="448" font-size="16" fill="#6b7f7a">Leitner Energy, Ekon, NEOGY</text>
+    <!-- 3 -->
+    <circle cx="600" cy="214" r="52" fill="#009572"/>
+    <text x="600" y="228" font-size="40" fill="#fff" font-weight="700">3</text>
+    <text x="600" y="312" font-size="23" font-weight="700" fill="#14302c">Control strategies</text>
+    <text x="600" y="362" font-size="40" font-weight="700" fill="#007c7c">−66%</text>
+    <text x="600" y="394" font-size="19" fill="#3c524d">savings, home with PV</text>
+    <text x="600" y="420" font-size="19" fill="#3c524d">(−51% self-consumption only)</text>
+    <text x="600" y="448" font-size="16" fill="#6b7f7a">Eurac Research</text>
+    <!-- 4 -->
+    <circle cx="830" cy="214" r="52" fill="#5fa53f"/>
+    <text x="830" y="228" font-size="40" fill="#fff" font-weight="700">4</text>
+    <text x="830" y="312" font-size="23" font-weight="700" fill="#14302c">Business models</text>
+    <text x="830" y="362" font-size="40" font-weight="700" fill="#4d8a2f">~12%</text>
+    <text x="830" y="394" font-size="19" fill="#3c524d">internal rate of return</text>
+    <text x="830" y="420" font-size="19" fill="#3c524d">for company fleets</text>
+    <text x="830" y="448" font-size="16" fill="#6b7f7a">residential · fleets · car sharing</text>
+    <!-- 5 -->
+    <circle cx="1060" cy="214" r="52" fill="#96ba2e"/>
+    <text x="1060" y="228" font-size="40" fill="#fff" font-weight="700">5</text>
+    <text x="1060" y="312" font-size="23" font-weight="700" fill="#14302c">Energy community</text>
+    <text x="1060" y="362" font-size="40" font-weight="700" fill="#6f8c1f">+19%</text>
+    <text x="1060" y="394" font-size="19" fill="#3c524d">investment value</text>
+    <text x="1060" y="420" font-size="19" fill="#3c524d">a further −13% CO₂</text>
+    <text x="1060" y="448" font-size="16" fill="#6b7f7a">+10% self-consumption</text>
+  </g>
+  <rect x="0" y="512" width="1200" height="118" fill="#e0f2ef"/>
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif" text-anchor="middle" fill="#14302c">
+    <text x="600" y="560" font-size="22" font-weight="600">20-vehicle study: V2G cuts annual costs by 12–42% and CO₂ by up to 50%,</text>
+    <text x="600" y="592" font-size="22" font-weight="600">even though the battery lasts about 7 years instead of 14–15</text>
+  </g>
+</svg>

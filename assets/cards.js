@@ -14,26 +14,35 @@ function hue(text) {
 
 function cardHTML(item) {
   const cover = item.image
-    ? `<img src="${esc(item.image)}" alt="" loading="lazy">`
+    ? `<img src="${esc(item.image)}" alt="${esc(item.title)}" loading="lazy">`
     : `<span class="cover-icon">${esc(item.icon || "✦")}</span>`;
 
   const meta = [];
   if (item.status)
     meta.push(`<span class="status ${esc(item.status)}">${item.status === "ongoing" ? "Ongoing" : "Completed"}</span>`);
+  if (item.date)
+    meta.push(`<time datetime="${esc(item.date)}">${new Date(item.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</time>`);
   if (item.period) meta.push(`<span>${esc(item.period)}</span>`);
   if (item.role) meta.push(`<span>${esc(item.role)}</span>`);
 
   const tags = (item.tags || []).map((t) => `<li>${esc(t)}</li>`).join("");
   const links = (item.links || [])
-    .map((l) => `<a class="btn${/app/i.test(l.label) ? " primary" : ""}" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`)
+    .map((l) => {
+      const ext = /^https?:/.test(l.url);
+      const primary = /app|read/i.test(l.label) ? " primary" : "";
+      return ext
+        ? `<a class="btn${primary}" href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`
+        : `<a class="btn${primary}" href="${esc(l.url)}">${esc(l.label)} →</a>`;
+    })
     .join("");
 
+  const internal = (item.links || []).find((l) => !/^https?:/.test(l.url));
   return `
     <article class="card">
       <div class="cover" style="--h:${hue(item.title)}">${cover}</div>
       <div class="card-body">
         ${meta.length ? `<div class="meta">${meta.join("")}</div>` : ""}
-        <h3>${esc(item.title)}</h3>
+        <h3>${internal ? `<a href="${esc(internal.url)}">${esc(item.title)}</a>` : esc(item.title)}</h3>
         <p>${esc(item.description)}</p>
         ${tags ? `<ul class="tags">${tags}</ul>` : ""}
         ${links ? `<div class="links">${links}</div>` : ""}

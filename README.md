@@ -8,6 +8,7 @@ Plain static HTML site (no build step). Open `index.html` in a browser to previe
 - `index.html` — about, highlights, experience, education, publications, contact
 - `projects.html` — research projects (cards)
 - `portfolio.html` — code and web apps (cards)
+- `blog.html` + `blog/*.html` — blog posts (plain-language versions of papers and projects)
 
 ## Add a card (portfolio or project)
 Edit `assets/data.js`: copy one `{ ... }` block in `PORTFOLIO` or `PROJECTS`, paste it and change the text.
@@ -28,6 +29,17 @@ Edit `assets/data.js`: copy one `{ ... }` block in `PORTFOLIO` or `PROJECTS`, pa
 Projects also accept `period`, `role` and `status` (`"ongoing"` or `"completed"`).
 
 Images go in `images/` (16:9 works best, e.g. 1200×675).
+
+## Add a blog post
+1. Copy `blog/_template.html` to `blog/<short-keyword-name>.html` and fill in the `[ ... ]` placeholders
+   (remove the `noindex` line). Put images in `images/blog/` — use a 1200×630 PNG/JPG for social previews.
+2. Add an entry at the top of the `BLOG` list in `assets/data.js`.
+3. Add the URL to `sitemap.xml` (and optionally to the "From the blog" box in `index.html`).
+
+## SEO
+Each page has a title, meta description, canonical URL and Open Graph tags; `index.html` has
+schema.org `Person` data, posts have `BlogPosting` data. `sitemap.xml` and `robots.txt` are at the root.
+The site is registered in Google Search Console — resubmit the sitemap after adding posts.
 
 ## Deploy on Render
 Render → New → **Static Site** → connect this repo, then:

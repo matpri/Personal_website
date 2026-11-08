@@ -15,7 +15,10 @@
      period       (projects only) e.g. "2025–2028"
      role         (projects only) e.g. "Coordinator"
      status       (projects only) "ongoing" or "completed"
+     date         (blog only) e.g. "2026-11-08"
      links        (optional) list of buttons: { label: "...", url: "..." }
+                  External links (https://...) open in a new tab, internal
+                  links (e.g. "blog/my-post.html") in the same tab.
    ===================================================================== */
 
 const PORTFOLIO = [
@@ -184,5 +187,19 @@ const PROJECTS = [
     status: "completed",
     tags: ["EEA", "Climate risk"],
     links: [{ label: "Report", url: "https://doi.org/10.2800/204249" }],
+  },
+];
+
+/* Blog posts — newest first. Each post is an HTML page in the /blog folder
+   (copy blog/_template.html), then add an entry here and in sitemap.xml. */
+const BLOG = [
+  {
+    title: "Why energy system models need accuracy, robustness and comprehensibility",
+    description:
+      "A plain-language guide to the three pillars that can close the gap between energy system models and real-world energy policy.",
+    image: "images/blog/challenges-bottom-up-energy-system-models.png",
+    date: "2026-11-08",
+    tags: ["Research explained", "Energy system models", "PLOS Climate"],
+    links: [{ label: "Read article", url: "blog/challenges-bottom-up-energy-system-models.html" }],
   },
 ];

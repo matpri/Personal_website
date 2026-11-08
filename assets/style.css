@@ -178,3 +178,29 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   header.site .wrap { justify-content: center; }
   .panel { padding: 20px; }
 }
+
+.card h3 a { color: inherit; }
+
+/* ---------- blog article ---------- */
+.article { max-width: 760px; padding-top: 32px; padding-bottom: 24px; }
+.crumbs { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 28px; overflow: visible; }
+.crumbs a { padding: 0; font-size: inherit; font-weight: 500; color: var(--accent); background: none; }
+.crumbs a:hover { background: none; text-decoration: underline; }
+.article h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 16px; }
+.article .lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 16px; }
+.byline { font-size: .9rem; color: var(--muted); margin: 0 0 28px; }
+.article h2 { font-size: 1.45rem; letter-spacing: -.01em; margin: 44px 0 12px; }
+.article h3 { font-size: 1.1rem; margin: 26px 0 6px; }
+.article p, .article li { font-size: 1.05rem; line-height: 1.75; }
+.article ul { padding-left: 22px; }
+.article li { margin-bottom: 8px; }
+.article figure { margin: 8px 0 32px; }
+.article figure img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; }
+.article figcaption { font-size: .88rem; color: var(--muted); margin-top: 10px; text-align: center; }
+.ref { margin: 44px 0 24px; padding: 22px 24px; border-radius: var(--radius); background: var(--accent-soft); border: 1px solid var(--line); }
+.ref p { margin: 6px 0 14px; font-size: .98rem; }
+.back { margin-top: 32px; }
+@media (max-width: 480px) {
+  nav { gap: 0; }
+  nav a { padding: 8px 7px; font-size: .88rem; }
+}

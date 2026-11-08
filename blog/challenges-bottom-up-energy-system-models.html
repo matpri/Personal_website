@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why energy system models need accuracy, robustness and comprehensibility | Matteo Giacomo Prina</title>
+  <meta name="description" content="A plain-language guide to the main challenges of bottom-up energy system models — accuracy, robustness and comprehensibility — and why they matter for energy transition policy.">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/challenges-bottom-up-energy-system-models.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="Why energy system models need accuracy, robustness and comprehensibility">
+  <meta property="og:description" content="A plain-language guide to the three pillars that can close the gap between energy models and real-world energy policy.">
+  <meta property="og:url" content="https://matteoprina.com/blog/challenges-bottom-up-energy-system-models.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/challenges-bottom-up-energy-system-models.png">
+  <meta property="og:image:alt" content="Framework of challenges in bottom-up energy system models: accuracy, robustness, comprehensibility">
+  <meta property="article:published_time" content="2026-11-08">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why energy system models need accuracy, robustness and comprehensibility",
+    "description": "A plain-language guide to the main challenges of bottom-up energy system models — accuracy, robustness and comprehensibility — and why they matter for energy transition policy.",
+    "image": "https://matteoprina.com/images/blog/challenges-bottom-up-energy-system-models.png",
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/challenges-bottom-up-energy-system-models.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "energy system models, bottom-up energy system modelling, energy transition, uncertainty, sector coupling, energy policy",
+    "citation": {
+      "@type": "ScholarlyArticle",
+      "name": "Accuracy, robustness and comprehensibility – Challenges in bottom-up energy system models",
+      "author": [{ "@type": "Person", "name": "Matteo Giacomo Prina" }, { "@type": "Person", "name": "Michel Noussan" }],
+      "datePublished": "2026-07-16",
+      "isPartOf": { "@type": "Periodical", "name": "PLOS Climate" },
+      "sameAs": "https://doi.org/10.1371/journal.pclm.0000890"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a bottom-up energy system model?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A bottom-up energy system model is a mathematical representation of an energy system built from its individual technologies — power plants, heat pumps, batteries, vehicles, grids — and the demand they serve. It is used to explore scenarios and find cost-effective pathways to decarbonise electricity, heating, transport and industry." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between bottom-up and top-down energy models?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Top-down models take a macroeconomic view and represent how the energy sector interacts with the wider economy, with little technological detail. Bottom-up models describe technologies and infrastructure in detail, which makes them well suited to compare technology options, but they are less integrated with the economy." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is accuracy the same as resolution in an energy model?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Resolution is how finely the system is described in time, space, techno-economic detail and sector coupling. Accuracy is how faithfully the results reproduce real-world behaviour. Higher resolution can improve accuracy, but only if good data are available and the computational cost remains acceptable." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo G. <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › Energy system models</nav>
+
+    <header>
+      <p class="eyebrow">Research explained · PLOS Climate, 2026</p>
+      <h1>Why energy system models need accuracy, robustness and comprehensibility</h1>
+      <p class="lead">Energy system models shape decisions worth billions on how we decarbonise electricity, heating, transport and industry. In a new review we propose a simple three-pillar framework to map what still holds these models back — and how to close the gap between model results and real-world energy policy.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-08">8 November 2026</time> · 7 min read</p>
+    </header>
+
+    <figure>
+      <img src="../images/blog/challenges-bottom-up-energy-system-models.svg" width="2673" height="2005" alt="Diagram of the challenges in bottom-up energy system models grouped in three pillars: increasing accuracy, strengthening robustness and improving comprehensibility">
+      <figcaption>The three-pillar framework: the twelve main challenges of bottom-up energy system models, grouped by goal. Adapted from Prina &amp; Noussan (2026), PLOS Climate.</figcaption>
+    </figure>
+
+    <h2>What are energy system models, and why do they matter?</h2>
+    <p>An <strong>energy system model</strong> is a mathematical description of how energy is produced, converted, stored and used in a region or country. Planners use it to ask questions such as: <em>how much solar, wind and storage do we need to reach climate neutrality, and at what cost?</em> <strong>Bottom-up models</strong> answer by describing each technology in detail — power plants, heat pumps, batteries, electric vehicles, grids — rather than looking at the economy from above.</p>
+    <p>Well-known examples include PyPSA, EnergyPLAN, Calliope, TIMES, OSeMOSYS and oemof. Their results feed into strategies such as the European Green Deal, guide renewable investment decisions and support climate commitments under the Paris Agreement. When a model is inaccurate, fragile or hard to understand, the policies built on it can be inefficient, delayed or rejected by the public.</p>
+
+    <h2>The problem: a fragmented picture of the challenges</h2>
+    <p>Over the last fifty years — from the oil crises of the 1970s to today's 100% renewable scenarios — energy modelling has advanced enormously thanks to better computers and data. But the energy system itself has become far more complex. Many reviews have studied individual weaknesses of models: time resolution, uncertainty, stakeholder involvement. None brought them all together.</p>
+    <p>In our article in <a href="https://doi.org/10.1371/journal.pclm.0000890" target="_blank" rel="noopener">PLOS Climate</a>, Michel Noussan (Politecnico di Torino) and I reviewed 182 sources, selected from more than 1,000 records, and organised all the major challenges into <strong>three pillars</strong>: accuracy, robustness and comprehensibility.</p>
+
+    <h2>Pillar 1 — Increasing accuracy</h2>
+    <p>Accuracy is how faithfully a model reproduces reality. It depends on <strong>resolution</strong>, the level of detail along four dimensions:</p>
+    <ul>
+      <li><strong>Time.</strong> Wind and solar change hour by hour. Models that use only a few "typical" time slices can underestimate curtailment and overestimate baseload plants. Techniques such as representative days and clustering reduce computing time, but can miss rare events like the <em>Dunkelflaute</em> — long periods with little wind and sun.</li>
+      <li><strong>Space.</strong> Where a wind farm or a grid line sits matters. For the European power system, studies found a good balance at around 90 grid nodes; country-level models hide transmission bottlenecks.</li>
+      <li><strong>Techno-economic detail.</strong> Ramp rates, start-up costs and part-load efficiencies of power plants, or self-discharge of storage.</li>
+      <li><strong>Sector coupling.</strong> Electricity, heat, transport, gas and industry interact. Modelling the power sector alone underestimates how much renewable energy a system can absorb.</li>
+    </ul>
+    <p>A fifth element is <strong>sector disaggregation</strong>: distinguishing buildings by age, industrial heat by temperature level, or urban from rural mobility, so that each solution is applied where it really fits.</p>
+    <p>The key insight: <strong>more detail is not automatically better</strong>. A model is limited by its weakest dimension, extra resolution is useless without matching data, and computing time grows quickly. The goal is the best <em>mix</em> of resolutions for an acceptable computational cost.</p>
+
+    <h2>Pillar 2 — Strengthening robustness</h2>
+    <p>A robust result is one whose conclusions hold across a plausible range of assumptions. Two families of uncertainty threaten it:</p>
+    <ul>
+      <li><strong>Data-based uncertainty</strong> — future technology costs, fuel prices, demand, weather. Some is irreducible (weather variability), some can be reduced with better data, and some is <em>deep uncertainty</em> that no probability distribution can capture, typical of a transition without historical precedent.</li>
+      <li><strong>Model-based uncertainty</strong> — the choices made when turning reality into equations: what to include, how to simplify, which solver to use. Comparing different frameworks, models and scenarios is the main way to reveal it.</li>
+    </ul>
+    <p>Classic methods such as Monte Carlo analysis, stochastic programming, robust optimisation and Modelling to Generate Alternatives often require thousands of model runs. This is where <strong>artificial intelligence</strong> helps: machine learning <em>surrogate models</em> imitate a full energy model in a fraction of the time, making large uncertainty and global sensitivity analyses feasible — a topic my group works on with tools like <a href="../portfolio.html">EPLANoptML</a>.</p>
+
+    <h2>Pillar 3 — Improving comprehensibility</h2>
+    <p>Even an accurate and robust model is of little use if decision-makers and citizens cannot understand or trust it. Comprehensibility covers five challenges:</p>
+    <ul>
+      <li><strong>Transparency and reproducibility</strong> — open code and open data, as promoted by the Open Energy Modelling Initiative (openmod).</li>
+      <li><strong>Participatory processes</strong> — involving stakeholders throughout the modelling, not just at the start or end, often with multi-criteria decision methods.</li>
+      <li><strong>Human behaviour and social factors</strong> — technology adoption depends on more than cost: acceptance, habits and trust matter.</li>
+      <li><strong>Environmental impact assessment</strong> — coupling models with life cycle assessment (LCA) and social LCA to look beyond CO<sub>2</sub>.</li>
+      <li><strong>Multi-level alignment</strong> — most studies target national governments, yet the energy transition is largely implemented by regions and municipalities. Models at different scales must speak to each other.</li>
+    </ul>
+
+    <h2>Why this matters for the energy transition</h2>
+    <p>The three pillars are connected: higher accuracy costs computing power that could go to uncertainty analysis; more participation can raise new questions that require more detail. Looking at them together helps modellers choose where to invest effort, and helps policymakers ask the right questions of the models they rely on.</p>
+    <p>This is also the idea behind our <a href="../projects.html">LIFE PLANtoACT project</a>, which helps regions and municipalities move from energy plans to concrete action.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is a bottom-up energy system model?</h3>
+    <p>A mathematical representation of an energy system built from its individual technologies — power plants, heat pumps, batteries, vehicles, grids — and the demand they serve. It is used to explore scenarios and find cost-effective pathways to decarbonise electricity, heating, transport and industry.</p>
+    <h3>What is the difference between bottom-up and top-down energy models?</h3>
+    <p>Top-down models take a macroeconomic view and represent how the energy sector interacts with the wider economy, with little technological detail. Bottom-up models describe technologies and infrastructure in detail, which makes them well suited to compare technology options, but they are less integrated with the economy.</p>
+    <h3>Is accuracy the same as resolution in an energy model?</h3>
+    <p>No. Resolution is how finely the system is described in time, space, techno-economic detail and sector coupling. Accuracy is how faithfully the results reproduce real-world behaviour. Higher resolution can improve accuracy, but only if good data are available and the computational cost remains acceptable.</p>
+
+    <aside class="ref">
+      <strong>Read the full article (open access)</strong>
+      <p>Prina MG, Noussan M. <em>Accuracy, robustness and comprehensibility – Challenges in bottom-up energy system models.</em> PLOS Climate 5(7): e0000890 (2026).</p>
+      <a class="btn primary" href="https://doi.org/10.1371/journal.pclm.0000890" target="_blank" rel="noopener">doi.org/10.1371/journal.pclm.0000890 ↗</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  TEMPLATE FOR A NEW BLOG POST
+  1. Copy this file in the /blog folder and rename it with a short, descriptive,
+     keyword-rich name, e.g. blog/v2g-boost-results.html  (lowercase, hyphens).
+  2. Replace every [ ... ] placeholder below (title, description, URL, date, image).
+  3. Remove the "noindex" line below.
+  4. Add the post to the BLOG list in assets/data.js and its URL to sitemap.xml.
+  SEO tips: title < 60 characters, description 120–160 characters, one <h1>,
+  sections with <h2>, descriptive alt text on images, link to the paper's DOI.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex"> <!-- REMOVE THIS LINE IN THE REAL POST -->
+  <title>[Post title] | Matteo Giacomo Prina</title>
+  <meta name="description" content="[One or two sentences, 120–160 characters, with the main keywords.]">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/[file-name].html">
+  <meta name="theme-color" content="#0f766e">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="[Post title]">
+  <meta property="og:description" content="[Short description]">
+  <meta property="og:url" content="https://matteoprina.com/blog/[file-name].html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/[image].png">
+  <meta property="article:published_time" content="[YYYY-MM-DD]">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "[Post title]",
+    "description": "[Short description]",
+    "image": "https://matteoprina.com/images/blog/[image].png",
+    "datePublished": "[YYYY-MM-DD]",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/[file-name].html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" }
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo G. <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › [Short title]</nav>
+    <header>
+      <p class="eyebrow">[Research explained · Journal, year]</p>
+      <h1>[Post title]</h1>
+      <p class="lead">[Two-sentence summary of the post.]</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="[YYYY-MM-DD]">[Day Month Year]</time></p>
+    </header>
+
+    <figure>
+      <img src="../images/blog/[image].png" alt="[Describe what the image shows]">
+      <figcaption>[Caption and source]</figcaption>
+    </figure>
+
+    <h2>[Section heading]</h2>
+    <p>[Text]</p>
+
+    <aside class="ref">
+      <strong>Read the full article</strong>
+      <p>[Authors. Title. Journal (year).]</p>
+      <a class="btn primary" href="https://doi.org/[DOI]" target="_blank" rel="noopener">doi.org/[DOI] ↗</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -7,6 +7,10 @@
    Fields:
      title        (required) card title
      description  (required) 1–3 sentences
+     video        (optional) path to an .mp4 shown as an autoplaying, muted
+                  loop on the card; "image" is then used as its poster
+     fit          (optional) "contain" to show the whole image/video
+                  instead of cropping it to the 16:9 cover
      image        (optional) path to an image, e.g. "images/eplanopt.png"
                   (put the file in the /images folder). If omitted, a
                   coloured cover with the `icon` is shown instead.
@@ -206,6 +210,17 @@ const PROJECTS = [
    "keywords" are shown as tags and used by the search on blog.html. Reuse
    existing keywords where they fit, so the filters group related posts. */
 const BLOG = [
+  {
+    title: "How much does nuclear power cost? 70 years of European reactors in one chart",
+    description:
+      "Cost of electricity and construction time of 288 European nuclear reactors. Since 1995, none has come in below the roughly 50 €/MWh of today's solar and wind.",
+    image: "images/blog/nuclear-cost-europe-poster.jpg",
+    video: "images/blog/nuclear-cost-europe.mp4",
+    fit: "contain",
+    date: "2026-11-08",
+    keywords: ["nuclear power", "levelised cost of electricity", "renewable energy", "energy policy", "Italy"],
+    links: [{ label: "Read article", url: "blog/nuclear-power-cost-europe.html" }],
+  },
   {
     title: "Bidirectional charging in practice: results of the V2G-BOOST project in South Tyrol",
     description:

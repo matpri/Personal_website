@@ -238,3 +238,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .article .topics ul.tags { padding-left: 0; }
 .article .topics .tags li { font-size: .8rem; line-height: 1.5; margin: 0; padding: 3px 10px; }
 .kw-filter button[hidden] { display: none; }
+
+/* ---------- video ---------- */
+.cover video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #fff; }
+.cover img.contain, .cover video.contain { object-fit: contain; }
+.article figure.video video, .article figure.video img { display: block; width: 100%; max-width: 540px; height: auto; margin: 0 auto; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; }
+.article figure.video figcaption { max-width: 640px; margin-left: auto; margin-right: auto; }

@@ -13,8 +13,10 @@ function hue(text) {
 }
 
 function cardHTML(item) {
-  const cover = item.image
-    ? `<img src="${esc(item.image)}" alt="${esc(item.title)}" loading="lazy">`
+  const cover = item.video
+    ? `<video class="${item.fit === "contain" ? "contain" : ""}" src="${esc(item.video)}" poster="${esc(item.image || "")}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(item.title)}"></video>`
+    : item.image
+    ? `<img class="${item.fit === "contain" ? "contain" : ""}" src="${esc(item.image)}" alt="${esc(item.title)}" loading="lazy">`
     : `<span class="cover-icon">${esc(item.icon || "✦")}</span>`;
 
   const meta = [];
@@ -52,5 +54,10 @@ function cardHTML(item) {
 
 function renderCards(containerId, items) {
   const el = document.getElementById(containerId);
-  if (el) el.innerHTML = items.map(cardHTML).join("");
+  if (!el) return;
+  el.innerHTML = items.map(cardHTML).join("");
+  // respect "reduce motion": stop autoplaying card videos and show the poster
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.querySelectorAll("video").forEach((v) => { v.removeAttribute("autoplay"); v.pause(); });
+  }
 }

@@ -1,5 +1,6 @@
 # Personal website — Matteo Giacomo Prina
-nLive at **https://matteoprina.com** (Render static site, auto-deploys on every push to `main`).
+
+Live at **https://matteoprina.com** (Render static site, auto-deploys on every push to `main`).
 
 Plain static HTML site (no build step). Open `index.html` in a browser to preview.
 

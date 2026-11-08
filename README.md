@@ -33,7 +33,9 @@ Images go in `images/` (16:9 works best, e.g. 1200×675).
 ## Add a blog post
 1. Copy `blog/_template.html` to `blog/<short-keyword-name>.html` and fill in the `[ ... ]` placeholders
    (remove the `noindex` line). Put images in `images/blog/` — use a 1200×630 PNG/JPG for social previews.
-2. Add an entry at the top of the `BLOG` list in `assets/data.js`.
+2. Add an entry at the top of the `BLOG` list in `assets/data.js`, with 5–8 `keywords`.
+   Reuse existing keywords where they fit: they become the filter buttons on `blog.html`
+   (search by text and/or keyword; links like `blog.html?k=smart+charging` open a filtered list).
 3. Add the URL to `sitemap.xml` (and optionally to the "From the blog" box in `index.html`).
 
 ## SEO

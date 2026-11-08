@@ -25,7 +25,7 @@ function cardHTML(item) {
   if (item.period) meta.push(`<span>${esc(item.period)}</span>`);
   if (item.role) meta.push(`<span>${esc(item.role)}</span>`);
 
-  const tags = (item.tags || []).map((t) => `<li>${esc(t)}</li>`).join("");
+  const tags = (item.tags || item.keywords || []).map((t) => `<li>${esc(t)}</li>`).join("");
   const links = (item.links || [])
     .map((l) => {
       const ext = /^https?:/.test(l.url);

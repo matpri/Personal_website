@@ -5,7 +5,9 @@
      keyword-rich name, e.g. blog/v2g-boost-results.html  (lowercase, hyphens).
   2. Replace every [ ... ] placeholder below (title, description, URL, date, image).
   3. Remove the "noindex" line below.
-  4. Add the post to the BLOG list in assets/data.js and its URL to sitemap.xml.
+  4. Add the post to the BLOG list in assets/data.js (with 5-8 keywords, reusing
+     existing ones where they fit) and its URL to sitemap.xml.
+  5. Put the same keywords in the "topics" list below and in the JSON-LD.
   SEO tips: title < 60 characters, description 120–160 characters, one <h1>,
   sections with <h2>, descriptive alt text on images, link to the paper's DOI.
 -->
@@ -68,6 +70,7 @@
       <h1>[Post title]</h1>
       <p class="lead">[Two-sentence summary of the post.]</p>
       <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="[YYYY-MM-DD]">[Day Month Year]</time></p>
+      <div class="topics"><span class="visually-hidden">Topics: </span><ul class="tags"><li><a href="../blog.html?k=[keyword+one]">[keyword one]</a></li><li><a href="../blog.html?k=[keyword+two]">[keyword two]</a></li></ul></div>
     </header>
 
     <figure>

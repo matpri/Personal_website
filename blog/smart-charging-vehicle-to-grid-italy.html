@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart charging and vehicle-to-grid (V2G): what electric cars can do for Italy's power system | Matteo Giacomo Prina</title>
+  <meta name="description" content="How much can smart charging and vehicle-to-grid (V2G) save on Italy's way to a net-zero power system in 2050? Results from a seven-zone PyPSA model with hourly EV profiles.">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/smart-charging-vehicle-to-grid-italy.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="Smart charging and vehicle-to-grid (V2G): what electric cars can do for Italy's power system">
+  <meta property="og:description" content="Smart charging and V2G cut the cost of a net-zero Italian power system by 1.3% and 3.3% and replace part of the stationary batteries.">
+  <meta property="og:url" content="https://matteoprina.com/blog/smart-charging-vehicle-to-grid-italy.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/smart-charging-v2g-og.jpg">
+  <meta property="og:image:alt" content="Hourly power generation and electric vehicle charging and V2G discharging over one week">
+  <meta property="article:published_time" content="2026-11-08">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Smart charging and vehicle-to-grid (V2G): what electric cars can do for Italy's power system",
+    "description": "How much can smart charging and vehicle-to-grid (V2G) save on Italy's way to a net-zero power system in 2050? Results from a seven-zone PyPSA model with hourly EV profiles.",
+    "image": "https://matteoprina.com/images/blog/smart-charging-v2g-og.jpg",
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/smart-charging-vehicle-to-grid-italy.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "smart charging, vehicle-to-grid, V2G, electric vehicles, EV flexibility, PyPSA, Italy, energy system modelling, battery storage, renewable curtailment",
+    "citation": {
+      "@type": "ScholarlyArticle",
+      "name": "Role of smart charging and vehicle-to-grid for long-term decarbonization pathways in Italy",
+      "author": [
+        { "@type": "Person", "name": "Pranav Deep Kumar" },
+        { "@type": "Person", "name": "Matteo Giacomo Prina" },
+        { "@type": "Person", "name": "Giuseppe Rotondo" },
+        { "@type": "Person", "name": "Giampaolo Manzolini" },
+        { "@type": "Person", "name": "Sonia Leva" },
+        { "@type": "Person", "name": "Michela Longo" },
+        { "@type": "Person", "name": "Wolfram Sparber" }
+      ],
+      "datePublished": "2026-10-14",
+      "isPartOf": { "@type": "Periodical", "name": "Sustainable Energy Technologies and Assessments" },
+      "sameAs": "https://doi.org/10.1016/j.seta.2026.105474"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between smart charging and vehicle-to-grid (V2G)?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Smart charging shifts when an electric car charges, for example to midday when solar power is abundant, but power only flows from the grid to the car. Vehicle-to-grid (V2G) also lets the car send electricity back to the grid during demand peaks, which requires bidirectional chargers." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can smart charging and V2G save in Italy?",
+        "acceptedAnswer": { "@type": "Answer", "text": "With 30% of electric cars taking part, smart charging lowers the total annual cost of Italy's net-zero power system in 2050 by 1.3% compared with uncontrolled charging. V2G lowers it by 3.3%, even after paying for bidirectional chargers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can electric car batteries replace grid-scale batteries?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Partly. In our model, V2G reduces the stationary battery capacity needed in 2050 by 39.7% compared with smart charging alone. Electric car batteries handle daily shifts well but cannot solve the seasonal gap between summer solar surplus and winter demand." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo Giacomo <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › Smart charging and V2G in Italy</nav>
+
+    <header>
+      <p class="eyebrow">Research explained · Sustainable Energy Technologies and Assessments, 2026</p>
+      <h1>Smart charging and vehicle-to-grid (V2G): what electric cars can do for Italy's power system</h1>
+      <p class="lead">Millions of electric cars will add a lot of electricity demand, but their batteries also sit parked most of the day. We modelled Italy's power system from 2025 to 2050 to see what happens if part of the fleet charges smartly or feeds power back to the grid. Smart charging and V2G both lower the cost of a net-zero system, and V2G replaces part of the stationary batteries Italy would otherwise have to build.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-08">8 November 2026</time> · 7 min read</p>
+      <div class="topics"><span class="visually-hidden">Topics: </span><ul class="tags"><li><a href="../blog.html?k=electric+vehicles">electric vehicles</a></li><li><a href="../blog.html?k=smart+charging">smart charging</a></li><li><a href="../blog.html?k=vehicle-to-grid">vehicle-to-grid</a></li><li><a href="../blog.html?k=battery+storage">battery storage</a></li><li><a href="../blog.html?k=PyPSA">PyPSA</a></li><li><a href="../blog.html?k=energy+system+modelling">energy system modelling</a></li><li><a href="../blog.html?k=Italy">Italy</a></li></ul></div>
+    </header>
+
+    <figure>
+      <img src="../images/blog/smart-charging-v2g-validation.jpg" width="1800" height="1287" alt="Two panels of hourly power generation by source over one week, each with the charging and V2G discharging of electric vehicles below it">
+      <figcaption>One test week in northern Italy. Top: with smart charging, cars charge (pink) in a few cheap midday hours. Bottom: with V2G, they also discharge (green) during morning and evening peaks. Light blue bars show when vehicles are plugged in. From Kumar et al. (2026), Sustainable Energy Technologies and Assessments.</figcaption>
+    </figure>
+
+    <h2>Three ways to charge an electric car</h2>
+    <p>The study compares three charging strategies:</p>
+    <ul>
+      <li><strong>Uncontrolled ("dumb") charging.</strong> The car starts charging as soon as it is plugged in, whatever the time or the price of electricity. This is how most cars charge today.</li>
+      <li><strong>Smart charging.</strong> The car still leaves with the charge it needs, but the system chooses when to charge, preferably when electricity is cheap or solar and wind produce more than demand. Power only flows into the car.</li>
+      <li><strong>Vehicle-to-grid (V2G).</strong> The car can also send power back to the grid when demand peaks. This needs a bidirectional charger, extra metering and grid-code compliance.</li>
+    </ul>
+    <p>We tested cases where 10%, 30% or 50% of cars use smart charging or V2G, with the rest charging in the uncontrolled way. The results below refer to 30% participation.</p>
+
+    <h2>How we modelled Italy's power system with PyPSA</h2>
+    <p>The work was led by Pranav Deep Kumar, a PhD student I co-supervise at Politecnico di Milano. He built PyPSA-Italy, a model of the Italian power system in the open-source tool PyPSA, with seven nodes (one per Italian electricity market zone) and hourly resolution. For every period from 2025 to 2050, in five-year steps, the model decides how much solar, wind, battery storage and transmission to build and how to run it, at minimum cost and within a CO<sub>2</sub> cap that reaches zero in 2050.</p>
+    <p>The key ingredient is when cars are actually plugged in. We generated hourly charging and availability profiles with the open tool emobpy, using origin–destination travel data from the Lombardy region. In an earlier study with colleagues at Eurac, we checked that emobpy reproduces the daily charging pattern measured on 411,800 charging sessions in Trentino–South Tyrol.</p>
+    <p>We also gave each option a price. Smart charging needs only control equipment, costed at 50 €/kW. V2G needs bidirectional power electronics, costed at 300 €/kW. Many studies treat this flexibility as free.</p>
+
+    <h2>Results: how much smart charging and V2G save</h2>
+    <p>Electricity demand grows from 322.8 TWh in 2025 to 388.2 TWh in 2050 in both cases, mostly because of electric vehicles. Fossil generation and imports fall to zero by 2050.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>2050, 30% of cars taking part</th><th>Smart charging</th><th>V2G</th></tr></thead>
+        <tbody>
+          <tr><td>Total system cost compared with uncontrolled charging</td><td>−1.3%</td><td>−3.3%</td></tr>
+          <tr><td>Total annual system cost</td><td>144.0 billion €</td><td>141.0 billion €</td></tr>
+          <tr><td>Stationary battery capacity</td><td>−10% vs uncontrolled</td><td>a further −39.7% vs smart charging</td></tr>
+          <tr><td>Renewable curtailment</td><td>−13% vs uncontrolled</td><td>a further −13.9 TWh vs smart charging</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Smart charging saves money mainly by moving car charging to sunny midday hours. That cuts the need for stationary batteries and the amount of solar and wind power that must be thrown away. In the earlier years of the transition the effect is much larger: up to 92% fewer stationary batteries and 48% less curtailment than with uncontrolled charging.</p>
+    <p>V2G goes further because parked cars act as a distributed battery. They charge at midday and discharge during the evening and night peaks, so the system needs fewer grid-scale batteries and less gas in the transition years.</p>
+
+    <h2>What changes when V2G is not free</h2>
+    <p>We ran the model twice: once with free smart charging and V2G, as many published studies assume, and once with realistic charger costs. Without costs, the model fits bidirectional chargers to the whole participating fleet, 118.4 GW in 2050. With costs, it builds only 25.6 GW of V2G and keeps 99.2 GW of the much cheaper smart charging. It then adds 31.3 GW of stationary batteries to make up the difference, and the 2050 system cost rises by 1.12%. Ignoring charger costs therefore overstates how much V2G is worth building.</p>
+
+    <h2>Why location matters: southern solar, northern cars</h2>
+    <p>Because the model has seven zones, it can show where the flexibility is used. The cheapest solar resource, agrivoltaics, is concentrated in the south (zone R5), while 46% of the car fleet is in the north. With V2G instead of smart charging alone, agrivoltaic capacity in the south grows from 46.0 to 71.7 GW and becomes the largest single generator in Italy, at 121 TWh per year. Inter-zonal transmission grows from 179.4 to 186.1 GW to carry the midday surplus to the northern fleets. A single-node model of Italy could not show this interaction between charging, renewables and the grid.</p>
+
+    <h2>Why hourly EV availability matters</h2>
+    <p>Many models assume that a fixed share of cars is always plugged in. We replaced our hourly profiles with constant availabilities of 20%, 40%, 60% and 80% and re-ran the whole 2025–2050 chain.</p>
+    <ul>
+      <li>Assuming 20% availability, the model builds 33% more stationary batteries (512.7 instead of 385.4 GW) and 10% less solar, at 1.0% higher cost. Batteries also arrive about ten years too early.</li>
+      <li>Assuming 80%, it builds 16% fewer batteries. That system looks 0.3% cheaper on paper but would be short of storage in reality.</li>
+      <li>Even 60%, close to the real annual average of 63.8%, gets the total cost right within 0.14% but underestimates battery needs by 14.9 GW, because it misses the dips during commuting hours and the overnight plateau.</li>
+    </ul>
+    <p>Model resolution in time and space is one of the recurring challenges we describe in our article on <a href="challenges-bottom-up-energy-system-models.html">the challenges of energy system models</a>, and this study shows it changes investment decisions by tens of gigawatts.</p>
+
+    <h2>Limits of the study</h2>
+    <p>Curtailment in 2050 is high (254.6 TWh with V2G) because the model has no seasonal storage, no exports and no Power-to-X demand to absorb summer solar surplus. Car batteries shift energy within a day, not between summer and winter. The model also leaves out ancillary services such as frequency regulation, distribution grid limits, battery degradation and market behaviour. Adding seasonal storage, Power-to-X and cross-border exchange is the next step. Our <a href="deep-learning-surrogate-energy-system-synergies.html">study on heat pumps and Power-to-X</a> looks at when those technologies start to pay off.</p>
+    <p>The work is part of our research on e-mobility and the grid, which includes the <a href="../projects.html">V2G-BOOST project</a> in South Tyrol. It was funded by the MOST Sustainable Mobility Center under Italy's NextGenerationEU recovery plan (PNRR). Model code and data are open on <a href="https://github.com/pranavdeep1992/PyPSA-Italy" target="_blank" rel="noopener">GitHub (PyPSA-Italy)</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is the difference between smart charging and vehicle-to-grid (V2G)?</h3>
+    <p>Smart charging shifts when an electric car charges, for example to midday when solar power is abundant, but power only flows from the grid to the car. Vehicle-to-grid (V2G) also lets the car send electricity back to the grid during demand peaks, which requires bidirectional chargers.</p>
+    <h3>How much can smart charging and V2G save in Italy?</h3>
+    <p>With 30% of electric cars taking part, smart charging lowers the total annual cost of Italy's net-zero power system in 2050 by 1.3% compared with uncontrolled charging. V2G lowers it by 3.3%, even after paying for bidirectional chargers.</p>
+    <h3>Can electric car batteries replace grid-scale batteries?</h3>
+    <p>Partly. In our model, V2G reduces the stationary battery capacity needed in 2050 by 39.7% compared with smart charging alone. Electric car batteries handle daily shifts well but cannot solve the seasonal gap between summer solar surplus and winter demand.</p>
+
+    <aside class="ref">
+      <strong>Read the full article (open access)</strong>
+      <p>Kumar PD, Prina MG, Rotondo G, Manzolini G, Leva S, Longo M, Sparber W. <em>Role of smart charging and vehicle-to-grid for long-term decarbonization pathways in Italy.</em> Sustainable Energy Technologies and Assessments 94: 105474 (2026).</p>
+      <a class="btn primary" href="https://doi.org/10.1016/j.seta.2026.105474" target="_blank" rel="noopener">doi.org/10.1016/j.seta.2026.105474 ↗</a>
+      <a class="btn" href="https://github.com/pranavdeep1992/PyPSA-Italy" target="_blank" rel="noopener">Code on GitHub ↗</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -38,12 +38,18 @@
   <div class="page-head">
     <div class="wrap">
       <h1>Blog</h1>
-      <p>Plain-language versions of my scientific articles and stories from the research projects I work on, about energy system modelling, the energy transition and AI.</p>
+      <p>Plain-language versions of my scientific articles and stories from the research projects I work on, about energy system modelling, the energy transition, e-mobility and AI. Search by text or pick one or more keywords.</p>
     </div>
   </div>
 
   <section>
     <div class="wrap">
+      <div class="search" role="search">
+        <label for="q" class="visually-hidden">Search the blog</label>
+        <input id="q" type="search" placeholder="Search posts, e.g. V2G, heat pumps, climate risk…" autocomplete="off">
+        <div class="kw-filter" id="kw" aria-label="Filter by keyword"></div>
+        <p class="search-status" id="status" aria-live="polite"></p>
+      </div>
       <div class="grid" id="blog"></div>
     </div>
   </section>
@@ -58,6 +64,70 @@
 
 <script src="assets/data.js"></script>
 <script src="assets/cards.js"></script>
-<script>renderCards("blog", BLOG);</script>
+<script>
+(function () {
+  const input = document.getElementById("q");
+  const kwBox = document.getElementById("kw");
+  const status = document.getElementById("status");
+  const grid = document.getElementById("blog");
+  const selected = new Set();
+  const norm = (s) => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  // keyword list, most used first
+  const counts = {};
+  BLOG.forEach((p) => (p.keywords || []).forEach((k) => (counts[k] = (counts[k] || 0) + 1)));
+  const keywords = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+  kwBox.innerHTML = keywords
+    .map((k) => `<button type="button" data-k="${esc(k)}" aria-pressed="false">${esc(k)}<span class="count">${counts[k]}</span></button>`)
+    .join("");
+
+  // read ?q= and ?k= from the URL (topic links in the posts use ?k=)
+  const params = new URLSearchParams(location.search);
+  if (params.get("q")) input.value = params.get("q");
+  params.getAll("k").forEach((k) => { const m = keywords.find((x) => norm(x) === norm(k)); if (m) selected.add(m); });
+
+  function update() {
+    const terms = norm(input.value).split(/\s+/).filter(Boolean);
+    const hits = BLOG.filter((p) => {
+      const kws = p.keywords || [];
+      if ([...selected].some((k) => !kws.includes(k))) return false;
+      const text = norm([p.title, p.description, kws.join(" ")].join(" "));
+      return terms.every((t) => text.includes(t));
+    });
+    renderCards("blog", hits);
+    if (!hits.length) grid.innerHTML = '<p class="empty">No posts match your search.</p>';
+    kwBox.querySelectorAll("button").forEach((b) => {
+      const on = selected.has(b.dataset.k);
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on);
+    });
+    const filtered = terms.length || selected.size;
+    status.innerHTML = filtered
+      ? `${hits.length} of ${BLOG.length} posts · <button type="button" id="clear">Clear filters</button>`
+      : "";
+    const u = new URLSearchParams();
+    if (input.value.trim()) u.set("q", input.value.trim());
+    selected.forEach((k) => u.append("k", k));
+    history.replaceState(null, "", u.toString() ? "?" + u.toString() : location.pathname);
+  }
+
+  input.addEventListener("input", update);
+  kwBox.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    const k = b.dataset.k;
+    selected.has(k) ? selected.delete(k) : selected.add(k);
+    update();
+  });
+  status.addEventListener("click", (e) => {
+    if (e.target.id !== "clear") return;
+    input.value = "";
+    selected.clear();
+    update();
+    input.focus();
+  });
+  update();
+})();
+</script>
 </body>
 </html>

@@ -12,6 +12,7 @@
                   coloured cover with the `icon` is shown instead.
      icon         (optional) emoji used on the cover when there is no image
      tags         (optional) list of short labels, e.g. ["Python", "Dash"]
+     keywords     (blog only) SEO keywords, shown as tags and used for search
      period       (projects only) e.g. "2025–2028"
      role         (projects only) e.g. "Coordinator"
      status       (projects only) "ongoing" or "completed"
@@ -157,7 +158,10 @@ const PROJECTS = [
     role: "Coordinator & PI",
     status: "completed",
     tags: ["EFRE", "650 k€"],
-    links: [{ label: "Project page", url: "https://www.eurac.edu/en/projects/v2g-boost" }],
+    links: [
+      { label: "Project page", url: "https://www.eurac.edu/en/projects/v2g-boost" },
+      { label: "Related blog post", url: "blog/smart-charging-vehicle-to-grid-italy.html" },
+    ],
   },
   {
     title: "AIchargeMAP",
@@ -193,16 +197,27 @@ const PROJECTS = [
   },
 ];
 
-/* Blog posts — newest first. Each post is an HTML page in the /blog folder
-   (copy blog/_template.html), then add an entry here and in sitemap.xml. */
+/* Blog posts, newest first. Each post is an HTML page in the /blog folder
+   (copy blog/_template.html), then add an entry here and in sitemap.xml.
+   "keywords" are shown as tags and used by the search on blog.html. Reuse
+   existing keywords where they fit, so the filters group related posts. */
 const BLOG = [
+  {
+    title: "Smart charging and vehicle-to-grid (V2G): what electric cars can do for Italy's power system",
+    description:
+      "Smart charging and V2G cut the cost of a net-zero Italian power system by 1.3% and 3.3% and replace part of the stationary batteries.",
+    image: "images/blog/smart-charging-v2g-og.jpg",
+    date: "2026-11-08",
+    keywords: ["electric vehicles", "smart charging", "vehicle-to-grid", "battery storage", "PyPSA", "energy system modelling", "Italy"],
+    links: [{ label: "Read article", url: "blog/smart-charging-vehicle-to-grid-italy.html" }],
+  },
   {
     title: "Climate change risks for Europe's energy system: what the European Climate Risk Assessment found",
     description:
       "Heatwaves, droughts and floods already disrupt energy supply in Europe, and southern Europe faces the highest risk. Findings of the EUCRA energy chapter.",
     image: "images/blog/european-climate-risk-assessment-energy-og.jpg",
     date: "2026-11-08",
-    tags: ["Research explained", "Climate risk", "EEA"],
+    keywords: ["climate change", "climate risk", "energy security", "climate adaptation", "hydropower", "EU policy"],
     links: [{ label: "Read article", url: "blog/climate-change-risks-european-energy-system.html" }],
   },
   {
@@ -211,7 +226,7 @@ const BLOG = [
       "A neural network learns to imitate EnergyPLAN and cuts the computing time of a national energy system optimisation by 64%, with the same accuracy.",
     image: "images/blog/machine-learning-surrogate-energyplan.png",
     date: "2026-11-08",
-    tags: ["Research explained", "Machine learning", "Energy"],
+    keywords: ["machine learning", "surrogate model", "EnergyPLAN", "multi-objective optimisation", "energy system modelling", "Italy"],
     links: [{ label: "Read article", url: "blog/machine-learning-surrogate-energyplan.html" }],
   },
   {
@@ -220,7 +235,7 @@ const BLOG = [
       "Heat pumps cut CO2 right away. Hydrogen and synthetic gas only help once renewables cover about half of electricity demand.",
     image: "images/blog/deep-learning-surrogate-energy-system-synergies.png",
     date: "2026-11-08",
-    tags: ["Research explained", "AI", "Smart Energy"],
+    keywords: ["explainable AI", "surrogate model", "machine learning", "heat pumps", "Power-to-X", "green hydrogen", "energy system modelling"],
     links: [{ label: "Read article", url: "blog/deep-learning-surrogate-energy-system-synergies.html" }],
   },
   {
@@ -229,7 +244,7 @@ const BLOG = [
       "Twelve challenges of bottom-up energy system models, grouped into three pillars, and why they matter for energy policy.",
     image: "images/blog/challenges-bottom-up-energy-system-models.png",
     date: "2026-11-08",
-    tags: ["Research explained", "Energy system models", "PLOS Climate"],
+    keywords: ["energy system modelling", "energy transition", "uncertainty", "sector coupling", "energy policy"],
     links: [{ label: "Read article", url: "blog/challenges-bottom-up-energy-system-models.html" }],
   },
 ];

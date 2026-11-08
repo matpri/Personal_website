@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 632" width="1200" height="632" role="img" aria-labelledby="iomses-title iomses-desc">
+  <title id="iomses-title">IOMSES project: two studies on smart charging and V2G</title>
+  <desc id="iomses-desc">The IOMSES project compared uncontrolled charging, smart charging and vehicle-to-grid at two scales: an emobpy and PyPSA model of Italy's power system to 2050, where V2G cut system cost by 3.3 percent, and a cost and life cycle study of 20 electric cars, where V2G cut annual costs by 12 to 42 percent but shortened battery life.</desc>
+  <defs>
+    <marker id="iomses-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5d6b66"/>
+    </marker>
+    <style>
+      .eyebrow { font: 600 13px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .08em; fill: #0f766e; }
+      .title { font: 700 26px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .lane { font: 600 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .08em; fill: #5d6b66; }
+      .tag { font: 600 11px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .06em; }
+      .name { font: 600 19px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .big { font: 700 20px Inter, "Segoe UI", Arial, sans-serif; fill: #0f5f58; }
+      .sub { font: 400 13px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; fill: #4a5a55; }
+      .chip { font: 600 14px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .legend { font: 400 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; fill: #5d6b66; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="632" fill="#ffffff"/>
+
+  <!-- heading -->
+  <text class="eyebrow" x="48" y="44">IOMSES · EURAC RESEARCH · 2024–2025</text>
+  <text class="title" x="48" y="80">Two scales, one question: what are smart charging and V2G worth?</text>
+
+  <!-- shared comparison strip -->
+  <rect x="48" y="104" width="1104" height="44" rx="6" fill="#f3f6f4" stroke="#e2e7e4"/>
+  <text class="lane" x="68" y="131">COMPARED IN BOTH STUDIES</text>
+  <rect x="300" y="112" width="216" height="28" rx="2" fill="#ffffff" stroke="#c9d3cf"/>
+  <text class="chip" x="408" y="131" text-anchor="middle">Uncontrolled charging</text>
+  <rect x="532" y="112" width="160" height="28" rx="2" fill="#ffffff" stroke="#c9d3cf"/>
+  <text class="chip" x="612" y="131" text-anchor="middle">Smart charging</text>
+  <rect x="708" y="112" width="200" height="28" rx="2" fill="#ffffff" stroke="#c9d3cf"/>
+  <text class="chip" x="808" y="131" text-anchor="middle">Vehicle-to-grid (V2G)</text>
+
+  <!-- arrows first (behind nodes) -->
+  <line x1="320" y1="268" x2="384" y2="268" stroke="#5d6b66" stroke-width="1.5" marker-end="url(#iomses-arrow)"/>
+  <line x1="700" y1="268" x2="764" y2="268" stroke="#5d6b66" stroke-width="1.5" marker-end="url(#iomses-arrow)"/>
+  <line x1="320" y1="472" x2="384" y2="472" stroke="#5d6b66" stroke-width="1.5" marker-end="url(#iomses-arrow)"/>
+  <line x1="700" y1="472" x2="764" y2="472" stroke="#5d6b66" stroke-width="1.5" marker-end="url(#iomses-arrow)"/>
+
+  <!-- lane 1: system scale -->
+  <text class="lane" x="48" y="184">SYSTEM SCALE · ITALY 2025–2050</text>
+
+  <rect x="48" y="196" width="272" height="144" rx="6" fill="#f3f6f4" stroke="#c9d3cf"/>
+  <rect x="64" y="212" width="52" height="20" rx="2" fill="#ffffff" stroke="#c9d3cf"/>
+  <text class="tag" x="90" y="226" text-anchor="middle" fill="#5d6b66">INPUT</text>
+  <text class="name" x="64" y="262">emobpy profiles</text>
+  <text class="sub" x="64" y="288">hourly EV availability</text>
+  <text class="sub" x="64" y="308">and charging demand</text>
+  <text class="sub" x="64" y="328">from Lombardy travel data</text>
+
+  <rect x="388" y="196" width="312" height="144" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <rect x="404" y="212" width="52" height="20" rx="2" fill="#1b2421"/>
+  <text class="tag" x="430" y="226" text-anchor="middle" fill="#ffffff">MODEL</text>
+  <text class="name" x="404" y="262">PyPSA-Italy</text>
+  <text class="sub" x="404" y="288">7 market zones, hourly</text>
+  <text class="sub" x="404" y="308">capacity expansion to 2050</text>
+  <text class="sub" x="404" y="328">CO₂ cap reaching zero</text>
+
+  <rect x="768" y="196" width="384" height="144" rx="6" fill="#e0f2ef" stroke="#0f766e" stroke-width="1.5"/>
+  <rect x="784" y="212" width="164" height="20" rx="2" fill="#0f766e"/>
+  <text class="tag" x="866" y="226" text-anchor="middle" fill="#ffffff">RESULT · SETA 2026</text>
+  <text class="big" x="784" y="262">V2G: −3.3% system cost in 2050</text>
+  <text class="sub" x="784" y="288">about 4.9 bn € a year</text>
+  <text class="sub" x="784" y="308">smart charging: −1.3%</text>
+  <text class="sub" x="784" y="328">V2G vs smart: −39.7% grid batteries</text>
+
+  <!-- lane 2: fleet scale -->
+  <text class="lane" x="48" y="388">FLEET SCALE · 20 ELECTRIC CARS, ONE YEAR</text>
+
+  <rect x="48" y="400" width="272" height="144" rx="6" fill="#f3f6f4" stroke="#c9d3cf"/>
+  <rect x="64" y="416" width="52" height="20" rx="2" fill="#ffffff" stroke="#c9d3cf"/>
+  <text class="tag" x="90" y="430" text-anchor="middle" fill="#5d6b66">INPUT</text>
+  <text class="name" x="64" y="466">20 representative EVs</text>
+  <text class="sub" x="64" y="492">Italian car fleet</text>
+  <text class="sub" x="64" y="512">real electricity prices</text>
+
+  <rect x="388" y="400" width="312" height="144" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <rect x="404" y="416" width="52" height="20" rx="2" fill="#1b2421"/>
+  <text class="tag" x="430" y="430" text-anchor="middle" fill="#ffffff">MODEL</text>
+  <text class="name" x="404" y="466">Cost + life cycle study</text>
+  <text class="sub" x="404" y="492">battery wear included</text>
+  <text class="sub" x="404" y="512">15 environmental indicators</text>
+  <text class="sub" x="404" y="532">shared with V2G-BOOST</text>
+
+  <rect x="768" y="400" width="384" height="144" rx="6" fill="#e0f2ef" stroke="#0f766e" stroke-width="1.5"/>
+  <rect x="784" y="416" width="260" height="20" rx="2" fill="#0f766e"/>
+  <text class="tag" x="914" y="430" text-anchor="middle" fill="#ffffff">RESULT · SUSTAINABLE FUTURES 2026</text>
+  <text class="big" x="784" y="466">V2G: −12 to −42% annual cost</text>
+  <text class="sub" x="784" y="492">CO₂ up to −50%; smart −5 to −25% cost</text>
+  <text class="sub" x="784" y="512">battery ~7 instead of 14–15 years</text>
+  <text class="sub" x="784" y="532">land use and minerals get worse</text>
+
+  <!-- legend strip -->
+  <line x1="48" y1="572" x2="1152" y2="572" stroke="#e2e7e4"/>
+  <rect x="48" y="592" width="20" height="14" rx="2" fill="#f3f6f4" stroke="#c9d3cf"/>
+  <text class="legend" x="76" y="604">Input data</text>
+  <rect x="172" y="592" width="20" height="14" rx="2" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="legend" x="200" y="604">Model</text>
+  <rect x="268" y="592" width="20" height="14" rx="2" fill="#e0f2ef" stroke="#0f766e" stroke-width="1.5"/>
+  <text class="legend" x="296" y="604">Published result, vs uncontrolled charging unless stated</text>
+  <text class="legend" x="1152" y="604" text-anchor="end">Kumar et al. 2026 · Rotondo et al. 2026</text>
+</svg>

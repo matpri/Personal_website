@@ -219,7 +219,7 @@ const BLOG = [
     title: "Is vehicle-to-grid worth it? Results of the IOMSES project on electric vehicles and Italy's power grid",
     description:
       "Smart charging and V2G cut costs and CO2 for EV owners and for Italy's power system, but V2G also raises land use and mineral depletion.",
-    image: "images/blog/smart-charging-v2g-og.jpg",
+    image: "images/blog/iomses-project-diagram.png",
     date: "2026-11-08",
     keywords: ["vehicle-to-grid", "smart charging", "electric vehicles", "life cycle assessment", "PyPSA", "Italy"],
     links: [{ label: "Read article", url: "blog/iomses-electric-vehicles-power-system-italy.html" }],

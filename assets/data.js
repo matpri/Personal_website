@@ -74,6 +74,26 @@ const PORTFOLIO = [
       { label: "Code", url: "https://github.com/matpri/idea-dash-italy" },
     ],
   },
+  {
+    title: "Simple Charts",
+    description:
+      "Social channel sharing clear, simple charts that make data on energy, climate and society easy to understand.",
+    image: "images/simple-charts.png",
+    tags: ["Data visualisation", "Social media"],
+    links: [
+      { label: "LinkedIn", url: "https://www.linkedin.com/company/145326665/" },
+      { label: "YouTube", url: "https://www.youtube.com/@Simple.charts.studio" },
+      { label: "Instagram", url: "https://www.instagram.com/_simple.charts_/" },
+    ],
+  },
+  {
+    title: "AI for Research",
+    description:
+      "LinkedIn page sharing tools, tips and examples on how artificial intelligence can support scientific research.",
+    icon: "🤖",
+    tags: ["AI", "Research", "Social media"],
+    links: [{ label: "LinkedIn", url: "https://www.linkedin.com/company/101353359/" }],
+  },
 ];
 
 const PROJECTS = [

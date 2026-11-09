@@ -71,6 +71,7 @@ const PORTFOLIO = [
     links: [
       { label: "Code", url: "https://github.com/matpri/oemof-moea" },
       { label: "Paper", url: "https://doi.org/10.1016/j.apenergy.2020.114728" },
+      { label: "Blog post", url: "blog/multi-node-energy-system-models-oemof-pypsa.html" },
     ],
   },
   {
@@ -212,6 +213,15 @@ const PROJECTS = [
    "keywords" are shown as tags and used by the search on blog.html. Reuse
    existing keywords where they fit, so the filters group related posts. */
 const BLOG = [
+  {
+    title: "Multi-node energy system models with high spatial resolution: from oemof to PyPSA",
+    description:
+      "Linear programming models with many zones, from the Italian power sector in 2017 to energy communities, abatement cost curves and vehicle-to-grid, and the colleagues behind each paper.",
+    image: "images/blog/multi-node-energy-models-og.jpg",
+    date: "2026-11-09",
+    keywords: ["energy system modelling", "linear programming", "PyPSA", "oemof", "energy communities", "vehicle-to-grid", "Italy"],
+    links: [{ label: "Read article", url: "blog/multi-node-energy-system-models-oemof-pypsa.html" }],
+  },
   {
     title: "EPLANopt: the story of an open-source energy system optimisation model",
     description:

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-node energy system models with high spatial resolution: from oemof to PyPSA | Matteo Giacomo Prina</title>
+  <meta name="description" content="How we built multi-node, linear programming energy system models with oemof and PyPSA, from the Italian power sector in 2017 to energy communities, abatement cost curves and vehicle-to-grid.">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/multi-node-energy-system-models-oemof-pypsa.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="Multi-node energy system models: from oemof to PyPSA">
+  <meta property="og:description" content="Linear programming at high spatial resolution, 2017–2026: the models, the papers and the colleagues behind them.">
+  <meta property="og:url" content="https://matteoprina.com/blog/multi-node-energy-system-models-oemof-pypsa.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/multi-node-energy-models-og.jpg">
+  <meta property="og:image:alt" content="Timeline of multi-node energy system models from oemof to PyPSA, 2017 to 2026">
+  <meta property="article:published_time" content="2026-11-09T12:00:00+01:00">
+  <meta property="article:modified_time" content="2026-11-09T12:00:00+01:00">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Multi-node energy system models with high spatial resolution: from oemof to PyPSA",
+    "description": "How we built multi-node, linear programming energy system models with oemof and PyPSA, from the Italian power sector in 2017 to energy communities, abatement cost curves and vehicle-to-grid.",
+    "image": "https://matteoprina.com/images/blog/multi-node-energy-models-og.jpg",
+    "datePublished": "2026-11-09T12:00:00+01:00",
+    "dateModified": "2026-11-09T12:00:00+01:00",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/multi-node-energy-system-models-oemof-pypsa.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "multi-node energy system model, spatial resolution, linear programming, oemof, PyPSA, PyPSA-Eur, energy communities, marginal abatement cost curve, vehicle-to-grid, Italy",
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "oemof", "url": "https://oemof.org/" },
+      { "@type": "SoftwareApplication", "name": "PyPSA", "url": "https://pypsa.org/" }
+    ],
+    "citation": [
+      { "@type": "ScholarlyArticle", "name": "Multi-objective investment optimization for energy system models in high temporal and spatial resolution", "sameAs": "https://doi.org/10.1016/j.apenergy.2020.114728" },
+      { "@type": "ScholarlyArticle", "name": "Optimal Allocation Method for a Fair Distribution of the Benefits in an Energy Community", "sameAs": "https://doi.org/10.1002/solr.202100473" },
+      { "@type": "ScholarlyArticle", "name": "From investment optimization to fair benefit distribution in renewable energy community modelling", "sameAs": "https://doi.org/10.1016/j.apenergy.2021.118447" },
+      { "@type": "ScholarlyArticle", "name": "Model-based step-wise marginal CO2 abatement cost curves to determine least-cost decarbonization pathways for sector-coupled energy systems", "sameAs": "https://doi.org/10.1016/j.jclepro.2022.133173" },
+      { "@type": "ScholarlyArticle", "name": "Evaluating hourly charging profiles for different electric vehicles and charging strategies", "sameAs": "https://doi.org/10.1016/j.est.2024.112388" },
+      { "@type": "ScholarlyArticle", "name": "Power system investment optimization to identify carbon neutrality scenarios for Italy", "sameAs": "https://doi.org/10.1088/2753-3751/ad5b64" },
+      { "@type": "ScholarlyArticle", "name": "Advancing renewable energy community planning through integrated sector-coupling and economies of scale", "sameAs": "https://doi.org/10.1016/j.apenergy.2025.125942" },
+      { "@type": "ScholarlyArticle", "name": "Role of smart charging and vehicle-to-grid for long-term decarbonization pathways in Italy", "sameAs": "https://doi.org/10.1016/j.seta.2026.105474" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a multi-node energy system model?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A multi-node energy system model splits a country or continent into several zones, the nodes, connected by transmission lines. Each node has its own demand, renewable resources and power plants, so the model can show where to build generation, storage and grid, and where the grid becomes a bottleneck." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between oemof and PyPSA?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Both are open-source Python tools that build linear optimisation models of energy systems. oemof (Open Energy Modelling Framework) is a modular framework for building models of any shape, from a single energy community to a country. PyPSA (Python for Power System Analysis) focuses on power and sector-coupled systems with a detailed transmission network, and comes with ready-made datasets such as PyPSA-Eur for Europe." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why use linear programming for energy system models?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Linear programming finds the least-cost combination of investments and hourly operation in one solve, with a guaranteed optimum. That makes it possible to model many nodes and every hour of the year at the same time, which is hard to do with simulation-based approaches." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo Giacomo <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../media.html">Media</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › Multi-node energy system models</nav>
+
+    <header>
+      <p class="eyebrow">Model history · Updated as the work grows</p>
+      <h1>Multi-node energy system models with high spatial resolution: from oemof to PyPSA</h1>
+      <p class="lead">Next to <a href="eplanopt-energy-system-model-history.html">EPLANopt</a>, which treats a region or a country as a single node, my group works on a second family of models: multi-node models solved with linear programming, where a country is split into zones linked by the transmission grid. This is the story of that work from 2017 to today, the open-source tools we used, oemof and PyPSA, and the colleagues I wrote each paper with.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-09">9 November 2026</time> · 8 min read</p>
+      <div class="topics"><span class="visually-hidden">Topics: </span><ul class="tags"><li><a href="../blog.html?k=energy+system+modelling">energy system modelling</a></li><li><a href="../blog.html?k=linear+programming">linear programming</a></li><li><a href="../blog.html?k=PyPSA">PyPSA</a></li><li><a href="../blog.html?k=oemof">oemof</a></li><li><a href="../blog.html?k=energy+communities">energy communities</a></li><li><a href="../blog.html?k=vehicle-to-grid">vehicle-to-grid</a></li><li><a href="../blog.html?k=Italy">Italy</a></li></ul></div>
+    </header>
+
+    <figure class="diagram">
+      <div class="diagram-scroll">
+        <img src="../images/blog/multi-node-energy-models-timeline.svg" width="720" height="1072" alt="Vertical timeline. New methods on the left: oemof for the Italian power sector 2017, oemof-moea 2020, oemof for energy communities and ELTRAMOD abatement cost curves 2022, oemof and vehicle-to-grid 2024, PyPSA and vehicle-to-grid 2026. New applications on the right: energy communities 2021, Italian carbon neutrality 2024, energy communities with sector coupling 2025. Next step: SURE-RES with PyPSA-Eur, 2027 to 2029.">
+      </div>
+      <figcaption>Multi-node and linear programming models in my group, 2017–2026: new methods on the left, new applications on the right.</figcaption>
+    </figure>
+
+    <h2>Why multi-node models and linear programming</h2>
+    <p>A single-node model treats a country as one big copper plate: any kilowatt-hour produced anywhere can reach any consumer. That works well for regional planning, but at national scale it hides a real problem. In our PyPSA model of Italy, for example, the cheapest solar resource, agrivoltaics, is concentrated in the south, while 46% of the car fleet is in the north, and the transmission lines between market zones have limits. A multi-node model splits the system into zones, each with its own demand, resources and power plants, and connects them with lines of limited capacity.</p>
+    <p>More nodes and more hours mean many more variables. Linear programming handles this well: in one solve it finds the least-cost combination of investments and hourly operation, with a guaranteed optimum. That is why we moved to linear programming for this family of models. Spatial resolution is one of the dimensions of model accuracy we discuss in <a href="challenges-bottom-up-energy-system-models.html">our review of the challenges of energy system models</a>.</p>
+
+    <h2>The tools: oemof and PyPSA</h2>
+    <p><a href="https://oemof.org/" target="_blank" rel="noopener">oemof</a>, the Open Energy Modelling Framework, is an open-source Python framework for building energy system models out of components such as buses, converters, storage and links. It fits anything from a single energy community to a whole country.</p>
+    <p><a href="https://pypsa.org/" target="_blank" rel="noopener">PyPSA</a>, Python for Power System Analysis, is an open-source Python toolbox for optimising power and sector-coupled energy systems with a detailed transmission network. Its European model, PyPSA-Eur, provides open data for the whole continent.</p>
+
+    <h2>2017: starting with oemof</h2>
+    <p>In 2017 we started working with oemof on the Italian power sector. Between March and July 2017 I was a visiting PhD student at the Reiner Lemoine Institut in Berlin, where I worked on a multi-objective version of oemof.</p>
+
+    <h2>2020: oemof-moea, high temporal and spatial resolution</h2>
+    <p>That work became oemof-moea, which couples oemof to a multi-objective evolutionary algorithm. It optimises investments for a full sector-coupled model of Italy in high temporal and spatial resolution, and returns the trade-off between costs and emissions instead of a single answer. I wrote it with Valeria Casalicchio, Cord Kaldemeyer, Giampaolo Manzolini, David Moser, Alexander Wanitschke and Wolfram Sparber (<a href="https://doi.org/10.1016/j.apenergy.2020.114728" target="_blank" rel="noopener">Applied Energy, 2020</a>). The code is on <a href="https://github.com/matpri/oemof-moea" target="_blank" rel="noopener">GitHub</a> and in my <a href="../portfolio.html#oemof-moea">portfolio</a>.</p>
+
+    <h2>2021–2025: energy communities with Valeria Casalicchio</h2>
+    <p>Renewable energy communities share local generation among their members, which raises two questions: what should the community build, and how should it split the benefits? Valeria Casalicchio, whose PhD at Politecnico di Milano I co-supervised from 2019 to 2024, adapted oemof to answer both, with Giampaolo Manzolini and David Moser.</p>
+    <ul>
+      <li>An optimal allocation method for a fair distribution of the benefits among members, for the power sector (<a href="https://doi.org/10.1002/solr.202100473" target="_blank" rel="noopener">Solar RRL, 2021</a>).</li>
+      <li>A model that goes from investment optimisation to fair benefit distribution in one framework (<a href="https://doi.org/10.1016/j.apenergy.2021.118447" target="_blank" rel="noopener">Applied Energy, 2022</a>).</li>
+      <li>Sector coupling and economies of scale in energy community planning, with Grazia Barchi and Francesca Calabria (<a href="https://doi.org/10.1016/j.apenergy.2025.125942" target="_blank" rel="noopener">Applied Energy, 2025</a>).</li>
+    </ul>
+
+    <h2>2022: abatement cost curves with ELTRAMOD</h2>
+    <p>With Steffi Misconel, then a visiting PhD student from TU Dresden, and her colleagues Hannes Hobbie and Dominik Möst, we derived step-wise marginal CO<sub>2</sub> abatement cost curves from a bottom-up model, ELTRAMOD, to find least-cost decarbonisation pathways for sector-coupled energy systems (<a href="https://doi.org/10.1016/j.jclepro.2022.133173" target="_blank" rel="noopener">Journal of Cleaner Production, 2022</a>; method also presented at <a href="https://doi.org/10.1109/EEM54602.2022.9921046" target="_blank" rel="noopener">EEM 2022</a>). It is the multi-node counterpart of the abatement cost curves we built with EPLANoptMAC.</p>
+
+    <h2>2024: carbon neutrality for Italy and the first step to vehicle-to-grid</h2>
+    <p><strong>Italian power system.</strong> With Alice Di Bella, Federico Canti, Valeria Casalicchio, Giampaolo Manzolini and Wolfram Sparber we used power system investment optimisation to identify carbon neutrality scenarios for Italy (<a href="https://doi.org/10.1088/2753-3751/ad5b64" target="_blank" rel="noopener">Environmental Research: Energy, 2024</a>).</p>
+    <p><strong>Electric vehicles.</strong> With Giuseppe Rotondo we extended our oemof work to couple electricity and mobility, starting from realistic hourly charging profiles for different electric vehicles and charging strategies, including vehicle-to-grid (<a href="https://doi.org/10.1016/j.est.2024.112388" target="_blank" rel="noopener">Journal of Energy Storage, 2024</a>).</p>
+
+    <h2>2026: PyPSA and vehicle-to-grid for Italy</h2>
+    <p>Pranav Deep Kumar, a PhD student I co-supervise at Politecnico di Milano, built a seven-zone PyPSA model of Italy with power and mobility, and optimised the system from 2025 to net zero in 2050. With 30% of electric cars taking part, vehicle-to-grid cuts the 2050 system cost by 3.3% and reduces the stationary batteries Italy needs (<a href="https://doi.org/10.1016/j.seta.2026.105474" target="_blank" rel="noopener">Sustainable Energy Technologies and Assessments, 2026</a>). The full story is in <a href="smart-charging-vehicle-to-grid-italy.html">smart charging and vehicle-to-grid in Italy</a>, and the project behind it in <a href="iomses-electric-vehicles-power-system-italy.html">the IOMSES results</a>.</p>
+
+    <h2>Who I worked with</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Colleagues</th><th>Topic</th><th>Years</th></tr></thead>
+        <tbody>
+          <tr><td>Valeria Casalicchio</td><td>oemof-moea, energy communities, Italian power system</td><td>2020–2025</td></tr>
+          <tr><td>Cord Kaldemeyer, Alexander Wanitschke</td><td>oemof-moea</td><td>2020</td></tr>
+          <tr><td>Steffi Misconel, Hannes Hobbie, Dominik Möst</td><td>Abatement cost curves with ELTRAMOD</td><td>2022</td></tr>
+          <tr><td>Grazia Barchi, Francesca Calabria</td><td>Energy communities with sector coupling</td><td>2025</td></tr>
+          <tr><td>Alice Di Bella, Federico Canti</td><td>Carbon neutrality scenarios for Italy</td><td>2024</td></tr>
+          <tr><td>Giuseppe Rotondo</td><td>EV charging profiles and vehicle-to-grid</td><td>2024–2026</td></tr>
+          <tr><td>Pranav Deep Kumar, Sonia Leva, Michela Longo</td><td>PyPSA-Italy and vehicle-to-grid</td><td>2026</td></tr>
+          <tr><td>Giampaolo Manzolini, David Moser, Wolfram Sparber</td><td>Co-authors across this line of work</td><td>2020–2026</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Next: SURE-RES and PyPSA-Eur</h2>
+    <p>The next step is SURE-RES (Spatially-resolved UnceRtainty analysis for futurE Renewable based Energy), a joint South Tyrol–Switzerland research project funded by the Swiss National Science Foundation and the Autonomous Province of Bolzano, running from 2027 to 2029. We will build a high-fidelity European model in PyPSA-Eur, with about 200 nodes, hourly resolution and full sector coupling, and test two faster low-fidelity versions against it: one that aggregates resolution with polynomial chaos expansion, and one that uses a graph neural network surrogate to keep full spatial resolution. The goal is to make energy system models more robust and easier to understand under deep uncertainty without giving up spatial and temporal detail.</p>
+    <p>SURE-RES brings together this multi-node line and our work on AI surrogates, from <a href="machine-learning-surrogate-energyplan.html">the EnergyPLAN surrogate</a> to <a href="deep-learning-surrogate-energy-system-synergies.html">explainable deep learning</a>. I will update this page and the timeline as results come out. More on the project on my <a href="../projects.html">projects page</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is a multi-node energy system model?</h3>
+    <p>A multi-node energy system model splits a country or continent into several zones, the nodes, connected by transmission lines. Each node has its own demand, renewable resources and power plants, so the model can show where to build generation, storage and grid, and where the grid becomes a bottleneck.</p>
+    <h3>What is the difference between oemof and PyPSA?</h3>
+    <p>Both are open-source Python tools that build linear optimisation models of energy systems. oemof (Open Energy Modelling Framework) is a modular framework for building models of any shape, from a single energy community to a country. PyPSA (Python for Power System Analysis) focuses on power and sector-coupled systems with a detailed transmission network, and comes with ready-made datasets such as PyPSA-Eur for Europe.</p>
+    <h3>Why use linear programming for energy system models?</h3>
+    <p>Linear programming finds the least-cost combination of investments and hourly operation in one solve, with a guaranteed optimum. That makes it possible to model many nodes and every hour of the year at the same time, which is hard to do with simulation-based approaches.</p>
+
+    <aside class="ref">
+      <strong>Publications</strong>
+      <ol class="reflist">
+        <li>Prina MG, Casalicchio V, Kaldemeyer C, Manzolini G, Moser D, Wanitschke A, Sparber W. Multi-objective investment optimization for energy system models in high temporal and spatial resolution. <em>Applied Energy</em>, 2020. <a href="https://doi.org/10.1016/j.apenergy.2020.114728" target="_blank" rel="noopener">doi</a></li>
+        <li>Casalicchio V, Manzolini G, Prina MG, Moser D. Optimal allocation method for a fair distribution of the benefits in an energy community. <em>Solar RRL</em>, 2021. <a href="https://doi.org/10.1002/solr.202100473" target="_blank" rel="noopener">doi</a></li>
+        <li>Casalicchio V, Manzolini G, Prina MG, Moser D. From investment optimization to fair benefit distribution in renewable energy community modelling. <em>Applied Energy</em>, 2022. <a href="https://doi.org/10.1016/j.apenergy.2021.118447" target="_blank" rel="noopener">doi</a></li>
+        <li>Misconel S, Prina MG, Hobbie H, Möst D, Sparber W. Model-based step-wise marginal CO<sub>2</sub> abatement cost curves to determine least-cost decarbonization pathways for sector-coupled energy systems. <em>Journal of Cleaner Production</em>, 2022. <a href="https://doi.org/10.1016/j.jclepro.2022.133173" target="_blank" rel="noopener">doi</a></li>
+        <li>Rotondo G, Prina MG, Manzolini G, Sparber W. Evaluating hourly charging profiles for different electric vehicles and charging strategies. <em>Journal of Energy Storage</em>, 2024. <a href="https://doi.org/10.1016/j.est.2024.112388" target="_blank" rel="noopener">doi</a></li>
+        <li>Di Bella A, Canti F, Prina MG, Casalicchio V, Manzolini G, Sparber W. Power system investment optimization to identify carbon neutrality scenarios for Italy. <em>Environmental Research: Energy</em>, 2024. <a href="https://doi.org/10.1088/2753-3751/ad5b64" target="_blank" rel="noopener">doi</a></li>
+        <li>Casalicchio V, Barchi G, Calabria F, Manzolini G, Prina MG, Moser D. Advancing renewable energy community planning through integrated sector-coupling and economies of scale. <em>Applied Energy</em>, 2025. <a href="https://doi.org/10.1016/j.apenergy.2025.125942" target="_blank" rel="noopener">doi</a></li>
+        <li>Kumar PD, Prina MG, Rotondo G, Manzolini G, Leva S, Longo M, Sparber W. Role of smart charging and vehicle-to-grid for long-term decarbonization pathways in Italy. <em>Sustainable Energy Technologies and Assessments</em>, 2026. <a href="https://doi.org/10.1016/j.seta.2026.105474" target="_blank" rel="noopener">doi</a></li>
+      </ol>
+      <a class="btn primary" href="https://github.com/matpri/oemof-moea" target="_blank" rel="noopener">oemof-moea on GitHub ↗</a>
+      <a class="btn" href="https://oemof.org/" target="_blank" rel="noopener">oemof ↗</a>
+      <a class="btn" href="https://pypsa.org/" target="_blank" rel="noopener">PyPSA ↗</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

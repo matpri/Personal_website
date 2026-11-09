@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1072" width="720" height="1072" role="img" aria-labelledby="multinode-timeline-title multinode-timeline-desc">
+  <title id="multinode-timeline-title">Multi-node energy system modelling, 2017-2026</title>
+  <desc id="multinode-timeline-desc">Timeline of multi-node linear programming energy system models: from oemof for the Italian power sector in 2017 to oemof-moea with full sector coupling, energy community models, ELTRAMOD abatement cost curves, oemof with vehicle-to-grid, and a seven-zone PyPSA model of Italy with vehicle-to-grid in 2026, followed by the SURE-RES project with PyPSA-Eur.</desc>
+  <defs>
+    <style>
+      .eyebrow { font: 600 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .08em; fill: #0f766e; }
+      .title { font: 700 22px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .col { font: 600 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .08em; fill: #5d6b66; }
+      .yr { font: 700 13px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .name { font: 600 15px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .namef { font: 700 15px Inter, "Segoe UI", Arial, sans-serif; fill: #0f5f58; }
+      .sub { font: 400 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; fill: #4a5a55; }
+      .legend { font: 400 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; fill: #5d6b66; }
+    </style>
+  </defs>
+  <rect width="720" height="1072" fill="#ffffff"/>
+  <text class="eyebrow" x="44" y="36">MULTI-NODE MODELS · 2017–2026 · STILL GROWING</text>
+  <text class="title" x="44" y="66">From oemof to PyPSA: linear programming at scale</text>
+  <text class="col" x="328" y="100" text-anchor="end">NEW METHODS</text>
+  <text class="col" x="392" y="100">NEW APPLICATIONS</text>
+    <line x1="332" y1="148" x2="328" y2="148" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="248" x2="328" y2="248" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="348" x2="392" y2="348" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="448" x2="328" y2="448" stroke="#9aa8a3" stroke-width="1.5"/>
+  <circle cx="360" cy="532" r="4" fill="#9aa8a3"/>
+  <line x1="356" y1="532" x2="328" y2="532" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="632" x2="328" y2="632" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="632" x2="392" y2="632" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="732" x2="392" y2="732" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="832" x2="328" y2="832" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="360" y1="136" x2="360" y2="904" stroke="#1b2421" stroke-width="2"/>
+  <line x1="360" y1="904" x2="360" y2="932" stroke="#0f766e" stroke-width="2" stroke-dasharray="5 4"/>
+    <rect x="332" y="136" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="153" text-anchor="middle">2017</text>
+  <rect x="44" y="112" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="138">Starting with oemof</text>
+  <text class="sub" x="60" y="158">Italy, power sector only;</text>
+  <text class="sub" x="60" y="175">research stay at RLI Berlin</text>
+  <rect x="332" y="236" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="253" text-anchor="middle">2020</text>
+  <rect x="44" y="212" width="284" height="72" rx="6" fill="#e0f2ef" stroke="#0f766e" stroke-width="2"/>
+  <text class="namef" x="60" y="238">oemof-moea</text>
+  <text class="sub" x="60" y="258">oemof + multi-objective</text>
+  <text class="sub" x="60" y="275">algorithm, full sector coupling</text>
+  <rect x="332" y="336" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="353" text-anchor="middle">2021</text>
+  <rect x="392" y="312" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="338">Energy communities</text>
+  <text class="sub" x="408" y="358">Fair allocation of benefits</text>
+  <text class="sub" x="408" y="375">among members (power sector)</text>
+  <rect x="332" y="436" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="453" text-anchor="middle">2022</text>
+  <rect x="44" y="412" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="438">oemof for energy communities</text>
+  <text class="sub" x="60" y="458">From investment optimisation</text>
+  <text class="sub" x="60" y="475">to fair benefit sharing</text>
+  <rect x="44" y="496" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="522">ELTRAMOD MAC curves</text>
+  <text class="sub" x="60" y="542">Step-wise abatement cost</text>
+  <text class="sub" x="60" y="559">curves, sector-coupled</text>
+  <rect x="332" y="620" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="637" text-anchor="middle">2024</text>
+  <rect x="44" y="596" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="622">oemof and vehicle-to-grid</text>
+  <text class="sub" x="60" y="642">Hourly EV charging profiles</text>
+  <text class="sub" x="60" y="659">and charging strategies</text>
+  <rect x="392" y="596" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="622">Italy, carbon neutrality</text>
+  <text class="sub" x="408" y="642">Power system investment</text>
+  <text class="sub" x="408" y="659">optimisation with oemof</text>
+  <rect x="332" y="720" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="737" text-anchor="middle">2025</text>
+  <rect x="392" y="696" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="722">Energy communities, all sectors</text>
+  <text class="sub" x="408" y="742">Sector coupling and</text>
+  <text class="sub" x="408" y="759">economies of scale</text>
+  <rect x="332" y="820" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="837" text-anchor="middle">2026</text>
+  <rect x="44" y="796" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="822">PyPSA and vehicle-to-grid</text>
+  <text class="sub" x="60" y="842">Italy, 7 zones, power and</text>
+  <text class="sub" x="60" y="859">mobility, 2025-2050</text>
+  <rect x="164" y="932" width="392" height="64" rx="6" fill="#ffffff" stroke="#0f766e" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="namef" x="360" y="958" text-anchor="middle">Next: SURE-RES, 2027-2029</text>
+  <text class="sub" x="360" y="978" text-anchor="middle">PyPSA-Eur, ~200 nodes, AI surrogates</text>
+  
+  <line x1="44" y1="1016" x2="676" y2="1016" stroke="#e2e7e4"/>
+  <rect x="44" y="1032" width="20" height="14" rx="2" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="legend" x="72" y="1044">New method</text>
+  <rect x="180" y="1032" width="20" height="14" rx="2" fill="#f3f6f4" stroke="#c9d3cf"/>
+  <text class="legend" x="208" y="1044">New application</text>
+  <rect x="344" y="1032" width="20" height="14" rx="2" fill="#ffffff" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text class="legend" x="372" y="1044">Next step</text>
+  <text class="legend" x="676" y="1044" text-anchor="end">github.com/matpri</text>
+</svg>

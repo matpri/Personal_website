@@ -36,6 +36,7 @@ const PORTFOLIO = [
     links: [
       { label: "Code", url: "https://github.com/matpri/EPLANopt" },
       { label: "Paper", url: "https://doi.org/10.1016/j.energy.2018.02.050" },
+      { label: "Story of the model", url: "blog/eplanopt-energy-system-model-history.html" },
     ],
   },
   {
@@ -47,6 +48,7 @@ const PORTFOLIO = [
     links: [
       { label: "Code", url: "https://github.com/matpri/EPLANoptML" },
       { label: "Paper", url: "https://doi.org/10.1016/j.energy.2024.132735" },
+      { label: "Blog post", url: "blog/machine-learning-surrogate-energyplan.html" },
     ],
   },
   {
@@ -210,6 +212,15 @@ const PROJECTS = [
    "keywords" are shown as tags and used by the search on blog.html. Reuse
    existing keywords where they fit, so the filters group related posts. */
 const BLOG = [
+  {
+    title: "EPLANopt: the story of an open-source energy system optimisation model",
+    description:
+      "From one EnergyPLAN study in 2014 to machine learning and explainable AI: twelve years of methods, applications and papers, and what comes next with PLANtoACT.",
+    image: "images/blog/eplanopt-history-og.jpg",
+    date: "2026-11-09",
+    keywords: ["EnergyPLAN", "multi-objective optimisation", "energy system modelling", "open-source", "regional energy planning", "machine learning"],
+    links: [{ label: "Read article", url: "blog/eplanopt-energy-system-model-history.html" }],
+  },
   {
     title: "How much does nuclear power cost? 70 years of European reactors in one chart",
     description:

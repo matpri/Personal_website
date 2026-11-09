@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1456" width="720" height="1456" role="img" aria-labelledby="eplanopt-timeline-title eplanopt-timeline-desc">
+  <title id="eplanopt-timeline-title">EPLANopt development timeline, 2014-2026</title>
+  <desc id="eplanopt-timeline-desc">Timeline of the EPLANopt energy system model: new methods from the 2018 coupling of EnergyPLAN with an evolutionary algorithm to transition pathways, abatement cost curves, near-optimal solutions, machine learning and explainable AI, and applications from the municipality of Brixen to Italy, European countries and regions, with work continuing in the PLANtoACT project.</desc>
+  <defs>
+    <style>
+      .eyebrow { font: 600 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .08em; fill: #0f766e; }
+      .title { font: 700 22px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .col { font: 600 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: .08em; fill: #5d6b66; }
+      .yr { font: 700 13px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .name { font: 600 15px Inter, "Segoe UI", Arial, sans-serif; fill: #1b2421; }
+      .namef { font: 700 15px Inter, "Segoe UI", Arial, sans-serif; fill: #0f5f58; }
+      .sub { font: 400 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; fill: #4a5a55; }
+      .legend { font: 400 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; fill: #5d6b66; }
+    </style>
+  </defs>
+  <rect width="720" height="1456" fill="#ffffff"/>
+  <text class="eyebrow" x="44" y="36">EPLANOPT · 2014–2026 · STILL GROWING</text>
+  <text class="title" x="44" y="66">From one EnergyPLAN study to an AI-enhanced model</text>
+  <text class="col" x="328" y="100" text-anchor="end">NEW METHODS</text>
+  <text class="col" x="392" y="100">NEW APPLICATIONS</text>
+    <line x1="332" y1="148" x2="328" y2="148" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="248" x2="392" y2="248" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="348" x2="328" y2="348" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="348" x2="392" y2="348" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="448" x2="328" y2="448" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="548" x2="392" y2="548" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="648" x2="328" y2="648" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="748" x2="328" y2="748" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="748" x2="392" y2="748" stroke="#9aa8a3" stroke-width="1.5"/>
+  <circle cx="360" cy="832" r="4" fill="#9aa8a3"/>
+  <line x1="364" y1="832" x2="392" y2="832" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="932" x2="328" y2="932" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="1032" x2="392" y2="1032" stroke="#9aa8a3" stroke-width="1.5"/>
+  <circle cx="360" cy="1116" r="4" fill="#9aa8a3"/>
+  <line x1="364" y1="1116" x2="392" y2="1116" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="332" y1="1216" x2="328" y2="1216" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="388" y1="1216" x2="392" y2="1216" stroke="#9aa8a3" stroke-width="1.5"/>
+  <line x1="360" y1="136" x2="360" y2="1288" stroke="#1b2421" stroke-width="2"/>
+  <line x1="360" y1="1288" x2="360" y2="1316" stroke="#0f766e" stroke-width="2" stroke-dasharray="5 4"/>
+    <rect x="332" y="136" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="153" text-anchor="middle">2014</text>
+  <rect x="44" y="112" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="138">Starting point</text>
+  <text class="sub" x="60" y="158">Modelling for regional</text>
+  <text class="sub" x="60" y="175">authorities; EnergyPLAN chosen</text>
+  <rect x="332" y="236" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="253" text-anchor="middle">2016</text>
+  <rect x="392" y="212" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="238">Municipality of Brixen</text>
+  <text class="sub" x="408" y="258">EnergyPLAN study of the</text>
+  <text class="sub" x="408" y="275">municipal energy system</text>
+  <rect x="332" y="336" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="353" text-anchor="middle">2018</text>
+  <rect x="44" y="312" width="284" height="72" rx="6" fill="#e0f2ef" stroke="#0f766e" stroke-width="2"/>
+  <text class="namef" x="60" y="338">EPLANopt</text>
+  <text class="sub" x="60" y="358">EnergyPLAN + multi-objective</text>
+  <text class="sub" x="60" y="375">evolutionary algorithm, open</text>
+  <rect x="392" y="312" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="338">Italy, power sector</text>
+  <text class="sub" x="408" y="358">Gas turbine flexibility</text>
+  <text class="sub" x="408" y="375">in the Italian system</text>
+  <rect x="332" y="436" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="453" text-anchor="middle">2019</text>
+  <rect x="44" y="412" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="438">EPLANoptTP</text>
+  <text class="sub" x="60" y="458">Transition pathways for</text>
+  <text class="sub" x="60" y="475">long-term planning</text>
+  <rect x="332" y="536" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="553" text-anchor="middle">2020</text>
+  <rect x="392" y="512" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="538">Italy and regions, all sectors</text>
+  <text class="sub" x="408" y="558">Sector-coupled scenarios</text>
+  <text class="sub" x="408" y="575">vs climate-change scenarios</text>
+  <rect x="332" y="636" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="653" text-anchor="middle">2021</text>
+  <rect x="44" y="612" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="638">EPLANoptMAC</text>
+  <text class="sub" x="60" y="658">Marginal abatement cost</text>
+  <text class="sub" x="60" y="675">curves from EnergyPLAN</text>
+  <rect x="332" y="736" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="753" text-anchor="middle">2023</text>
+  <rect x="44" y="712" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="738">Near-optimal solutions</text>
+  <text class="sub" x="60" y="758">Alternatives close to the</text>
+  <text class="sub" x="60" y="775">optimum (Aalborg Univ.)</text>
+  <rect x="392" y="712" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="738">European countries</text>
+  <text class="sub" x="408" y="758">Energy mix and risk of</text>
+  <text class="sub" x="408" y="775">supply, 2030 and 2050</text>
+  <rect x="392" y="796" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="822">Optimisation vs simulation</text>
+  <text class="sub" x="408" y="842">Municipal case study</text>
+  <text class="sub" x="408" y="859">(Aalborg University)</text>
+  <rect x="332" y="920" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="937" text-anchor="middle">2024</text>
+  <rect x="44" y="896" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="922">EPLANoptML</text>
+  <text class="sub" x="60" y="942">Machine learning surrogate,</text>
+  <text class="sub" x="60" y="959">64% less computing time</text>
+  <rect x="332" y="1020" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="1037" text-anchor="middle">2025</text>
+  <rect x="392" y="996" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="1022">Piemonte region</text>
+  <text class="sub" x="408" y="1042">Regional application</text>
+  <rect x="392" y="1080" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="1106">PLANtoACT</text>
+  <text class="sub" x="408" y="1126">Five EU regions, 2025-2028</text>
+  <rect x="332" y="1204" width="56" height="24" rx="12" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="yr" x="360" y="1221" text-anchor="middle">2026</text>
+  <rect x="44" y="1180" width="284" height="72" rx="6" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="name" x="60" y="1206">Explainable AI</text>
+  <text class="sub" x="60" y="1226">Deep learning surrogate</text>
+  <text class="sub" x="60" y="1243">explains synergies</text>
+  <rect x="392" y="1180" width="284" height="72" rx="6" fill="#f3f6f4" stroke="#c9d3cf" stroke-width="1"/>
+  <text class="name" x="408" y="1206">South Tyrol (iNEST)</text>
+  <text class="sub" x="408" y="1226">Regional application</text>
+  <rect x="164" y="1316" width="392" height="64" rx="6" fill="#ffffff" stroke="#0f766e" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="namef" x="360" y="1342" text-anchor="middle">In development</text>
+  <text class="sub" x="360" y="1362" text-anchor="middle">next updates from PLANtoACT, 2025-2028</text>
+  
+  <line x1="44" y1="1400" x2="676" y2="1400" stroke="#e2e7e4"/>
+  <rect x="44" y="1416" width="20" height="14" rx="2" fill="#ffffff" stroke="#1b2421" stroke-width="1.5"/>
+  <text class="legend" x="72" y="1428">New method</text>
+  <rect x="180" y="1416" width="20" height="14" rx="2" fill="#f3f6f4" stroke="#c9d3cf"/>
+  <text class="legend" x="208" y="1428">New application</text>
+  <rect x="344" y="1416" width="20" height="14" rx="2" fill="#ffffff" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text class="legend" x="372" y="1428">In progress</text>
+  <text class="legend" x="676" y="1428" text-anchor="end">github.com/matpri</text>
+</svg>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EPLANopt: the story of an open-source energy system optimisation model (2014–2026) | Matteo Giacomo Prina</title>
+  <meta name="description" content="How EPLANopt grew from a single EnergyPLAN study in 2014 into an open-source multi-objective optimisation model with transition pathways, abatement cost curves, machine learning and explainable AI.">
+  <meta name="author" content="Matteo Giacomo Prina">
+  <link rel="canonical" href="https://matteoprina.com/blog/eplanopt-energy-system-model-history.html">
+  <meta name="theme-color" content="#0f766e">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Matteo Giacomo Prina">
+  <meta property="og:title" content="EPLANopt: the story of an open-source energy system optimisation model">
+  <meta property="og:description" content="From one EnergyPLAN study in 2014 to machine learning and explainable AI: twelve years of development, every paper and every application.">
+  <meta property="og:url" content="https://matteoprina.com/blog/eplanopt-energy-system-model-history.html">
+  <meta property="og:image" content="https://matteoprina.com/images/blog/eplanopt-history-og.jpg">
+  <meta property="og:image:alt" content="Timeline of the EPLANopt energy system model from 2014 to 2026">
+  <meta property="article:published_time" content="2026-11-09T12:00:00+01:00">
+  <meta property="article:modified_time" content="2026-11-09T12:00:00+01:00">
+  <meta property="article:author" content="https://matteoprina.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "EPLANopt: the story of an open-source energy system optimisation model (2014–2026)",
+    "description": "How EPLANopt grew from a single EnergyPLAN study in 2014 into an open-source multi-objective optimisation model with transition pathways, abatement cost curves, machine learning and explainable AI.",
+    "image": "https://matteoprina.com/images/blog/eplanopt-history-og.jpg",
+    "datePublished": "2026-11-09T12:00:00+01:00",
+    "dateModified": "2026-11-09T12:00:00+01:00",
+    "inLanguage": "en",
+    "mainEntityOfPage": "https://matteoprina.com/blog/eplanopt-energy-system-model-history.html",
+    "author": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "publisher": { "@type": "Person", "name": "Matteo Giacomo Prina", "url": "https://matteoprina.com/" },
+    "keywords": "EPLANopt, EnergyPLAN, energy system optimisation, multi-objective optimisation, open-source energy model, energy planning, transition pathways, marginal abatement cost curve, surrogate model",
+    "about": {
+      "@type": "SoftwareSourceCode",
+      "name": "EPLANopt",
+      "codeRepository": "https://github.com/matpri/EPLANopt",
+      "programmingLanguage": "Python",
+      "description": "Multi-objective optimisation model coupled to the EnergyPLAN energy system simulation software."
+    },
+    "citation": [
+      { "@type": "ScholarlyArticle", "name": "Multi-objective optimization algorithm coupled to EnergyPLAN software: The EPLANopt model", "sameAs": "https://doi.org/10.1016/j.energy.2018.02.050" },
+      { "@type": "ScholarlyArticle", "name": "Incorporating combined cycle gas turbine flexibility constraints and additional costs into the EPLANopt model: The Italian case study", "sameAs": "https://doi.org/10.1016/j.energy.2018.07.007" },
+      { "@type": "ScholarlyArticle", "name": "Transition pathways optimization methodology through EnergyPLAN software for long-term energy planning", "sameAs": "https://doi.org/10.1016/j.apenergy.2018.10.099" },
+      { "@type": "ScholarlyArticle", "name": "Multi-Objective Optimization Model EPLANopt for Energy Transition Analysis and Comparison with Climate-Change Scenarios", "sameAs": "https://doi.org/10.3390/en13123255" },
+      { "@type": "ScholarlyArticle", "name": "Optimisation method to obtain marginal abatement cost-curve through EnergyPLAN software", "sameAs": "https://doi.org/10.1016/j.segy.2021.100002" },
+      { "@type": "ScholarlyArticle", "name": "Evaluating near-optimal scenarios with EnergyPLAN to support policy makers", "sameAs": "https://doi.org/10.1016/j.segy.2023.100100" },
+      { "@type": "ScholarlyArticle", "name": "Optimal future energy mix assessment considering the risk of supply for seven European countries in 2030 and 2050", "sameAs": "https://doi.org/10.1016/j.prime.2023.100179" },
+      { "@type": "ScholarlyArticle", "name": "Municipal energy system modelling – A practical comparison of optimisation and simulation approaches", "sameAs": "https://doi.org/10.1016/j.energy.2023.126803" },
+      { "@type": "ScholarlyArticle", "name": "Machine learning as a surrogate model for EnergyPLAN: Speeding up energy system optimization at the country level", "sameAs": "https://doi.org/10.1016/j.energy.2024.132735" },
+      { "@type": "ScholarlyArticle", "name": "Deep learning surrogate model to explain decision variable synergies in energy system modelling", "sameAs": "https://doi.org/10.1016/j.segy.2026.100246" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is EPLANopt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "EPLANopt is an energy system optimisation model that couples the EnergyPLAN simulation software, developed at Aalborg University, with a multi-objective evolutionary algorithm. It searches for the energy mixes that best balance total costs and CO2 emissions, and returns a set of optimal scenarios instead of a single one." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between EnergyPLAN and EPLANopt?",
+        "acceptedAnswer": { "@type": "Answer", "text": "EnergyPLAN simulates one energy system scenario at a time, hour by hour, across electricity, heating, transport and industry. EPLANopt runs EnergyPLAN thousands of times inside an optimisation loop, so it can search for the best combinations of technologies automatically." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is EPLANopt open source?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The code of EPLANopt, EPLANoptMAC and EPLANoptML is on GitHub. EnergyPLAN itself is a separate tool that has to be downloaded from its website." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matteo Giacomo <span>Prina</span></a>
+    <nav>
+      <a href="../index.html">About</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../blog.html" class="active">Blog</a>
+      <a href="../media.html">Media</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="article wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../blog.html">Blog</a> › The story of EPLANopt</nav>
+
+    <header>
+      <p class="eyebrow">Model history · Updated as the model grows</p>
+      <h1>EPLANopt: the story of an open-source energy system optimisation model</h1>
+      <p class="lead">EPLANopt is the energy system model my group and I have been developing since 2018, on top of work that started in 2014. It began as a way to help regional administrations plan their energy transition and has since grown new methods, from transition pathways to machine learning and explainable AI, and new applications, from one municipality to European countries. This page tells the whole story, links every paper, and will be updated as the model keeps growing.</p>
+      <p class="byline">By <a href="../index.html">Matteo Giacomo Prina</a> · <time datetime="2026-11-09">9 November 2026</time> · 8 min read</p>
+      <div class="topics"><span class="visually-hidden">Topics: </span><ul class="tags"><li><a href="../blog.html?k=EnergyPLAN">EnergyPLAN</a></li><li><a href="../blog.html?k=multi-objective+optimisation">multi-objective optimisation</a></li><li><a href="../blog.html?k=energy+system+modelling">energy system modelling</a></li><li><a href="../blog.html?k=open-source">open-source</a></li><li><a href="../blog.html?k=regional+energy+planning">regional energy planning</a></li><li><a href="../blog.html?k=machine+learning">machine learning</a></li></ul></div>
+    </header>
+
+    <figure class="diagram">
+      <div class="diagram-scroll">
+        <img src="../images/blog/eplanopt-timeline.svg" width="720" height="1456" alt="Vertical timeline of EPLANopt. New methods on the left: start in 2014, EPLANopt 2018, EPLANoptTP 2019, EPLANoptMAC 2021, near-optimal solutions 2023, EPLANoptML 2024, explainable AI 2026. New applications on the right: Brixen 2016, Italian power sector 2018, Italy and regions with all sectors 2020, European countries and a municipal comparison 2023, Piemonte region and PLANtoACT 2025, South Tyrol in iNEST 2026. The timeline ends in an open box: in development.">
+      </div>
+      <figcaption>Twelve years of EPLANopt: new methods on the left, new applications on the right. The timeline is still open.</figcaption>
+    </figure>
+
+    <h2>2014: why we started from EnergyPLAN</h2>
+    <p>In 2014 I started working on energy system modelling at Eurac Research. The goal was practical: support regional public administrations in planning their energy transition. We looked for a tool that could represent a whole region hour by hour, with electricity, heating, transport and industry linked together, and chose <a href="https://www.energyplan.eu/" target="_blank" rel="noopener">EnergyPLAN</a>, the simulation software developed at Aalborg University.</p>
+    <p>One of the first applications, in 2016, was an EnergyPLAN study for the municipality of Brixen (Bressanone) in South Tyrol.</p>
+
+    <h2>2018: EPLANopt, EnergyPLAN plus an optimisation algorithm</h2>
+    <p>EnergyPLAN simulates one scenario at a time: you describe an energy system, it tells you the costs, the emissions and how the system runs through the year. It does not search for the best scenario on its own, and the possible combinations of solar, wind, storage, heat pumps and efficiency are far too many to test by hand.</p>
+    <p>So we coupled EnergyPLAN with a multi-objective evolutionary algorithm. The algorithm proposes thousands of energy systems, EnergyPLAN simulates each one, and the algorithm keeps the best and evolves them. The result is a Pareto front: a set of optimal scenarios that trade total costs against CO<sub>2</sub> emissions, instead of one single answer. We called it EPLANopt and released it as open-source code on <a href="https://github.com/matpri/EPLANopt" target="_blank" rel="noopener">GitHub</a> (<a href="https://doi.org/10.1016/j.energy.2018.02.050" target="_blank" rel="noopener">Energy, 2018</a>; <a href="../portfolio.html#eplanopt">portfolio</a>).</p>
+    <p>The first large application was the Italian power sector, where we also added the flexibility limits and extra costs of combined-cycle gas turbines (<a href="https://doi.org/10.1016/j.energy.2018.07.007" target="_blank" rel="noopener">Energy, 2018</a>).</p>
+
+    <h2>2019–2021: from snapshots to pathways and cost curves</h2>
+    <p><strong>EPLANoptTP (2019).</strong> The first version optimised a single future year. EPLANoptTP optimises the transition pathway in successive steps, towards long-term planning targets (<a href="https://doi.org/10.1016/j.apenergy.2018.10.099" target="_blank" rel="noopener">Applied Energy, 2019</a>).</p>
+    <p><strong>All sectors, national and regional scale (2020).</strong> We then applied EPLANopt with full sector coupling at Italian level and compared the optimal scenarios with climate-change scenarios (<a href="https://doi.org/10.3390/en13123255" target="_blank" rel="noopener">Energies, 2020</a>). This work received the best paper award at the SDEWES 2020 conference. In the same year we applied the sector-coupled model at regional level.</p>
+    <p><strong>EPLANoptMAC (2021).</strong> Policymakers often ask which measures cut CO<sub>2</sub> at the lowest cost. EPLANoptMAC builds marginal abatement cost curves directly from EnergyPLAN through optimisation (<a href="https://doi.org/10.1016/j.segy.2021.100002" target="_blank" rel="noopener">Smart Energy, 2021</a>; <a href="https://github.com/matpri/EPLANoptMAC" target="_blank" rel="noopener">code</a>). It received the best presentation award at the SES 2020 conference. Daniele Groppi and colleagues have used both tools for the Italian island of Favignana: <a href="https://doi.org/10.1016/j.enconman.2021.114295" target="_blank" rel="noopener">EPLANopt for the island's energy transition</a> and <a href="https://doi.org/10.1016/j.energy.2022.124342" target="_blank" rel="noopener">EPLANoptMAC for its maritime transport</a>.</p>
+
+    <h2>2023: alternatives, Europe and a reality check</h2>
+    <p><strong>Near-optimal solutions.</strong> The cheapest scenario is only one of many that cost almost the same. With Aalborg University we extended EPLANopt to find these near-optimal scenarios, which cost only slightly more than the optimum but can look very different, so policymakers can choose between real alternatives (<a href="https://doi.org/10.1016/j.segy.2023.100100" target="_blank" rel="noopener">Smart Energy, 2023</a>).</p>
+    <p><strong>European countries.</strong> We applied the model to several European countries to assess their optimal energy mix in 2030 and 2050 while accounting for the risk of supply (<a href="https://doi.org/10.1016/j.prime.2023.100179" target="_blank" rel="noopener">e-Prime, 2023</a>).</p>
+    <p><strong>Optimisation or simulation?</strong> Also with Aalborg University, we compared optimisation and simulation approaches on a municipal energy system, to see what each one adds in practice (<a href="https://doi.org/10.1016/j.energy.2023.126803" target="_blank" rel="noopener">Energy, 2023</a>).</p>
+
+    <h2>2024–2026: machine learning and explainable AI</h2>
+    <p>A single EPLANopt run can call EnergyPLAN tens of thousands of times, and that limits how many uncertainties we can explore. In <strong>EPLANoptML (2024)</strong> a neural network learns to imitate EnergyPLAN and takes its place for most of the optimisation. For Italy, the computing time fell by 64% with almost identical optimal scenarios. The full story is in <a href="machine-learning-surrogate-energyplan.html">our article on the EnergyPLAN surrogate model</a>, and the code is on <a href="https://github.com/matpri/EPLANoptML" target="_blank" rel="noopener">GitHub</a>.</p>
+    <p>In <strong>2026</strong> we went a step further with a deep learning surrogate and explainable AI, to understand why some combinations of technologies work better than others. It showed, for example, that heat pumps cut CO<sub>2</sub> right away while Power-to-X needs a high share of renewables first. Read <a href="deep-learning-surrogate-energy-system-synergies.html">heat pumps first, Power-to-X later</a>.</p>
+    <p>Long computing times and hard-to-explain results are two of the challenges we describe in <a href="challenges-bottom-up-energy-system-models.html">our review of bottom-up energy system models</a>. The AI work on EPLANopt is our attempt to address both.</p>
+
+    <h2>Back to the regions: Piemonte, South Tyrol and PLANtoACT</h2>
+    <p>The model has come back to where it started: regional energy planning. In 2025 we applied it to the Piemonte region, and in 2026 to South Tyrol within the iNEST project. Since 2025 it is also at the centre of <a href="../projects.html">LIFE PLANtoACT</a>, the project I coordinate, which applies it in five European regions until 2028 and helps regions and municipalities move from energy plans to action.</p>
+
+    <h2>Still in development</h2>
+    <p>EPLANopt is not finished. The next methods and applications will come mostly from PLANtoACT, and I will update this page and the timeline when they are published. All the code is listed in my portfolio (<a href="../portfolio.html#eplanopt">EPLANopt</a>, <a href="../portfolio.html#eplanoptmac">EPLANoptMAC</a>, <a href="../portfolio.html#eplanoptml">EPLANoptML</a>) and on <a href="https://github.com/matpri" target="_blank" rel="noopener">GitHub</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>What is EPLANopt?</h3>
+    <p>EPLANopt is an energy system optimisation model that couples the EnergyPLAN simulation software, developed at Aalborg University, with a multi-objective evolutionary algorithm. It searches for the energy mixes that best balance total costs and CO<sub>2</sub> emissions, and returns a set of optimal scenarios instead of a single one.</p>
+    <h3>What is the difference between EnergyPLAN and EPLANopt?</h3>
+    <p>EnergyPLAN simulates one energy system scenario at a time, hour by hour, across electricity, heating, transport and industry. EPLANopt runs EnergyPLAN thousands of times inside an optimisation loop, so it can search for the best combinations of technologies automatically.</p>
+    <h3>Is EPLANopt open source?</h3>
+    <p>Yes. The code of EPLANopt, EPLANoptMAC and EPLANoptML is on GitHub. EnergyPLAN itself is a separate tool that has to be downloaded from its website.</p>
+
+    <aside class="ref">
+      <strong>EPLANopt publications</strong>
+      <ol class="reflist">
+        <li>Prina MG et al. Multi-objective optimization algorithm coupled to EnergyPLAN software: The EPLANopt model. <em>Energy</em>, 2018. <a href="https://doi.org/10.1016/j.energy.2018.02.050" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG et al. Incorporating combined cycle gas turbine flexibility constraints and additional costs into the EPLANopt model: The Italian case study. <em>Energy</em>, 2018. <a href="https://doi.org/10.1016/j.energy.2018.07.007" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG et al. Transition pathways optimization methodology through EnergyPLAN software for long-term energy planning. <em>Applied Energy</em>, 2019. <a href="https://doi.org/10.1016/j.apenergy.2018.10.099" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG et al. Multi-objective optimization model EPLANopt for energy transition analysis and comparison with climate-change scenarios. <em>Energies</em>, 2020. <a href="https://doi.org/10.3390/en13123255" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG et al. Optimisation method to obtain marginal abatement cost-curve through EnergyPLAN software. <em>Smart Energy</em>, 2021. <a href="https://doi.org/10.1016/j.segy.2021.100002" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG, Johannsen RM, Sparber W, Østergaard PA. Evaluating near-optimal scenarios with EnergyPLAN to support policy makers. <em>Smart Energy</em>, 2023. <a href="https://doi.org/10.1016/j.segy.2023.100100" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG et al. Optimal future energy mix assessment considering the risk of supply for seven European countries in 2030 and 2050. <em>e-Prime</em>, 2023. <a href="https://doi.org/10.1016/j.prime.2023.100179" target="_blank" rel="noopener">doi</a></li>
+        <li>Johannsen RM, Prina MG, Østergaard PA et al. Municipal energy system modelling – A practical comparison of optimisation and simulation approaches. <em>Energy</em>, 2023. <a href="https://doi.org/10.1016/j.energy.2023.126803" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG et al. Machine learning as a surrogate model for EnergyPLAN: Speeding up energy system optimization at the country level. <em>Energy</em>, 2024. <a href="https://doi.org/10.1016/j.energy.2024.132735" target="_blank" rel="noopener">doi</a></li>
+        <li>Prina MG et al. Deep learning surrogate model to explain decision variable synergies in energy system modelling. <em>Smart Energy</em>, 2026. <a href="https://doi.org/10.1016/j.segy.2026.100246" target="_blank" rel="noopener">doi</a></li>
+      </ol>
+      <a class="btn primary" href="https://github.com/matpri/EPLANopt" target="_blank" rel="noopener">EPLANopt on GitHub ↗</a>
+      <a class="btn" href="../portfolio.html#eplanopt">All code in the portfolio →</a>
+    </aside>
+
+    <p class="back"><a href="../blog.html">← All blog posts</a></p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Matteo Giacomo Prina</span>
+    <span><a href="../projects.html">Projects</a> · <a href="../portfolio.html">Portfolio</a> · <a href="../blog.html">Blog</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

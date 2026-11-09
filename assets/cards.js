@@ -12,6 +12,10 @@ function hue(text) {
   return h;
 }
 
+function slug(text) {
+  return String(text).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function cardHTML(item) {
   const cover = item.video
     ? `<video class="${item.fit === "contain" ? "contain" : ""}" src="${esc(item.video)}" poster="${esc(item.image || "")}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(item.title)}"></video>`
@@ -40,7 +44,7 @@ function cardHTML(item) {
 
   const internal = (item.links || []).find((l) => !/^https?:/.test(l.url));
   return `
-    <article class="card">
+    <article class="card" id="${esc(item.id || slug(item.title))}">
       <div class="cover" style="--h:${hue(item.title)}">${cover}</div>
       <div class="card-body">
         ${meta.length ? `<div class="meta">${meta.join("")}</div>` : ""}
@@ -59,5 +63,10 @@ function renderCards(containerId, items) {
   // respect "reduce motion": stop autoplaying card videos and show the poster
   if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) {
     el.querySelectorAll("video").forEach((v) => { v.removeAttribute("autoplay"); v.pause(); });
+  }
+  // cards are rendered after page load, so jump to #card-id links manually
+  if (location.hash) {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target && el.contains(target)) target.scrollIntoView({ block: "start" });
   }
 }
